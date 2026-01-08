@@ -28,7 +28,7 @@ pipeline = pipelines[selected_pipeline]
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    status_color = {"Running": "🟡", "Completed": "🟢", "Failed": "��"}
+    status_color = {"Running": "🟡", "Completed": "🟢", "Failed": "🔴"}
     st.metric("Status", f"{status_color[pipeline['status']]} {pipeline['status']}")
 
 with col2:
