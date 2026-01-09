@@ -1,4 +1,4 @@
-# Pflichtenheft: Multi-Page App
+# Specifications: Multi-Page App
 
 ## Expected Functionality
 Demonstrate multi-page navigation structure.

@@ -1,4 +1,4 @@
-# Pflichtenheft: Custom Components
+# Specifications: Custom Components
 
 ## Expected Functionality
 Demonstrate custom Streamlit component patterns.

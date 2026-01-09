@@ -1,4 +1,4 @@
-# Pflichtenheft: Simple Survey Form
+# Specifications: Simple Survey Form
 
 ## Expected Functionality
 Collect user feedback through a form.

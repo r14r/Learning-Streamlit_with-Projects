@@ -1,4 +1,4 @@
-# Pflichtenheft: TODO List Manager
+# Specifications: TODO List Manager
 
 ## Expected Functionality
 Manage tasks with persistent session state.

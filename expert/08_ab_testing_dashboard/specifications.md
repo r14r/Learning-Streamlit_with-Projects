@@ -1,4 +1,4 @@
-# Pflichtenheft: A/B Testing Dashboard
+# Specifications: A/B Testing Dashboard
 
 ## Expected Functionality
 Statistical analysis and visualization of A/B tests.

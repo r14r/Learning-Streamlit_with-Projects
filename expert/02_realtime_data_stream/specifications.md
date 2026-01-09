@@ -1,4 +1,4 @@
-# Pflichtenheft: Real-Time Data Stream
+# Specifications: Real-Time Data Stream
 
 ## Expected Functionality
 Display live updating data with auto-refresh.

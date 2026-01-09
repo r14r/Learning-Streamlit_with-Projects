@@ -1,4 +1,4 @@
-# Pflichtenheft: Text Analyzer
+# Specifications: Text Analyzer
 
 ## Expected Functionality
 

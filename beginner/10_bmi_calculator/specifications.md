@@ -1,4 +1,4 @@
-# Pflichtenheft: BMI Calculator
+# Specifications: BMI Calculator
 
 ## Expected Functionality
 Calculate Body Mass Index from height and weight.

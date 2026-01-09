@@ -1,4 +1,4 @@
-# Pflichtenheft: Database Integration
+# Specifications: Database Integration
 
 ## Expected Functionality
 CRUD operations with SQLite database.

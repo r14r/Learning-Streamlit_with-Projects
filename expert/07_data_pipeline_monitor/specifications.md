@@ -1,4 +1,4 @@
-# Pflichtenheft: Data Pipeline Monitor
+# Specifications: Data Pipeline Monitor
 
 ## Expected Functionality
 Visualize ETL pipeline status and metrics.

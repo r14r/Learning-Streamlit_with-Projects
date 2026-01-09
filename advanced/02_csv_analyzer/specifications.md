@@ -1,4 +1,4 @@
-# Pflichtenheft: CSV Analyzer
+# Specifications: CSV Analyzer
 
 ## Expected Functionality
 Upload and analyze CSV files with statistics and visualization.

@@ -1,4 +1,4 @@
-# Pflichtenheft: Interactive Calculator
+# Specifications: Interactive Calculator
 
 ## Expected Functionality
 

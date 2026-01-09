@@ -1,4 +1,4 @@
-# Pflichtenheft: Performance Optimizer
+# Specifications: Performance Optimizer
 
 ## Expected Functionality
 Demonstrate app optimization techniques.

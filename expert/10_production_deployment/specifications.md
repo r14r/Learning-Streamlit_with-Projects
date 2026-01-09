@@ -1,4 +1,4 @@
-# Pflichtenheft: Production Deployment
+# Specifications: Production Deployment
 
 ## Expected Functionality
 Guide for deploying Streamlit apps to production.

@@ -1,4 +1,4 @@
-# Pflichtenheft: Authentication System
+# Specifications: Authentication System
 
 ## Expected Functionality
 User login and session management system.

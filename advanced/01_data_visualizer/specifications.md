@@ -1,4 +1,4 @@
-# Pflichtenheft: Data Visualizer
+# Specifications: Data Visualizer
 
 ## Expected Functionality
 Create interactive charts with plotly from sample data.

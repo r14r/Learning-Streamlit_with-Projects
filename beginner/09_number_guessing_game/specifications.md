@@ -1,4 +1,4 @@
-# Pflichtenheft: Number Guessing Game
+# Specifications: Number Guessing Game
 
 ## Expected Functionality
 Guess a random number with hints.

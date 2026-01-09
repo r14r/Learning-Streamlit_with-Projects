@@ -1,4 +1,4 @@
-# Pflichtenheft: Advanced Caching
+# Specifications: Advanced Caching
 
 ## Expected Functionality
 Demonstrate caching strategies for performance.

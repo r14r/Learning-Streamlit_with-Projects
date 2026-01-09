@@ -1,4 +1,4 @@
-# Pflichtenheft: API Dashboard
+# Specifications: API Dashboard
 
 ## Expected Functionality
 Fetch and display data from REST APIs.
