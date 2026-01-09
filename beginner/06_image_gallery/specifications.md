@@ -1,4 +1,4 @@
-# Pflichtenheft: Image Gallery
+# Specifications: Image Gallery
 
 ## Expected Functionality
 Upload and display images with basic information.

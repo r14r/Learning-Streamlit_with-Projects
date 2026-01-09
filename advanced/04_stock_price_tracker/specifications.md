@@ -1,4 +1,4 @@
-# Pflichtenheft: Stock Price Tracker
+# Specifications: Stock Price Tracker
 
 ## Expected Functionality
 Display stock price data and charts (demo data).

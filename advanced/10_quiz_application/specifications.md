@@ -1,4 +1,4 @@
-# Pflichtenheft: Quiz Application
+# Specifications: Quiz Application
 
 ## Expected Functionality
 Interactive quiz with scoring system.

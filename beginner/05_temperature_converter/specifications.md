@@ -1,4 +1,4 @@
-# Pflichtenheft: Temperature Converter
+# Specifications: Temperature Converter
 
 ## Expected Functionality
 

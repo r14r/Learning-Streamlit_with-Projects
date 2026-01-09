@@ -1,4 +1,4 @@
-# Pflichtenheft: Hello Streamlit
+# Specifications: Hello Streamlit
 
 ## Expected Functionality
 

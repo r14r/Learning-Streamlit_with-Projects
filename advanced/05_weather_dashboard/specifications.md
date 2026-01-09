@@ -1,4 +1,4 @@
-# Pflichtenheft: Weather Dashboard
+# Specifications: Weather Dashboard
 
 ## Expected Functionality
 Display weather information (demo data).

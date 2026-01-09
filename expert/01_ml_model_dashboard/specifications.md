@@ -1,4 +1,4 @@
-# Pflichtenheft: ML Model Dashboard
+# Specifications: ML Model Dashboard
 
 ## Expected Functionality
 Deploy and visualize machine learning model predictions.

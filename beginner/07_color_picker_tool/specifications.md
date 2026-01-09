@@ -1,4 +1,4 @@
-# Pflichtenheft: Color Picker Tool
+# Specifications: Color Picker Tool
 
 ## Expected Functionality
 Pick colors and display their values in different formats.

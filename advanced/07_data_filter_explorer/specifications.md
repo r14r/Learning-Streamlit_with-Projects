@@ -1,4 +1,4 @@
-# Pflichtenheft: Data Filter Explorer
+# Specifications: Data Filter Explorer
 
 ## Expected Functionality
 Filter and explore dataset interactively.

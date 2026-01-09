@@ -1,4 +1,4 @@
-# Pflichtenheft: Data Display
+# Specifications: Data Display
 
 ## Expected Functionality
 

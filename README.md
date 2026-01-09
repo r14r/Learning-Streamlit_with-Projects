@@ -1,6 +1,6 @@
 # Learning Streamlit with Projects
 
-A comprehensive collection of 30 Streamlit applications organized by difficulty level, designed to help you learn Streamlit through practical, hands-on projects. Each app comes with detailed requirements documentation (Pflichtenheft) describing functionality, inputs, outputs, and tests.
+A comprehensive collection of 30 Streamlit applications organized by difficulty level, designed to help you learn Streamlit through practical, hands-on projects. Each app comes with detailed requirements documentation (specifications) describing functionality, inputs, outputs, and tests.
 
 ## 📚 Project Structure
 
@@ -11,7 +11,7 @@ This repository contains 30 Streamlit applications divided into three difficulty
 
 Each app is contained in its own directory with:
 - `app.py` - The Streamlit application
-- `Pflichtenheft.md` - Requirements document with functionality, I/O specs, and test cases
+- `specifications.md` - Requirements document with functionality, I/O specs, and test cases
 
 ## 🎯 Beginner Level
 
@@ -125,7 +125,7 @@ The app will open in your default web browser at `http://localhost:8501`
 
 ### How to Use Each Project:
 
-1. **Read the Pflichtenheft.md** - Understand what the app should do
+1. **Read the specifications.md** - Understand what the app should do
 2. **Study the app.py** - Analyze the implementation
 3. **Run the app** - See it in action with `streamlit run app.py`
 4. **Modify it** - Experiment with changes
@@ -162,7 +162,7 @@ The app will open in your default web browser at `http://localhost:8501`
 
 ## 📝 Documentation Format
 
-Each `Pflichtenheft.md` includes:
+Each `specifications.md` includes:
 
 - **Expected Functionality**: What the app does
 - **Input**: User interactions and data inputs

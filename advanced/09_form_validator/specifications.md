@@ -1,4 +1,4 @@
-# Pflichtenheft: Form Validator
+# Specifications: Form Validator
 
 ## Expected Functionality
 Complex form with validation rules.
