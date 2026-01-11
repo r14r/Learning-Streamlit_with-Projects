@@ -1,0 +1,50 @@
+"""
+Step 4: Using Metrics for Better Display
+Learning objective: Use metric() widgets in columns to display key statistics
+"""
+
+import streamlit as st
+
+st.set_page_config(
+    page_title="Text Analyzer",
+    page_icon="📝",
+    layout="wide"
+)
+
+st.title("📝 Text Analyzer")
+st.write("Enter text to analyze its characteristics")
+
+text = st.text_area("Enter your text here:", height=200,
+                    placeholder="Type or paste your text...")
+
+if text:
+    # Basic statistics
+    char_count = len(text)
+    char_no_spaces = len(text.replace(" ", "").replace("\n", ""))
+    word_count = len(text.split())
+    sentence_count = text.count('.') + text.count('!') + text.count('?')
+
+    # Vowels and consonants
+    vowels = "aeiouAEIOU"
+    vowel_count = sum(1 for char in text if char in vowels)
+    consonants = sum(1 for char in text if char.isalpha() and char not in vowels)
+
+    # Display statistics in columns using metrics
+    # metric() creates a nice card-like display for key values
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
+        st.metric("Characters", char_count)
+        st.caption(f"Without spaces: {char_no_spaces}")
+
+    with col2:
+        st.metric("Words", word_count)
+
+    with col3:
+        st.metric("Sentences", max(sentence_count, 1))
+
+    with col4:
+        st.metric("Vowels", vowel_count)
+        st.caption(f"Consonants: {consonants}")
+else:
+    st.info("👆 Enter some text above to see the analysis")

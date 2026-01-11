@@ -1,0 +1,38 @@
+"""
+Step 2: Displaying a Single Image
+Learning objective: Use PIL to open images and st.image() to display them
+"""
+
+import streamlit as st
+from PIL import Image
+
+st.set_page_config(
+    page_title="Image Gallery",
+    page_icon="🖼️",
+    layout="wide"
+)
+
+st.title("🖼️ Image Gallery")
+st.write("Upload and view your images")
+
+uploaded_files = st.file_uploader(
+    "Choose images...",
+    type=['png', 'jpg', 'jpeg'],
+    accept_multiple_files=True
+)
+
+if uploaded_files:
+    st.success(f"✅ Uploaded {len(uploaded_files)} image(s)")
+
+    # Display the first image
+    uploaded_file = uploaded_files[0]
+
+    # Open the image using PIL
+    image = Image.open(uploaded_file)
+
+    # Display the image
+    # caption: text shown below the image
+    # use_container_width: makes image fill available width
+    st.image(image, caption=uploaded_file.name, use_container_width=True)
+else:
+    st.info("👆 Upload one or more images to get started")

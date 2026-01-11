@@ -1,0 +1,80 @@
+"""
+Step 3: Implement Session State for Data History
+- Initialize session state
+- Store data points over time
+- Display historical data
+"""
+
+import streamlit as st
+import numpy as np
+from datetime import datetime
+
+st.set_page_config(page_title="Real-Time Data Stream", page_icon="📡", layout="wide")
+
+st.title("📡 Real-Time Data Stream")
+
+st.sidebar.header("🎛️ Stream Controls")
+refresh_rate = st.sidebar.slider("Refresh Rate (seconds)", 1, 10, 2)
+auto_refresh = st.sidebar.checkbox("Auto-refresh", value=False)  # Off for now
+
+# STEP 1: Initialize session state for data history
+# Session state persists data across script reruns
+if 'data_history' not in st.session_state:
+    st.session_state.data_history = []
+
+# STEP 2: Add a button to manually generate new data point
+if st.button("Generate Data Point", type="primary"):
+    # Generate random data
+    current_time = datetime.now().strftime("%H:%M:%S")
+    value = np.random.randint(50, 150)
+
+    # STEP 3: Append to history
+    st.session_state.data_history.append({
+        'time': current_time,
+        'value': value
+    })
+
+    # STEP 4: Keep only last 50 data points to prevent memory issues
+    if len(st.session_state.data_history) > 50:
+        st.session_state.data_history.pop(0)  # Remove oldest
+
+    st.success(f"Added data point: {value} at {current_time}")
+
+# STEP 5: Display current data history
+st.subheader("📊 Data History")
+
+if st.session_state.data_history:
+    st.write(f"Total data points: {len(st.session_state.data_history)}")
+
+    # Show last 10 data points
+    st.write("Last 10 data points:")
+    for item in st.session_state.data_history[-10:]:
+        st.write(f"- {item['time']}: {item['value']}")
+else:
+    st.info("No data yet. Click 'Generate Data Point' to add data.")
+
+# STEP 6: Explain session state
+with st.expander("ℹ️ About Session State"):
+    st.markdown("""
+    ### Streamlit Session State
+
+    Session state allows you to store data that persists across reruns.
+
+    **Why it's important for real-time apps:**
+    - Preserves historical data between updates
+    - Tracks accumulated metrics
+    - Maintains user state across refreshes
+
+    **Usage:**
+    ```python
+    # Initialize
+    if 'data' not in st.session_state:
+        st.session_state.data = []
+
+    # Use
+    st.session_state.data.append(new_value)
+    ```
+    """)
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

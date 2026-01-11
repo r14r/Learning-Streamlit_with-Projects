@@ -1,0 +1,101 @@
+"""
+Step 5: Adding More Chart Types
+
+In this step, we'll:
+- Add pie chart, area chart, and box plot options
+- Learn different Plotly chart types and their use cases
+
+Key Concepts:
+- px.pie() for pie charts
+- px.area() for area charts
+- px.box() for box plots
+- When to use each chart type
+"""
+
+import streamlit as st
+import plotly.express as px
+import pandas as pd
+import numpy as np
+
+st.set_page_config(
+    page_title="Data Visualizer",
+    page_icon="📊",
+    layout="wide"
+)
+
+st.title("📊 Data Visualizer")
+st.write("Create interactive visualizations with Plotly")
+
+@st.cache_data
+def generate_sample_data():
+    np.random.seed(42)
+    dates = pd.date_range('2024-01-01', periods=100)
+    return pd.DataFrame({
+        'Date': dates,
+        'Sales': np.random.randint(100, 1000, 100),
+        'Profit': np.random.randint(50, 500, 100),
+        'Customers': np.random.randint(10, 100, 100),
+        'Category': np.random.choice(['A', 'B', 'C'], 100),
+        'Region': np.random.choice(['North', 'South', 'East', 'West'], 100)
+    })
+
+df = generate_sample_data()
+
+# Sidebar controls
+st.sidebar.header("Chart Controls")
+chart_type = st.sidebar.selectbox(
+    "Select Chart Type",
+    ["Line Chart", "Bar Chart", "Scatter Plot", "Pie Chart", "Area Chart", "Box Plot"]
+)
+
+# Metrics
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.metric("Total Records", len(df))
+with col2:
+    st.metric("Total Sales", f"${df['Sales'].sum():,}")
+with col3:
+    st.metric("Avg Profit", f"${df['Profit'].mean():.0f}")
+
+st.divider()
+
+# Display selected chart type
+st.subheader(f"{chart_type}")
+
+if chart_type == "Line Chart":
+    fig = px.line(df, x='Date', y=['Sales', 'Profit'],
+                  title="Sales and Profit Over Time")
+
+elif chart_type == "Bar Chart":
+    fig = px.bar(df.groupby('Category')[['Sales', 'Profit']].sum().reset_index(),
+                x='Category', y=['Sales', 'Profit'], barmode='group',
+                title="Sales and Profit by Category")
+
+elif chart_type == "Scatter Plot":
+    fig = px.scatter(df, x='Sales', y='Profit', color='Category',
+                    size='Customers', hover_data=['Region'],
+                    title="Sales vs Profit by Category")
+
+elif chart_type == "Pie Chart":
+    fig = px.pie(df, values='Sales', names='Category',
+                title="Sales Distribution by Category")
+
+elif chart_type == "Area Chart":
+    fig = px.area(df, x='Date', y='Sales',
+                 title="Sales Area Chart")
+
+elif chart_type == "Box Plot":
+    fig = px.box(df, x='Category', y='Sales', color='Region',
+                title="Sales Distribution by Category and Region")
+
+st.plotly_chart(fig, use_container_width=True)
+
+st.divider()
+
+# Display the data
+st.subheader("📋 Data Table")
+st.dataframe(df, use_container_width=True)
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

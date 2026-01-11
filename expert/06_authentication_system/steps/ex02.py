@@ -1,0 +1,99 @@
+"""
+Step 2: Set Up User Database and Password Hashing
+- Create user database dictionary
+- Implement password hashing with hashlib
+- Create authentication functions
+"""
+
+import streamlit as st
+import hashlib
+
+st.set_page_config(page_title="Authentication System", page_icon="🔐", layout="centered")
+
+st.title("🔐 Authentication System")
+
+# STEP 1: Create user database with hashed passwords
+# In production, this would be a real database
+users_db = {
+    "admin": hashlib.sha256("admin123".encode()).hexdigest(),
+    "user": hashlib.sha256("user123".encode()).hexdigest()
+}
+
+# STEP 2: Create password hashing function
+def hash_password(password):
+    """Hash a password using SHA-256"""
+    # encode() converts string to bytes
+    # hexdigest() returns hash as hexadecimal string
+    return hashlib.sha256(password.encode()).hexdigest()
+
+# STEP 3: Create login verification function
+def check_login(username, password):
+    """Verify if username and password are correct"""
+    # Check if username exists in database
+    if username in users_db:
+        # Compare hashed password with stored hash
+        if users_db[username] == hash_password(password):
+            return True
+    return False
+
+# STEP 4: Display information about the system
+st.subheader("🔒 Security Setup")
+
+st.markdown("""
+### User Database
+
+We have a simple user database with hashed passwords:
+""")
+
+# Show example users (without revealing passwords!)
+col1, col2 = st.columns(2)
+
+with col1:
+    st.write("**Username**")
+    st.write("admin")
+    st.write("user")
+
+with col2:
+    st.write("**Password (for demo)**")
+    st.write("admin123")
+    st.write("user123")
+
+st.divider()
+
+# STEP 5: Demonstrate password hashing
+st.subheader("🔐 Password Hashing Demo")
+
+demo_password = st.text_input("Enter a password to see its hash:", type="password")
+
+if demo_password:
+    hashed = hash_password(demo_password)
+    st.code(hashed)
+    st.caption("This is what gets stored in the database (not the actual password)")
+
+# STEP 6: Explain hashing
+with st.expander("💡 Why Hash Passwords?"):
+    st.markdown("""
+    ### Password Hashing Explained
+
+    **What is hashing?**
+    - One-way function: password → hash (can't reverse)
+    - Same password always produces same hash
+    - Tiny change in password completely changes hash
+
+    **Why it's important:**
+    - If database is compromised, actual passwords aren't revealed
+    - Admins can't see user passwords
+    - Industry standard security practice
+
+    **Example:**
+    - Password: "hello123"
+    - Hash: "ee4c2f5c3a8ec6c3e57e4f6c7b8a9d0e..."
+
+    **In production, use:**
+    - bcrypt or Argon2 (more secure than SHA-256)
+    - Salt (random data added to password before hashing)
+    - Key stretching (multiple hashing iterations)
+    """)
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

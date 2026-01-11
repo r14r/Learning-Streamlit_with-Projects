@@ -1,0 +1,29 @@
+"""
+Step 2: Converting HEX to RGB
+Learning objective: Convert hexadecimal color to RGB values
+"""
+
+import streamlit as st
+
+st.set_page_config(
+    page_title="Color Picker Tool",
+    page_icon="🎨",
+    layout="centered"
+)
+
+st.title("🎨 Color Picker Tool")
+st.write("Pick a color and see its values in different formats")
+
+color = st.color_picker("Pick a color", "#3498db")
+
+# Extract RGB values from hex color
+# Remove the '#' from the beginning
+hex_color = color.lstrip('#')
+
+# Convert hex to RGB
+# Hex format: RRGGBB (each pair is a number in base 16)
+# int(hex_string, 16) converts from hex to decimal
+rgb = tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+
+st.write(f"**HEX**: {color}")
+st.write(f"**RGB**: rgb({rgb[0]}, {rgb[1]}, {rgb[2]})")

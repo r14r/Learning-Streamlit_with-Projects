@@ -1,0 +1,113 @@
+"""
+Step 2: Implement CREATE Operation
+- Build form to add new users
+- Insert data into database
+- Use st.form for batch input
+"""
+
+import streamlit as st
+import sqlite3
+import pandas as pd
+
+st.set_page_config(page_title="Database Integration", page_icon="🗄️", layout="wide")
+
+st.title("🗄️ Database Integration")
+
+@st.cache_resource
+def get_connection():
+    conn = sqlite3.connect('app_database.db', check_same_thread=False)
+    return conn
+
+conn = get_connection()
+
+def create_table():
+    cursor = conn.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            email TEXT NOT NULL,
+            age INTEGER
+        )
+    ''')
+    conn.commit()
+
+create_table()
+
+# STEP 1: Create tabs for different operations
+tab1, tab2 = st.tabs(["Create", "Read"])
+
+# STEP 2: Implement CREATE operation
+with tab1:
+    st.subheader("➕ Create New User")
+
+    # STEP 3: Use st.form to group inputs and submit together
+    # Forms prevent re-running the script on every input change
+    with st.form("create_form"):
+        name = st.text_input("Name", help="Enter user's full name")
+        email = st.text_input("Email", help="Enter user's email address")
+        age = st.number_input("Age", min_value=0, max_value=120, value=25)
+
+        # Form submit button
+        submitted = st.form_submit_button("Add User", type="primary")
+
+        # STEP 4: Process form submission
+        if submitted:
+            # Validate inputs
+            if name and email:
+                # STEP 5: Insert into database
+                cursor = conn.cursor()
+                cursor.execute(
+                    "INSERT INTO users (name, email, age) VALUES (?, ?, ?)",
+                    (name, email, age)
+                )
+                conn.commit()
+                st.success(f"✅ User '{name}' added successfully!")
+            else:
+                st.error("❌ Please fill in all required fields!")
+
+    # STEP 6: Show example
+    st.info("""
+    💡 **Tips:**
+    - Name and email are required
+    - Age must be between 0 and 120
+    - Data is immediately saved to the database
+    """)
+
+# STEP 7: Implement basic READ operation
+with tab2:
+    st.subheader("📋 Read Users")
+
+    # Query all users from database
+    df = pd.read_sql_query("SELECT * FROM users", conn)
+
+    if len(df) > 0:
+        st.dataframe(df, use_container_width=True)
+        st.metric("Total Users", len(df))
+    else:
+        st.info("No users in database yet. Add some users in the Create tab!")
+
+# STEP 8: Explain SQL injection prevention
+with st.expander("🔒 Security: SQL Injection Prevention"):
+    st.markdown("""
+    ### Why Use Parameterized Queries?
+
+    **Bad (vulnerable to SQL injection):**
+    ```python
+    cursor.execute(f"INSERT INTO users VALUES ('{name}', '{email}')")
+    ```
+
+    **Good (safe):**
+    ```python
+    cursor.execute("INSERT INTO users VALUES (?, ?)", (name, email))
+    ```
+
+    **Benefits:**
+    - Prevents SQL injection attacks
+    - Handles special characters correctly
+    - Database handles escaping
+    - Best practice for all SQL operations
+    """)
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

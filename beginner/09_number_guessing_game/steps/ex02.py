@@ -1,0 +1,34 @@
+"""
+Step 2: Using Session State to Persist the Target Number
+Learning objective: Use session_state to keep the same random number across reruns
+"""
+
+import streamlit as st
+import random
+
+st.set_page_config(
+    page_title="Number Guessing Game",
+    page_icon="🎲",
+    layout="centered"
+)
+
+st.title("🎲 Number Guessing Game")
+st.write("I'm thinking of a number between 1 and 100. Can you guess it?")
+
+# Initialize session state
+# Without session_state, a new random number would be generated on every rerun
+if 'target_number' not in st.session_state:
+    st.session_state.target_number = random.randint(1, 100)
+
+st.write(f"(Target: {st.session_state.target_number})") # For testing
+
+guess = st.number_input("Enter your guess (1-100):", min_value=1, max_value=100, value=50, step=1)
+
+# Button to submit guess
+if st.button("Submit Guess", type="primary"):
+    if guess == st.session_state.target_number:
+        st.success("🎉 Congratulations! You guessed it!")
+    elif guess < st.session_state.target_number:
+        st.info("📈 Too low! Try a higher number.")
+    else:
+        st.info("📉 Too high! Try a lower number.")

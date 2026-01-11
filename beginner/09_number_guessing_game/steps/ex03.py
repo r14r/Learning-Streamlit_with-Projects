@@ -1,0 +1,39 @@
+"""
+Step 3: Tracking Attempts
+Learning objective: Count how many guesses the player has made
+"""
+
+import streamlit as st
+import random
+
+st.set_page_config(
+    page_title="Number Guessing Game",
+    page_icon="🎲",
+    layout="centered"
+)
+
+st.title("🎲 Number Guessing Game")
+st.write("I'm thinking of a number between 1 and 100. Can you guess it?")
+
+# Initialize session state
+if 'target_number' not in st.session_state:
+    st.session_state.target_number = random.randint(1, 100)
+    st.session_state.attempts = 0  # Track number of attempts
+
+# Display attempts
+st.metric("Attempts", st.session_state.attempts)
+
+st.write(f"(Target: {st.session_state.target_number})")
+
+guess = st.number_input("Enter your guess (1-100):", min_value=1, max_value=100, value=50, step=1)
+
+if st.button("Submit Guess", type="primary"):
+    # Increment attempts counter
+    st.session_state.attempts += 1
+
+    if guess == st.session_state.target_number:
+        st.success(f"🎉 Congratulations! You guessed it in {st.session_state.attempts} attempts!")
+    elif guess < st.session_state.target_number:
+        st.info("📈 Too low! Try a higher number.")
+    else:
+        st.info("📉 Too high! Try a lower number.")

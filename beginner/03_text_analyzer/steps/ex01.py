@@ -1,0 +1,27 @@
+"""
+Step 1: Basic Setup with Text Input
+Learning objective: Use text_area() to accept multi-line text input
+"""
+
+import streamlit as st
+
+st.set_page_config(
+    page_title="Text Analyzer",
+    page_icon="📝",
+    layout="wide"
+)
+
+st.title("📝 Text Analyzer")
+st.write("Enter text to analyze its characteristics")
+
+# Text area widget for multi-line input
+# height: specifies the height in pixels
+# placeholder: shows hint text when empty
+text = st.text_area("Enter your text here:", height=200,
+                    placeholder="Type or paste your text...")
+
+# Show what was entered
+if text:
+    st.write(f"You entered: {text}")
+else:
+    st.info("👆 Enter some text above to see the analysis")

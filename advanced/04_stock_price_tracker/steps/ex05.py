@@ -1,0 +1,75 @@
+"""
+Step 5: Adding Price Chart with Plotly
+
+In this final step, we'll:
+- Import plotly.graph_objects
+- Create a line chart of stock prices
+- Display the chart between metrics and data table
+
+Key Concepts:
+- plotly.graph_objects for advanced charts
+- go.Figure() and go.Scatter() for line charts
+- fig.update_layout() for chart customization
+- st.plotly_chart() for displaying Plotly charts
+"""
+
+import streamlit as st
+import plotly.graph_objects as go
+import pandas as pd
+import numpy as np
+
+st.set_page_config(page_title="Stock Price Tracker", page_icon="📈", layout="wide")
+
+st.title("📈 Stock Price Tracker")
+
+stocks = ["AAPL", "GOOGL", "MSFT", "AMZN", "TSLA"]
+selected_stock = st.selectbox("Select Stock", stocks)
+
+# Generate demo data
+np.random.seed(hash(selected_stock) % 100)
+dates = pd.date_range('2024-01-01', periods=90)
+base_price = np.random.randint(100, 300)
+prices = base_price + np.cumsum(np.random.randn(90) * 5)
+
+df = pd.DataFrame({'Date': dates, 'Price': prices})
+
+# Display metrics
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    current_price = prices[-1]
+    previous_price = prices[-2]
+    change_percent = ((current_price - previous_price) / previous_price * 100)
+    st.metric(
+        "Current Price",
+        f"${current_price:.2f}",
+        f"{change_percent:.2f}%"
+    )
+
+with col2:
+    st.metric("High", f"${prices.max():.2f}")
+
+with col3:
+    st.metric("Low", f"${prices.min():.2f}")
+
+# Create price chart
+fig = go.Figure()
+fig.add_trace(go.Scatter(
+    x=df['Date'],
+    y=df['Price'],
+    mode='lines',
+    name=selected_stock
+))
+fig.update_layout(
+    title=f"{selected_stock} Price Chart",
+    xaxis_title="Date",
+    yaxis_title="Price ($)"
+)
+
+st.plotly_chart(fig, use_container_width=True)
+
+# Display data
+st.dataframe(df.tail(10), use_container_width=True)
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

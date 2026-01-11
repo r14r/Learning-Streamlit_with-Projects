@@ -3,6 +3,7 @@
 ## Expected Functionality
 
 Display data in various formats using Streamlit:
+
 - Show sample data in a DataFrame
 - Display data as a table
 - Show metrics with delta values
@@ -22,10 +23,12 @@ No user input required. Uses sample data.
 ## Tests
 
 ### Test 1: DataFrame Display
+
 - **Action**: Run app
 - **Expected Output**: DataFrame with 5 sample users displayed
 
 ### Test 2: Metrics Display
+
 - **Action**: View metrics section
 - **Expected Output**: Cards showing total users, average age, etc.
 

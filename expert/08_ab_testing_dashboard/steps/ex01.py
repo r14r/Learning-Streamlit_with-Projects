@@ -1,0 +1,70 @@
+"""
+Step 1: Introduction to A/B Testing
+- Explain A/B testing concepts
+- Set up basic structure
+- Define key terminology
+"""
+
+import streamlit as st
+
+st.set_page_config(page_title="A/B Testing Dashboard", page_icon="🧪", layout="wide")
+
+st.title("🧪 A/B Testing Dashboard")
+
+# STEP 1: Explain A/B testing
+st.markdown("""
+### What is A/B Testing?
+
+A/B testing (split testing) is a method of comparing two versions of something to determine which performs better.
+
+#### How it Works
+
+1. **Split traffic**: Divide users into two groups
+   - **Group A (Control)**: Sees original version
+   - **Group B (Variant)**: Sees modified version
+
+2. **Measure results**: Track conversion rates for each group
+
+3. **Statistical analysis**: Determine if the difference is significant
+
+#### Common Use Cases
+
+- **Website design**: Test different layouts, colors, or CTAs
+- **Email marketing**: Compare subject lines or content
+- **Product features**: Evaluate new functionality
+- **Pricing**: Test different price points
+- **User experience**: Optimize flows and interactions
+
+### Key Metrics
+
+**Conversion Rate**: Percentage of users who complete desired action
+```
+Conversion Rate = (Conversions / Visitors) × 100%
+```
+
+**Statistical Significance**: Probability that results aren't due to chance
+- Typically want p-value < 0.05 (95% confidence)
+- Means less than 5% chance results are random
+
+### Example Scenario
+
+**Testing a "Buy Now" button color:**
+- **Group A**: 10,000 visitors, 1,200 conversions (12% rate)
+- **Group B**: 10,000 visitors, 1,500 conversions (15% rate)
+- **Improvement**: 25% increase in conversions
+- **Question**: Is this statistically significant?
+
+### What We'll Build
+
+A complete A/B testing dashboard with:
+- Input controls for test data
+- Conversion rate calculations
+- Statistical significance testing
+- Visual comparisons
+- Actionable insights
+""")
+
+st.info("💡 In the next steps, we'll build tools to analyze A/B test results!")
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

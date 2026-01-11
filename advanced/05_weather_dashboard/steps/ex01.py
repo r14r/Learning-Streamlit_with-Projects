@@ -1,0 +1,43 @@
+"""
+Step 1: Basic City Selection
+
+In this first step, we'll:
+- Set up the page configuration
+- Create a city selector
+- Display the selected city
+
+Key Concepts:
+- st.selectbox() for dropdown selection
+- Basic page structure
+"""
+
+import streamlit as st
+
+st.set_page_config(page_title="Weather Dashboard", page_icon="🌤️", layout="wide")
+
+st.title("🌤️ Weather Dashboard")
+
+# Define available cities
+cities = ["New York", "London", "Tokyo", "Paris", "Sydney"]
+
+# City selector
+city = st.selectbox("Select City", cities)
+
+st.info(f"You selected: {city}")
+
+st.markdown("""
+### About this app:
+This weather dashboard displays current weather information and forecasts.
+
+**Note:** This app uses demo/simulated data for educational purposes.
+
+**Available cities:**
+- New York
+- London
+- Tokyo
+- Paris
+- Sydney
+""")
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

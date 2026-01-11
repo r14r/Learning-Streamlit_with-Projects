@@ -1,0 +1,22 @@
+"""
+Step 1: Basic Setup with Color Picker
+Learning objective: Use color_picker() widget to select colors
+"""
+
+import streamlit as st
+
+st.set_page_config(
+    page_title="Color Picker Tool",
+    page_icon="🎨",
+    layout="centered"
+)
+
+st.title("🎨 Color Picker Tool")
+st.write("Pick a color and see its values in different formats")
+
+# Color picker widget
+# The default value is a hex color code
+color = st.color_picker("Pick a color", "#3498db")
+
+# Display the selected color
+st.write(f"You selected: {color}")

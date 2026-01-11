@@ -1,0 +1,77 @@
+"""
+Step 5: Implementing All Conversion Logic with Button
+Learning objective: Complete conversion logic for all unit combinations
+"""
+
+import streamlit as st
+
+st.set_page_config(
+    page_title="Temperature Converter",
+    page_icon="🌡️",
+    layout="centered"
+)
+
+st.title("🌡️ Temperature Converter")
+st.write("Convert temperatures between Celsius, Fahrenheit, and Kelvin")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    temperature = st.number_input("Enter temperature:", value=0.0, format="%.2f")
+    from_unit = st.selectbox("From:", ["Celsius", "Fahrenheit", "Kelvin"])
+
+with col2:
+    st.write("")
+    st.write("")
+    to_unit = st.selectbox("To:", ["Celsius", "Fahrenheit", "Kelvin"])
+
+# Conversion functions
+def celsius_to_fahrenheit(c):
+    return (c * 9/5) + 32
+
+def celsius_to_kelvin(c):
+    return c + 273.15
+
+def fahrenheit_to_celsius(f):
+    return (f - 32) * 5/9
+
+def fahrenheit_to_kelvin(f):
+    return (f - 32) * 5/9 + 273.15
+
+def kelvin_to_celsius(k):
+    return k - 273.15
+
+def kelvin_to_fahrenheit(k):
+    return (k - 273.15) * 9/5 + 32
+
+# Convert button
+if st.button("Convert", type="primary"):
+    result = None
+
+    # Check if same unit
+    if from_unit == to_unit:
+        result = temperature
+        st.info(f"Same unit selected: {temperature:.2f}°{from_unit[0]}")
+    else:
+        # Celsius conversions
+        if from_unit == "Celsius" and to_unit == "Fahrenheit":
+            result = celsius_to_fahrenheit(temperature)
+        elif from_unit == "Celsius" and to_unit == "Kelvin":
+            result = celsius_to_kelvin(temperature)
+
+        # Fahrenheit conversions
+        elif from_unit == "Fahrenheit" and to_unit == "Celsius":
+            result = fahrenheit_to_celsius(temperature)
+        elif from_unit == "Fahrenheit" and to_unit == "Kelvin":
+            result = fahrenheit_to_kelvin(temperature)
+
+        # Kelvin conversions
+        elif from_unit == "Kelvin" and to_unit == "Celsius":
+            result = kelvin_to_celsius(temperature)
+        elif from_unit == "Kelvin" and to_unit == "Fahrenheit":
+            result = kelvin_to_fahrenheit(temperature)
+
+        if result is not None:
+            # Format unit symbol (Kelvin doesn't use degree symbol)
+            unit_symbol = "°" if to_unit != "Kelvin" else ""
+            st.success(f"### {temperature:.2f}°{from_unit[0]} = {result:.2f}{unit_symbol}{to_unit[0]}")

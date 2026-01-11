@@ -1,0 +1,74 @@
+"""
+Step 5: Converting RGB to HSL
+Learning objective: Implement RGB to HSL color conversion algorithm
+"""
+
+import streamlit as st
+
+st.set_page_config(
+    page_title="Color Picker Tool",
+    page_icon="🎨",
+    layout="centered"
+)
+
+st.title("🎨 Color Picker Tool")
+st.write("Pick a color and see its values in different formats")
+
+color = st.color_picker("Pick a color", "#3498db")
+
+hex_color = color.lstrip('#')
+rgb = tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+
+# Calculate HSL from RGB
+def rgb_to_hsl(r, g, b):
+    """Convert RGB (0-255) to HSL (H: 0-360, S: 0-100, L: 0-100)"""
+    # Normalize RGB values to 0-1 range
+    r, g, b = r/255.0, g/255.0, b/255.0
+
+    max_c = max(r, g, b)
+    min_c = min(r, g, b)
+    l = (max_c + min_c) / 2  # Lightness
+
+    if max_c == min_c:
+        # Achromatic (gray)
+        h = s = 0
+    else:
+        d = max_c - min_c
+        # Saturation
+        s = d / (2 - max_c - min_c) if l > 0.5 else d / (max_c + min_c)
+
+        # Hue
+        if max_c == r:
+            h = (g - b) / d + (6 if g < b else 0)
+        elif max_c == g:
+            h = (b - r) / d + 2
+        else:
+            h = (r - g) / d + 4
+        h /= 6
+
+    # Convert to degrees and percentages
+    return int(h * 360), int(s * 100), int(l * 100)
+
+hsl = rgb_to_hsl(*rgb)
+
+text_color = 'white' if sum(rgb) < 382 else 'black'
+
+st.markdown(f"""
+<div style="background-color: {color}; padding: 100px; border-radius: 10px; text-align: center; margin: 20px 0;">
+    <h2 style="color: {text_color};">Color Preview</h2>
+</div>
+""", unsafe_allow_html=True)
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.subheader("HEX")
+    st.code(color.upper())
+
+with col2:
+    st.subheader("RGB")
+    st.code(f"rgb({rgb[0]}, {rgb[1]}, {rgb[2]})")
+
+with col3:
+    st.subheader("HSL")
+    st.code(f"hsl({hsl[0]}°, {hsl[1]}%, {hsl[2]}%)")

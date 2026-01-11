@@ -1,0 +1,189 @@
+"""
+Step 4: Implement DELETE Operation (Complete)
+- Add delete functionality
+- Add confirmation step
+- Complete CRUD operations
+"""
+
+import streamlit as st
+import sqlite3
+import pandas as pd
+
+st.set_page_config(page_title="Database Integration", page_icon="🗄️", layout="wide")
+
+st.title("🗄️ Database Integration")
+
+@st.cache_resource
+def get_connection():
+    conn = sqlite3.connect('app_database.db', check_same_thread=False)
+    return conn
+
+conn = get_connection()
+
+def create_table():
+    cursor = conn.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            email TEXT NOT NULL,
+            age INTEGER
+        )
+    ''')
+    conn.commit()
+
+create_table()
+
+# STEP 1: Add all four CRUD tabs
+tab1, tab2, tab3, tab4 = st.tabs(["Create", "Read", "Update", "Delete"])
+
+# CREATE
+with tab1:
+    st.subheader("➕ Create New User")
+    with st.form("create_form"):
+        name = st.text_input("Name")
+        email = st.text_input("Email")
+        age = st.number_input("Age", min_value=0, max_value=120)
+        submitted = st.form_submit_button("Add User")
+
+        if submitted:
+            cursor = conn.cursor()
+            cursor.execute("INSERT INTO users (name, email, age) VALUES (?, ?, ?)",
+                         (name, email, age))
+            conn.commit()
+            st.success("User added successfully!")
+
+# READ
+with tab2:
+    st.subheader("📋 Read Users")
+    df = pd.read_sql_query("SELECT * FROM users", conn)
+    st.dataframe(df, use_container_width=True)
+    st.metric("Total Users", len(df))
+
+# UPDATE
+with tab3:
+    st.subheader("✏️ Update User")
+    user_id = st.number_input("User ID to update", min_value=1, step=1)
+    new_name = st.text_input("New Name")
+
+    if st.button("Update"):
+        cursor = conn.cursor()
+        cursor.execute("UPDATE users SET name = ? WHERE id = ?", (new_name, user_id))
+        conn.commit()
+        st.success("User updated!")
+
+# STEP 2: Implement DELETE operation
+with tab4:
+    st.subheader("🗑️ Delete User")
+
+    # STEP 3: Show current users
+    df = pd.read_sql_query("SELECT * FROM users", conn)
+
+    if len(df) > 0:
+        st.write("**Current Users:**")
+        st.dataframe(df, use_container_width=True)
+
+        st.divider()
+
+        # STEP 4: Create delete form
+        col1, col2 = st.columns([3, 1])
+
+        with col1:
+            del_id = st.number_input(
+                "User ID to delete",
+                min_value=1,
+                step=1,
+                help="Enter the ID of the user you want to delete"
+            )
+
+            # Show user details if ID exists
+            if del_id:
+                user_to_delete = df[df['id'] == del_id]
+                if not user_to_delete.empty:
+                    st.warning(f"""
+                    ⚠️ **You are about to delete:**
+                    - Name: {user_to_delete.iloc[0]['name']}
+                    - Email: {user_to_delete.iloc[0]['email']}
+                    - Age: {user_to_delete.iloc[0]['age']}
+                    """)
+                else:
+                    st.info(f"No user found with ID {del_id}")
+
+        # STEP 5: Delete button with warning color
+        if st.button("Delete User", type="primary"):
+            cursor = conn.cursor()
+            cursor.execute("DELETE FROM users WHERE id = ?", (del_id,))
+            conn.commit()
+
+            # STEP 6: Check if deletion was successful
+            if cursor.rowcount > 0:
+                st.success(f"✅ User ID {del_id} deleted successfully!")
+                st.rerun()  # Refresh the page to show updated data
+            else:
+                st.error(f"❌ No user found with ID {del_id}")
+
+    else:
+        st.info("No users in database to delete.")
+
+# STEP 7: Add comprehensive documentation
+with st.expander("📚 Complete CRUD Reference"):
+    st.markdown("""
+    ### CRUD Operations Summary
+
+    #### CREATE (Insert)
+    ```python
+    cursor.execute("INSERT INTO users (name, email, age) VALUES (?, ?, ?)",
+                   (name, email, age))
+    conn.commit()
+    ```
+
+    #### READ (Select)
+    ```python
+    # Read all
+    df = pd.read_sql_query("SELECT * FROM users", conn)
+
+    # Read specific
+    df = pd.read_sql_query("SELECT * FROM users WHERE age > 18", conn)
+    ```
+
+    #### UPDATE (Modify)
+    ```python
+    cursor.execute("UPDATE users SET name = ? WHERE id = ?",
+                   (new_name, user_id))
+    conn.commit()
+    ```
+
+    #### DELETE (Remove)
+    ```python
+    cursor.execute("DELETE FROM users WHERE id = ?", (user_id,))
+    conn.commit()
+    ```
+
+    ### Best Practices
+
+    1. **Always commit**: Call `conn.commit()` after modifying data
+    2. **Use parameters**: Never use f-strings for SQL (security risk)
+    3. **Check rowcount**: Verify operations succeeded
+    4. **Handle errors**: Use try-except for database operations
+    5. **Close cursor**: Or use context managers
+    6. **Cache connection**: Use `@st.cache_resource` for connections
+
+    ### Common SQL Queries
+
+    ```sql
+    -- Filter by condition
+    SELECT * FROM users WHERE age > 25
+
+    -- Sort results
+    SELECT * FROM users ORDER BY name ASC
+
+    -- Count records
+    SELECT COUNT(*) FROM users
+
+    -- Multiple conditions
+    SELECT * FROM users WHERE age > 18 AND name LIKE 'J%'
+    ```
+    """)
+
+st.divider()
+st.caption("Built with Streamlit 🎈")
