@@ -1,0 +1,85 @@
+"""
+Step 6: Using Session State to Store Submissions
+Learning objective: Use st.session_state to persist data across reruns
+"""
+
+import streamlit as st
+
+st.set_page_config(
+    page_title="Simple Survey Form",
+    page_icon="📋",
+    layout="centered"
+)
+
+st.title("📋 Simple Survey Form")
+st.write("We'd love to hear your feedback!")
+
+# Initialize session state for submissions
+# session_state persists data between reruns of the app
+if 'submissions' not in st.session_state:
+    st.session_state.submissions = []
+
+with st.form("survey_form"):
+    st.subheader("Personal Information")
+
+    name = st.text_input("Full Name*", placeholder="John Doe")
+    email = st.text_input("Email*", placeholder="john.doe@example.com")
+    age = st.number_input("Age", min_value=13, max_value=120, value=25)
+
+    st.subheader("Feedback")
+
+    rating = st.slider("How would you rate our service?", 1, 5, 3)
+
+    satisfaction = st.radio(
+        "Overall satisfaction:",
+        ["Very Satisfied", "Satisfied", "Neutral", "Unsatisfied", "Very Unsatisfied"]
+    )
+
+    interests = st.multiselect(
+        "Areas of interest:",
+        ["Technology", "Science", "Arts", "Sports", "Music", "Travel"]
+    )
+
+    comments = st.text_area("Additional comments", placeholder="Tell us more...")
+
+    newsletter = st.checkbox("Subscribe to newsletter")
+
+    submitted = st.form_submit_button("Submit Survey", type="primary")
+
+    if submitted:
+        if not name or not email:
+            st.error("⚠️ Please fill in all required fields (marked with *)")
+        elif "@" not in email:
+            st.error("⚠️ Please enter a valid email address")
+        else:
+            # Store submission in session state
+            submission = {
+                "name": name,
+                "email": email,
+                "age": age,
+                "rating": rating,
+                "satisfaction": satisfaction,
+                "interests": interests,
+                "comments": comments,
+                "newsletter": newsletter
+            }
+            st.session_state.submissions.append(submission)
+            st.success("✅ Thank you for your feedback!")
+
+            # Display summary
+            with st.expander("📊 Your Submission"):
+                st.write(f"**Name**: {name}")
+                st.write(f"**Email**: {email}")
+                st.write(f"**Age**: {age}")
+                st.write(f"**Rating**: {'⭐' * rating}")
+                st.write(f"**Satisfaction**: {satisfaction}")
+                if interests:
+                    st.write(f"**Interests**: {', '.join(interests)}")
+                if comments:
+                    st.write(f"**Comments**: {comments}")
+                st.write(f"**Newsletter**: {'Yes' if newsletter else 'No'}")
+
+# Show total submissions
+if st.session_state.submissions:
+    st.divider()
+    st.write(f"**Total submissions**: {len(st.session_state.submissions)}")

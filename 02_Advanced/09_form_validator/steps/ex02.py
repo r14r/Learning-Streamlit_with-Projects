@@ -1,0 +1,38 @@
+"""
+Step 2: Adding More Form Fields
+
+In this step, we'll:
+- Add password fields
+- Add age input
+- Add phone number input
+- Prepare for validation
+
+Key Concepts:
+- st.text_input() with type="password" for secure input
+- st.number_input() for numeric input
+- Different input types for different data
+"""
+
+import streamlit as st
+
+st.set_page_config(page_title="Form Validator", page_icon="✔️", layout="centered")
+
+st.title("✔️ Form Validator")
+
+with st.form("validation_form"):
+    st.subheader("User Registration")
+
+    username = st.text_input("Username (min 4 characters)")
+    email = st.text_input("Email")
+    password = st.text_input("Password", type="password")
+    confirm_password = st.text_input("Confirm Password", type="password")
+    age = st.number_input("Age", min_value=0, max_value=120, value=18)
+    phone = st.text_input("Phone (format: XXX-XXX-XXXX)")
+
+    submitted = st.form_submit_button("Submit", type="primary")
+
+    if submitted:
+        st.info("Form submitted! Validation will be added in the next step.")
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

@@ -1,0 +1,50 @@
+"""
+Step 3: Adding Home and About Pages
+
+In this step, we'll:
+- Create conditional logic for different pages
+- Add content for Home page
+- Add content for About page
+
+Key Concepts:
+- if/elif for conditional page rendering
+- Different content for each page
+- st.markdown() for formatted text
+"""
+
+import streamlit as st
+
+st.set_page_config(page_title="Multi-Page App", page_icon="📄", layout="wide")
+
+pages = {
+    "Home": "home",
+    "About": "about",
+    "Dashboard": "dashboard",
+    "Settings": "settings"
+}
+
+st.sidebar.title("Navigation")
+selection = st.sidebar.radio("Go to", list(pages.keys()))
+
+# Page content based on selection
+if selection == "Home":
+    st.title("🏠 Home Page")
+    st.write("Welcome to the multi-page application!")
+    st.info("Use the sidebar to navigate between pages.")
+
+elif selection == "About":
+    st.title("ℹ️ About Page")
+    st.write("This is a demonstration of multi-page navigation in Streamlit.")
+    st.markdown("""
+    ### Features:
+    - Multiple pages
+    - Sidebar navigation
+    - Different content per page
+    """)
+
+else:
+    st.title(f"📄 {selection} Page")
+    st.write("Content coming in next step...")
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

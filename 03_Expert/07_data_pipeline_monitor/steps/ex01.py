@@ -1,0 +1,66 @@
+"""
+Step 1: Introduction to Pipeline Monitoring
+- Explain ETL pipelines
+- Set up basic structure
+- Define pipeline data structure
+"""
+
+import streamlit as st
+
+st.set_page_config(page_title="Data Pipeline Monitor", page_icon="🔄", layout="wide")
+
+st.title("🔄 Data Pipeline Monitor")
+
+# STEP 1: Explain data pipelines
+st.markdown("""
+### What is a Data Pipeline?
+
+A data pipeline is an automated process that moves data from source to destination, often transforming it along the way.
+
+#### ETL Process
+
+**Extract** → **Transform** → **Load**
+
+- **Extract**: Pull data from sources (databases, APIs, files)
+- **Transform**: Clean, validate, and process data
+- **Load**: Store processed data in target system
+
+### Common Pipeline Examples
+
+1. **User Data Pipeline**
+   - Extract: User activities from app database
+   - Transform: Aggregate and anonymize
+   - Load: Analytics warehouse
+
+2. **Sales Analytics Pipeline**
+   - Extract: Sales transactions
+   - Transform: Calculate metrics, join with product data
+   - Load: Business intelligence dashboard
+
+3. **Log Processing Pipeline**
+   - Extract: Application logs
+   - Transform: Parse, filter errors
+   - Load: Monitoring system
+
+### Why Monitor Pipelines?
+
+- Track progress and status
+- Identify failures quickly
+- Optimize performance
+- Ensure data quality
+- Meet SLAs
+
+### What We'll Build
+
+A dashboard to monitor multiple data pipelines with:
+- Real-time status tracking
+- Progress indicators
+- Performance metrics
+- Historical trends
+- Error logging
+""")
+
+st.info("💡 In the next steps, we'll build a complete pipeline monitoring dashboard!")
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

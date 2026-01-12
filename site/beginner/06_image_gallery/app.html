@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>06 Image Gallery App</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+  <div class="site">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-title">Streamlit Workshop</div>
+        <div class="brand-subtitle">Learning-Streamlit_with-Projects</div>
+      </div>
+      <div class="nav-search">
+        <input id="nav-search" type="search" placeholder="Projekt oder Step suchen...">
+        <div class="nav-search-hint">Tipp: Tippe z.B. "api" oder "step 3"</div>
+      </div>
+      <nav class="nav">
+<details class="nav-level" open>
+<summary>Beginner</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Hello Streamlit</summary>
+<ul>
+<li><a href="../01_hello_streamlit/index.html">Projekt</a></li>
+<li><a href="../01_hello_streamlit/step-01.html">Step 1</a></li>
+<li><a href="../01_hello_streamlit/step-02.html">Step 2</a></li>
+<li><a href="../01_hello_streamlit/step-03.html">Step 3</a></li>
+<li><a href="../01_hello_streamlit/step-04.html">Step 4</a></li>
+<li><a href="../01_hello_streamlit/step-05.html">Step 5</a></li>
+<li><a href="../01_hello_streamlit/step-06.html">Step 6</a></li>
+<li><a href="../01_hello_streamlit/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Interactive Calculator</summary>
+<ul>
+<li><a href="../02_interactive_calculator/index.html">Projekt</a></li>
+<li><a href="../02_interactive_calculator/step-01.html">Step 1</a></li>
+<li><a href="../02_interactive_calculator/step-02.html">Step 2</a></li>
+<li><a href="../02_interactive_calculator/step-03.html">Step 3</a></li>
+<li><a href="../02_interactive_calculator/step-04.html">Step 4</a></li>
+<li><a href="../02_interactive_calculator/step-05.html">Step 5</a></li>
+<li><a href="../02_interactive_calculator/step-06.html">Step 6</a></li>
+<li><a href="../02_interactive_calculator/step-07.html">Step 7</a></li>
+<li><a href="../02_interactive_calculator/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Text Analyzer</summary>
+<ul>
+<li><a href="../03_text_analyzer/index.html">Projekt</a></li>
+<li><a href="../03_text_analyzer/step-01.html">Step 1</a></li>
+<li><a href="../03_text_analyzer/step-02.html">Step 2</a></li>
+<li><a href="../03_text_analyzer/step-03.html">Step 3</a></li>
+<li><a href="../03_text_analyzer/step-04.html">Step 4</a></li>
+<li><a href="../03_text_analyzer/step-05.html">Step 5</a></li>
+<li><a href="../03_text_analyzer/step-06.html">Step 6</a></li>
+<li><a href="../03_text_analyzer/step-07.html">Step 7</a></li>
+<li><a href="../03_text_analyzer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Data Display</summary>
+<ul>
+<li><a href="../04_data_display/index.html">Projekt</a></li>
+<li><a href="../04_data_display/step-01.html">Step 1</a></li>
+<li><a href="../04_data_display/step-02.html">Step 2</a></li>
+<li><a href="../04_data_display/step-03.html">Step 3</a></li>
+<li><a href="../04_data_display/step-04.html">Step 4</a></li>
+<li><a href="../04_data_display/step-05.html">Step 5</a></li>
+<li><a href="../04_data_display/step-06.html">Step 6</a></li>
+<li><a href="../04_data_display/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Temperature Converter</summary>
+<ul>
+<li><a href="../05_temperature_converter/index.html">Projekt</a></li>
+<li><a href="../05_temperature_converter/step-01.html">Step 1</a></li>
+<li><a href="../05_temperature_converter/step-02.html">Step 2</a></li>
+<li><a href="../05_temperature_converter/step-03.html">Step 3</a></li>
+<li><a href="../05_temperature_converter/step-04.html">Step 4</a></li>
+<li><a href="../05_temperature_converter/step-05.html">Step 5</a></li>
+<li><a href="../05_temperature_converter/step-06.html">Step 6</a></li>
+<li><a href="../05_temperature_converter/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" open>
+<summary>06 Image Gallery</summary>
+<ul>
+<li><a href="index.html">Projekt</a></li>
+<li><a href="step-01.html">Step 1</a></li>
+<li><a href="step-02.html">Step 2</a></li>
+<li><a href="step-03.html">Step 3</a></li>
+<li><a href="step-04.html">Step 4</a></li>
+<li><a href="step-05.html">Step 5</a></li>
+<li><a href="step-06.html">Step 6</a></li>
+<li><a class="active" href="app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Color Picker Tool</summary>
+<ul>
+<li><a href="../07_color_picker_tool/index.html">Projekt</a></li>
+<li><a href="../07_color_picker_tool/step-01.html">Step 1</a></li>
+<li><a href="../07_color_picker_tool/step-02.html">Step 2</a></li>
+<li><a href="../07_color_picker_tool/step-03.html">Step 3</a></li>
+<li><a href="../07_color_picker_tool/step-04.html">Step 4</a></li>
+<li><a href="../07_color_picker_tool/step-05.html">Step 5</a></li>
+<li><a href="../07_color_picker_tool/step-06.html">Step 6</a></li>
+<li><a href="../07_color_picker_tool/step-07.html">Step 7</a></li>
+<li><a href="../07_color_picker_tool/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Simple Survey Form</summary>
+<ul>
+<li><a href="../08_simple_survey_form/index.html">Projekt</a></li>
+<li><a href="../08_simple_survey_form/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Number Guessing Game</summary>
+<ul>
+<li><a href="../09_number_guessing_game/index.html">Projekt</a></li>
+<li><a href="../09_number_guessing_game/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Bmi Calculator</summary>
+<ul>
+<li><a href="../10_bmi_calculator/index.html">Projekt</a></li>
+<li><a href="../10_bmi_calculator/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+<details class="nav-level" >
+<summary>Advanced</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Data Visualizer</summary>
+<ul>
+<li><a href="../../advanced/01_data_visualizer/index.html">Projekt</a></li>
+<li><a href="../../advanced/01_data_visualizer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Csv Analyzer</summary>
+<ul>
+<li><a href="../../advanced/02_csv_analyzer/index.html">Projekt</a></li>
+<li><a href="../../advanced/02_csv_analyzer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Api Dashboard</summary>
+<ul>
+<li><a href="../../advanced/03_api_dashboard/index.html">Projekt</a></li>
+<li><a href="../../advanced/03_api_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Stock Price Tracker</summary>
+<ul>
+<li><a href="../../advanced/04_stock_price_tracker/index.html">Projekt</a></li>
+<li><a href="../../advanced/04_stock_price_tracker/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Weather Dashboard</summary>
+<ul>
+<li><a href="../../advanced/05_weather_dashboard/index.html">Projekt</a></li>
+<li><a href="../../advanced/05_weather_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Todo List Manager</summary>
+<ul>
+<li><a href="../../advanced/06_todo_list_manager/index.html">Projekt</a></li>
+<li><a href="../../advanced/06_todo_list_manager/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Data Filter Explorer</summary>
+<ul>
+<li><a href="../../advanced/07_data_filter_explorer/index.html">Projekt</a></li>
+<li><a href="../../advanced/07_data_filter_explorer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Multi Page App</summary>
+<ul>
+<li><a href="../../advanced/08_multi_page_app/index.html">Projekt</a></li>
+<li><a href="../../advanced/08_multi_page_app/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Form Validator</summary>
+<ul>
+<li><a href="../../advanced/09_form_validator/index.html">Projekt</a></li>
+<li><a href="../../advanced/09_form_validator/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Quiz Application</summary>
+<ul>
+<li><a href="../../advanced/10_quiz_application/index.html">Projekt</a></li>
+<li><a href="../../advanced/10_quiz_application/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+<details class="nav-level" >
+<summary>Expert</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Ml Model Dashboard</summary>
+<ul>
+<li><a href="../../expert/01_ml_model_dashboard/index.html">Projekt</a></li>
+<li><a href="../../expert/01_ml_model_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Realtime Data Stream</summary>
+<ul>
+<li><a href="../../expert/02_realtime_data_stream/index.html">Projekt</a></li>
+<li><a href="../../expert/02_realtime_data_stream/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Advanced Caching</summary>
+<ul>
+<li><a href="../../expert/03_advanced_caching/index.html">Projekt</a></li>
+<li><a href="../../expert/03_advanced_caching/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Custom Components</summary>
+<ul>
+<li><a href="../../expert/04_custom_components/index.html">Projekt</a></li>
+<li><a href="../../expert/04_custom_components/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Database Integration</summary>
+<ul>
+<li><a href="../../expert/05_database_integration/index.html">Projekt</a></li>
+<li><a href="../../expert/05_database_integration/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Authentication System</summary>
+<ul>
+<li><a href="../../expert/06_authentication_system/index.html">Projekt</a></li>
+<li><a href="../../expert/06_authentication_system/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Data Pipeline Monitor</summary>
+<ul>
+<li><a href="../../expert/07_data_pipeline_monitor/index.html">Projekt</a></li>
+<li><a href="../../expert/07_data_pipeline_monitor/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Ab Testing Dashboard</summary>
+<ul>
+<li><a href="../../expert/08_ab_testing_dashboard/index.html">Projekt</a></li>
+<li><a href="../../expert/08_ab_testing_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Performance Optimizer</summary>
+<ul>
+<li><a href="../../expert/09_performance_optimizer/index.html">Projekt</a></li>
+<li><a href="../../expert/09_performance_optimizer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Production Deployment</summary>
+<ul>
+<li><a href="../../expert/10_production_deployment/index.html">Projekt</a></li>
+<li><a href="../../expert/10_production_deployment/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+</nav>
+    </aside>
+    <main class="main">
+      
+<section class="hero" data-aos="fade-up">
+  <h1>06 Image Gallery — App</h1>
+  <div class="meta">
+    <span class="badge">Level: Beginner</span>
+    <span class="badge">Datei: app/app.py</span>
+  </div>
+  <div class="nav-inline"><a href="index.html">Zurueck zum Projekt</a><a href="step-06.html">Step 6: Add expandable info sections</a></div>
+</section>
+
+<section class="section-card" data-aos="fade-up">
+  <h2>app.py</h2>
+  <pre class="code-block"><code>&quot;&quot;&quot;
+Image Gallery - Beginner Project 06
+
+Upload and display images with information.
+&quot;&quot;&quot;
+
+import streamlit as st
+from PIL import Image
+import io
+
+st.set_page_config(
+    page_title=&quot;Image Gallery&quot;,
+    page_icon=&quot;🖼️&quot;,
+    layout=&quot;wide&quot;
+)
+
+st.title(&quot;🖼️ Image Gallery&quot;)
+st.write(&quot;Upload and view your images&quot;)
+
+# File uploader
+uploaded_files = st.file_uploader(
+    &quot;Choose images...&quot;, 
+    type=[&#x27;png&#x27;, &#x27;jpg&#x27;, &#x27;jpeg&#x27;],
+    accept_multiple_files=True
+)
+
+if uploaded_files:
+    st.success(f&quot;✅ Uploaded {len(uploaded_files)} image(s)&quot;)
+    
+    # Display images in a grid
+    cols_per_row = 3
+    rows = (len(uploaded_files) + cols_per_row - 1) // cols_per_row
+    
+    for row in range(rows):
+        cols = st.columns(cols_per_row)
+        for col_idx in range(cols_per_row):
+            img_idx = row * cols_per_row + col_idx
+            if img_idx &lt; len(uploaded_files):
+                uploaded_file = uploaded_files[img_idx]
+                
+                with cols[col_idx]:
+                    # Open and display image
+                    image = Image.open(uploaded_file)
+                    st.image(image, caption=uploaded_file.name, use_container_width=True)
+                    
+                    # Image information
+                    with st.expander(&quot;ℹ️ Image Info&quot;):
+                        st.write(f&quot;**Filename**: {uploaded_file.name}&quot;)
+                        st.write(f&quot;**Size**: {uploaded_file.size / 1024:.2f} KB&quot;)
+                        st.write(f&quot;**Dimensions**: {image.size[0]} x {image.size[1]} pixels&quot;)
+                        st.write(f&quot;**Format**: {image.format}&quot;)
+                        st.write(f&quot;**Mode**: {image.mode}&quot;)
+
+else:
+    st.info(&quot;👆 Upload one or more images to get started&quot;)
+    
+    # Show sample instructions
+    st.markdown(&quot;&quot;&quot;
+    ### Supported Formats:
+    - PNG
+    - JPG/JPEG
+    
+    ### Features:
+    - Upload multiple images at once
+    - View image details
+    - Grid layout display
+    &quot;&quot;&quot;)
+
+st.divider()
+st.caption(&quot;Built with Streamlit 🎈&quot;)
+</code></pre>
+</section>
+
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

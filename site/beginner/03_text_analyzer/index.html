@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>03 Text Analyzer</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+  <div class="site">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-title">Streamlit Workshop</div>
+        <div class="brand-subtitle">Learning-Streamlit_with-Projects</div>
+      </div>
+      <div class="nav-search">
+        <input id="nav-search" type="search" placeholder="Projekt oder Step suchen...">
+        <div class="nav-search-hint">Tipp: Tippe z.B. "api" oder "step 3"</div>
+      </div>
+      <nav class="nav">
+<details class="nav-level" open>
+<summary>Beginner</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Hello Streamlit</summary>
+<ul>
+<li><a href="../01_hello_streamlit/index.html">Projekt</a></li>
+<li><a href="../01_hello_streamlit/step-01.html">Step 1</a></li>
+<li><a href="../01_hello_streamlit/step-02.html">Step 2</a></li>
+<li><a href="../01_hello_streamlit/step-03.html">Step 3</a></li>
+<li><a href="../01_hello_streamlit/step-04.html">Step 4</a></li>
+<li><a href="../01_hello_streamlit/step-05.html">Step 5</a></li>
+<li><a href="../01_hello_streamlit/step-06.html">Step 6</a></li>
+<li><a href="../01_hello_streamlit/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Interactive Calculator</summary>
+<ul>
+<li><a href="../02_interactive_calculator/index.html">Projekt</a></li>
+<li><a href="../02_interactive_calculator/step-01.html">Step 1</a></li>
+<li><a href="../02_interactive_calculator/step-02.html">Step 2</a></li>
+<li><a href="../02_interactive_calculator/step-03.html">Step 3</a></li>
+<li><a href="../02_interactive_calculator/step-04.html">Step 4</a></li>
+<li><a href="../02_interactive_calculator/step-05.html">Step 5</a></li>
+<li><a href="../02_interactive_calculator/step-06.html">Step 6</a></li>
+<li><a href="../02_interactive_calculator/step-07.html">Step 7</a></li>
+<li><a href="../02_interactive_calculator/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" open>
+<summary>03 Text Analyzer</summary>
+<ul>
+<li><a class="active" href="index.html">Projekt</a></li>
+<li><a href="step-01.html">Step 1</a></li>
+<li><a href="step-02.html">Step 2</a></li>
+<li><a href="step-03.html">Step 3</a></li>
+<li><a href="step-04.html">Step 4</a></li>
+<li><a href="step-05.html">Step 5</a></li>
+<li><a href="step-06.html">Step 6</a></li>
+<li><a href="step-07.html">Step 7</a></li>
+<li><a href="app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Data Display</summary>
+<ul>
+<li><a href="../04_data_display/index.html">Projekt</a></li>
+<li><a href="../04_data_display/step-01.html">Step 1</a></li>
+<li><a href="../04_data_display/step-02.html">Step 2</a></li>
+<li><a href="../04_data_display/step-03.html">Step 3</a></li>
+<li><a href="../04_data_display/step-04.html">Step 4</a></li>
+<li><a href="../04_data_display/step-05.html">Step 5</a></li>
+<li><a href="../04_data_display/step-06.html">Step 6</a></li>
+<li><a href="../04_data_display/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Temperature Converter</summary>
+<ul>
+<li><a href="../05_temperature_converter/index.html">Projekt</a></li>
+<li><a href="../05_temperature_converter/step-01.html">Step 1</a></li>
+<li><a href="../05_temperature_converter/step-02.html">Step 2</a></li>
+<li><a href="../05_temperature_converter/step-03.html">Step 3</a></li>
+<li><a href="../05_temperature_converter/step-04.html">Step 4</a></li>
+<li><a href="../05_temperature_converter/step-05.html">Step 5</a></li>
+<li><a href="../05_temperature_converter/step-06.html">Step 6</a></li>
+<li><a href="../05_temperature_converter/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Image Gallery</summary>
+<ul>
+<li><a href="../06_image_gallery/index.html">Projekt</a></li>
+<li><a href="../06_image_gallery/step-01.html">Step 1</a></li>
+<li><a href="../06_image_gallery/step-02.html">Step 2</a></li>
+<li><a href="../06_image_gallery/step-03.html">Step 3</a></li>
+<li><a href="../06_image_gallery/step-04.html">Step 4</a></li>
+<li><a href="../06_image_gallery/step-05.html">Step 5</a></li>
+<li><a href="../06_image_gallery/step-06.html">Step 6</a></li>
+<li><a href="../06_image_gallery/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Color Picker Tool</summary>
+<ul>
+<li><a href="../07_color_picker_tool/index.html">Projekt</a></li>
+<li><a href="../07_color_picker_tool/step-01.html">Step 1</a></li>
+<li><a href="../07_color_picker_tool/step-02.html">Step 2</a></li>
+<li><a href="../07_color_picker_tool/step-03.html">Step 3</a></li>
+<li><a href="../07_color_picker_tool/step-04.html">Step 4</a></li>
+<li><a href="../07_color_picker_tool/step-05.html">Step 5</a></li>
+<li><a href="../07_color_picker_tool/step-06.html">Step 6</a></li>
+<li><a href="../07_color_picker_tool/step-07.html">Step 7</a></li>
+<li><a href="../07_color_picker_tool/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Simple Survey Form</summary>
+<ul>
+<li><a href="../08_simple_survey_form/index.html">Projekt</a></li>
+<li><a href="../08_simple_survey_form/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Number Guessing Game</summary>
+<ul>
+<li><a href="../09_number_guessing_game/index.html">Projekt</a></li>
+<li><a href="../09_number_guessing_game/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Bmi Calculator</summary>
+<ul>
+<li><a href="../10_bmi_calculator/index.html">Projekt</a></li>
+<li><a href="../10_bmi_calculator/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+<details class="nav-level" >
+<summary>Advanced</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Data Visualizer</summary>
+<ul>
+<li><a href="../../advanced/01_data_visualizer/index.html">Projekt</a></li>
+<li><a href="../../advanced/01_data_visualizer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Csv Analyzer</summary>
+<ul>
+<li><a href="../../advanced/02_csv_analyzer/index.html">Projekt</a></li>
+<li><a href="../../advanced/02_csv_analyzer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Api Dashboard</summary>
+<ul>
+<li><a href="../../advanced/03_api_dashboard/index.html">Projekt</a></li>
+<li><a href="../../advanced/03_api_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Stock Price Tracker</summary>
+<ul>
+<li><a href="../../advanced/04_stock_price_tracker/index.html">Projekt</a></li>
+<li><a href="../../advanced/04_stock_price_tracker/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Weather Dashboard</summary>
+<ul>
+<li><a href="../../advanced/05_weather_dashboard/index.html">Projekt</a></li>
+<li><a href="../../advanced/05_weather_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Todo List Manager</summary>
+<ul>
+<li><a href="../../advanced/06_todo_list_manager/index.html">Projekt</a></li>
+<li><a href="../../advanced/06_todo_list_manager/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Data Filter Explorer</summary>
+<ul>
+<li><a href="../../advanced/07_data_filter_explorer/index.html">Projekt</a></li>
+<li><a href="../../advanced/07_data_filter_explorer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Multi Page App</summary>
+<ul>
+<li><a href="../../advanced/08_multi_page_app/index.html">Projekt</a></li>
+<li><a href="../../advanced/08_multi_page_app/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Form Validator</summary>
+<ul>
+<li><a href="../../advanced/09_form_validator/index.html">Projekt</a></li>
+<li><a href="../../advanced/09_form_validator/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Quiz Application</summary>
+<ul>
+<li><a href="../../advanced/10_quiz_application/index.html">Projekt</a></li>
+<li><a href="../../advanced/10_quiz_application/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+<details class="nav-level" >
+<summary>Expert</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Ml Model Dashboard</summary>
+<ul>
+<li><a href="../../expert/01_ml_model_dashboard/index.html">Projekt</a></li>
+<li><a href="../../expert/01_ml_model_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Realtime Data Stream</summary>
+<ul>
+<li><a href="../../expert/02_realtime_data_stream/index.html">Projekt</a></li>
+<li><a href="../../expert/02_realtime_data_stream/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Advanced Caching</summary>
+<ul>
+<li><a href="../../expert/03_advanced_caching/index.html">Projekt</a></li>
+<li><a href="../../expert/03_advanced_caching/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Custom Components</summary>
+<ul>
+<li><a href="../../expert/04_custom_components/index.html">Projekt</a></li>
+<li><a href="../../expert/04_custom_components/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Database Integration</summary>
+<ul>
+<li><a href="../../expert/05_database_integration/index.html">Projekt</a></li>
+<li><a href="../../expert/05_database_integration/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Authentication System</summary>
+<ul>
+<li><a href="../../expert/06_authentication_system/index.html">Projekt</a></li>
+<li><a href="../../expert/06_authentication_system/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Data Pipeline Monitor</summary>
+<ul>
+<li><a href="../../expert/07_data_pipeline_monitor/index.html">Projekt</a></li>
+<li><a href="../../expert/07_data_pipeline_monitor/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Ab Testing Dashboard</summary>
+<ul>
+<li><a href="../../expert/08_ab_testing_dashboard/index.html">Projekt</a></li>
+<li><a href="../../expert/08_ab_testing_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Performance Optimizer</summary>
+<ul>
+<li><a href="../../expert/09_performance_optimizer/index.html">Projekt</a></li>
+<li><a href="../../expert/09_performance_optimizer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Production Deployment</summary>
+<ul>
+<li><a href="../../expert/10_production_deployment/index.html">Projekt</a></li>
+<li><a href="../../expert/10_production_deployment/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+</nav>
+    </aside>
+    <main class="main">
+      
+<section class="hero" data-aos="fade-up">
+  <h1>03 Text Analyzer</h1>
+  <div class="meta">
+    <span class="badge">Level: Beginner</span>
+    <span class="badge">Projektpfad: site/beginner/03_text_analyzer</span>
+  </div>
+</section>
+
+<section class="section-card" data-aos="fade-up" data-tabs>
+  <div class="tabs">
+    <button class="tab-btn">TODO.md</button>
+    <button class="tab-btn">TIPPS.md</button>
+  </div>
+  <div class="tab-panel md"><h1>Text Analyzer - TODO List</h1>
+<p>Create a comprehensive text analysis tool with statistics and visualizations!</p>
+<h2>Steps</h2>
+<ul>
+<li>[ ] <strong>Step 1</strong>: Set up text input area</li>
+<li>Create multi-line text input with <code>st.text_area()</code></li>
+<li>Add placeholder text and height configuration</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 2</strong>: Calculate basic statistics</li>
+<li>Count characters (with and without spaces)</li>
+<li>Count words using string methods</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 3</strong>: Add advanced text statistics</li>
+<li>Count sentences, vowels, and consonants</li>
+<li>Use list comprehensions for efficient counting</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 4</strong>: Display metrics in columns</li>
+<li>Use <code>st.metric()</code> for professional statistics display</li>
+<li>Organize metrics in columns for better layout</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 5</strong>: Analyze character frequency</li>
+<li>Import and use <code>Counter</code> from collections</li>
+<li>Display top 10 most common characters</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 6</strong>: Visualize with bar chart</li>
+<li>Create DataFrame from frequency data</li>
+<li>Display interactive bar chart with <code>st.bar_chart()</code></li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 7</strong>: Add detailed statistics</li>
+<li>Calculate average word and sentence length</li>
+<li>Show additional stats in expander</li>
+</ul>
+<h2>Learning Goals</h2>
+<p>By completing this project, you will learn:</p>
+<ul>
+<li>Multi-line text input with text_area</li>
+<li>String manipulation and analysis</li>
+<li>List comprehensions for data processing</li>
+<li>Using Python&#x27;s Counter for frequency analysis</li>
+<li>Creating DataFrames from dictionaries</li>
+<li>Displaying charts and visualizations</li>
+<li>Organizing complex data with metrics and expanders</li>
+</ul></div>
+  <div class="tab-panel md"><h1>Text Analyzer - Tips &amp; Code Sketches</h1>
+<h2>Step 1: Text Area Input</h2>
+<p><strong>Key Concept</strong>: <code>text_area()</code> provides a multi-line text input field.</p>
+<pre><code>
+text = st.text_area(
+    &quot;Enter your text here:&quot;,
+    height=200,                          # Height in pixels
+    placeholder=&quot;Type or paste text...&quot;  # Hint text
+)
+
+if text:
+    # Process text
+else:
+    st.info(&quot;👆 Enter some text to analyze&quot;)
+</code></pre>
+<p><strong>Tip</strong>: Always check if text exists before processing to avoid errors.</p>
+<hr>
+<h2>Step 2: Basic String Statistics</h2>
+<p><strong>Key Concept</strong>: Python string methods make text analysis easy.</p>
+<pre><code>
+# Total characters including spaces
+char_count = len(text)
+
+# Characters without spaces or newlines
+char_no_spaces = len(text.replace(&quot; &quot;, &quot;&quot;).replace(&quot;\n&quot;, &quot;&quot;))
+
+# Word count
+word_count = len(text.split())
+</code></pre>
+<p><strong>Tip</strong>: <code>split()</code> divides text by whitespace and returns a list of words.</p>
+<hr>
+<h2>Step 3: Advanced Text Analysis</h2>
+<p><strong>Key Concept</strong>: Use list comprehensions for efficient filtering and counting.</p>
+<pre><code>
+# Count sentences (simple method)
+sentence_count = text.count(&#x27;.&#x27;) + text.count(&#x27;!&#x27;) + text.count(&#x27;?&#x27;)
+
+# Count vowels
+vowels = &quot;aeiouAEIOU&quot;
+vowel_count = sum(1 for char in text if char in vowels)
+
+# Count consonants
+consonants = sum(1 for char in text if char.isalpha() and char not in vowels)
+</code></pre>
+<p><strong>Tip</strong>: <code>sum()</code> with a generator expression is memory-efficient for counting.</p>
+<hr>
+<h2>Step 4: Metric Display</h2>
+<p><strong>Key Concept</strong>: <code>st.metric()</code> creates professional-looking statistics cards.</p>
+<pre><code>
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.metric(&quot;Characters&quot;, char_count)
+    st.caption(f&quot;Without spaces: {char_no_spaces}&quot;)
+
+with col2:
+    st.metric(&quot;Words&quot;, word_count)
+</code></pre>
+<p><strong>Tip</strong>: Use <code>st.caption()</code> under metrics for additional context or details.</p>
+<hr>
+<h2>Step 5: Character Frequency with Counter</h2>
+<p><strong>Key Concept</strong>: <code>Counter</code> from collections module counts item occurrences.</p>
+<pre><code>
+from collections import Counter
+
+# Filter to letters only and convert to lowercase
+letters_only = [char.lower() for char in text if char.isalpha()]
+
+# Count frequency
+freq = Counter(letters_only)
+
+# Get most common
+most_common = freq.most_common(10)  # Top 10
+
+for char, count in most_common:
+    st.write(f&quot;- **{char}**: {count}&quot;)
+</code></pre>
+<p><strong>Tip</strong>: List comprehensions can filter and transform data in one line.</p>
+<hr>
+<h2>Step 6: Data Visualization</h2>
+<p><strong>Key Concept</strong>: Convert data to DataFrame for easy charting.</p>
+<pre><code>
+import pandas as pd
+
+# Create DataFrame from frequency data
+df = pd.DataFrame(most_common, columns=[&#x27;Character&#x27;, &#x27;Frequency&#x27;])
+
+# Display as bar chart
+st.bar_chart(df.set_index(&#x27;Character&#x27;))
+</code></pre>
+<p><strong>Tip</strong>: <code>set_index()</code> makes the character column the x-axis labels.</p>
+<hr>
+<h2>Step 7: Calculated Statistics</h2>
+<p><strong>Key Concept</strong>: Derive meaningful insights from basic statistics.</p>
+<pre><code>
+with st.expander(&quot;📊 Detailed Statistics&quot;):
+    # Average word length
+    avg_word_len = char_no_spaces / max(word_count, 1)
+    st.write(f&quot;Average word length: {avg_word_len:.2f} characters&quot;)
+
+    # Average sentence length
+    avg_sentence_len = word_count / max(sentence_count, 1)
+    st.write(f&quot;Average sentence length: {avg_sentence_len:.2f} words&quot;)
+
+    # More stats
+    st.write(f&quot;Uppercase: {sum(1 for c in text if c.isupper())}&quot;)
+    st.write(f&quot;Lowercase: {sum(1 for c in text if c.islower())}&quot;)
+    st.write(f&quot;Digits: {sum(1 for c in text if c.isdigit())}&quot;)
+</code></pre>
+<p><strong>Tip</strong>: Use <code>max(count, 1)</code> to avoid division by zero errors.</p>
+<hr>
+<h2>Best Practices</h2>
+<p>1. <strong>Input Validation</strong>: Always check if text exists before processing</p>
+<p>2. <strong>Efficient Counting</strong>: Use generator expressions with <code>sum()</code> for counting</p>
+<p>3. <strong>Data Structures</strong>: Use Counter for frequency analysis</p>
+<p>4. <strong>Visual Organization</strong>: Group related metrics in columns</p>
+<p>5. <strong>User Guidance</strong>: Provide clear instructions and placeholder text</p>
+<p>6. <strong>Edge Cases</strong>: Handle division by zero and empty inputs</p>
+<p>7. <strong>Formatting</strong>: Use f-strings and format specifiers for clean output</p></div>
+</section>
+
+
+<section class="section-card" data-aos="fade-up">
+  <h2>App Kurzprofil</h2>
+  <div class="summary-grid">
+    <div class="summary-card"><strong>Zeilen</strong><div>67</div></div>
+    <div class="summary-card"><strong>Funktionen</strong><div>0</div></div>
+    <div class="summary-card"><strong>Klassen</strong><div>0</div></div>
+    <div class="summary-card"><strong>Widgets</strong><div>bar_chart, caption, columns, divider, expander, info, metric, set_page_config</div></div>
+    <div class="summary-card"><strong>Imports</strong><div>collections, streamlit</div></div>
+    <div class="summary-card"><strong>Quellen/APIs</strong><div>—</div></div>
+  </div>
+</section>
+
+
+<section class="section-card" data-aos="fade-up">
+  <h2>Steps</h2>
+  <div class="step-grid">
+    <a class="box" href="step-01.html"><strong>Step 1</strong><p>Set up text input area
+- Create multi-line text input with `st.text_area()`
+- Add placeholder text and height configuration</p></a><a class="box" href="step-02.html"><strong>Step 2</strong><p>Calculate basic statistics
+- Count characters (with and without spaces)
+- Count words using string methods</p></a><a class="box" href="step-03.html"><strong>Step 3</strong><p>Add advanced text statistics
+- Count sentences, vowels, and consonants
+- Use list comprehensions for efficient counting</p></a><a class="box" href="step-04.html"><strong>Step 4</strong><p>Display metrics in columns
+- Use `st.metric()` for professional statistics display
+- Organize metrics in columns for better layout</p></a><a class="box" href="step-05.html"><strong>Step 5</strong><p>Analyze character frequency
+- Import and use `Counter` from collections
+- Display top 10 most common characters</p></a><a class="box" href="step-06.html"><strong>Step 6</strong><p>Visualize with bar chart
+- Create DataFrame from frequency data
+- Display interactive bar chart with `st.bar_chart()`</p></a><a class="box" href="step-07.html"><strong>Step 7</strong><p>Add detailed statistics
+- Calculate average word and sentence length
+- Show additional stats in expander
+
+
+- Multi-line text input with text_area
+- String manipulation and analysis
+- List comprehensions for data processing
+- Using Python&#x27;s Counter for frequency analysis
+- Creating DataFrames from dictionaries
+- Displaying charts and visualizations
+- Organizing complex data with metrics and expanders</p></a>
+    <a class="box" href="app.html"><strong>App</strong><p>Finale Streamlit-App ansehen.</p></a>
+  </div>
+</section>
+
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

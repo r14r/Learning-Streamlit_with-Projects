@@ -1,0 +1,29 @@
+"""
+Step 1: Basic Single Page Setup
+
+In this first step, we'll:
+- Set up the page configuration
+- Create a simple single-page app
+- Understand the structure before adding navigation
+
+Key Concepts:
+- Basic page setup
+- Page configuration
+"""
+
+import streamlit as st
+
+st.set_page_config(page_title="Multi-Page App", page_icon="📄", layout="wide")
+
+st.title("🏠 Home Page")
+st.write("Welcome to the multi-page application!")
+
+st.info("""
+This is currently a single-page app. In the next steps, we'll add:
+- Multiple pages
+- Navigation system
+- Different content for each page
+""")
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

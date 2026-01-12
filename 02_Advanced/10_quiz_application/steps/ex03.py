@@ -1,0 +1,53 @@
+"""
+Step 3: Displaying Questions with Radio Buttons
+
+In this step, we'll:
+- Display all questions
+- Add radio buttons for answer selection
+- Store answers in session state
+
+Key Concepts:
+- Looping through questions with enumerate()
+- st.radio() for multiple choice
+- Unique keys for widgets
+- Storing user selections
+"""
+
+import streamlit as st
+
+st.set_page_config(page_title="Quiz Application", page_icon="🎯", layout="centered")
+
+st.title("🎯 Quiz Application")
+
+questions = [
+    {"q": "What is 2 + 2?", "options": ["3", "4", "5"], "answer": "4"},
+    {"q": "What is the capital of France?", "options": ["London", "Paris", "Berlin"], "answer": "Paris"},
+    {"q": "What is 10 * 5?", "options": ["50", "55", "45"], "answer": "50"}
+]
+
+# Initialize session state
+if 'answers' not in st.session_state:
+    st.session_state.answers = {}
+
+if 'submitted' not in st.session_state:
+    st.session_state.submitted = False
+
+# Display questions
+for idx, q in enumerate(questions):
+    st.subheader(f"Question {idx + 1}")
+    st.write(q['q'])
+
+    # Radio button for answer selection
+    answer = st.radio(
+        f"Select answer:",
+        q['options'],
+        key=f"q{idx}"
+    )
+
+    # Store the answer
+    st.session_state.answers[idx] = answer
+
+st.info("Questions displayed! Submit button coming in the next step.")
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

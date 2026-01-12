@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>05 Database Integration</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+  <div class="site">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-title">Streamlit Workshop</div>
+        <div class="brand-subtitle">Learning-Streamlit_with-Projects</div>
+      </div>
+      <div class="nav-search">
+        <input id="nav-search" type="search" placeholder="Projekt oder Step suchen...">
+        <div class="nav-search-hint">Tipp: Tippe z.B. "api" oder "step 3"</div>
+      </div>
+      <nav class="nav">
+<details class="nav-level" >
+<summary>Beginner</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Hello Streamlit</summary>
+<ul>
+<li><a href="../../beginner/01_hello_streamlit/index.html">Projekt</a></li>
+<li><a href="../../beginner/01_hello_streamlit/step-01.html">Step 1</a></li>
+<li><a href="../../beginner/01_hello_streamlit/step-02.html">Step 2</a></li>
+<li><a href="../../beginner/01_hello_streamlit/step-03.html">Step 3</a></li>
+<li><a href="../../beginner/01_hello_streamlit/step-04.html">Step 4</a></li>
+<li><a href="../../beginner/01_hello_streamlit/step-05.html">Step 5</a></li>
+<li><a href="../../beginner/01_hello_streamlit/step-06.html">Step 6</a></li>
+<li><a href="../../beginner/01_hello_streamlit/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Interactive Calculator</summary>
+<ul>
+<li><a href="../../beginner/02_interactive_calculator/index.html">Projekt</a></li>
+<li><a href="../../beginner/02_interactive_calculator/step-01.html">Step 1</a></li>
+<li><a href="../../beginner/02_interactive_calculator/step-02.html">Step 2</a></li>
+<li><a href="../../beginner/02_interactive_calculator/step-03.html">Step 3</a></li>
+<li><a href="../../beginner/02_interactive_calculator/step-04.html">Step 4</a></li>
+<li><a href="../../beginner/02_interactive_calculator/step-05.html">Step 5</a></li>
+<li><a href="../../beginner/02_interactive_calculator/step-06.html">Step 6</a></li>
+<li><a href="../../beginner/02_interactive_calculator/step-07.html">Step 7</a></li>
+<li><a href="../../beginner/02_interactive_calculator/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Text Analyzer</summary>
+<ul>
+<li><a href="../../beginner/03_text_analyzer/index.html">Projekt</a></li>
+<li><a href="../../beginner/03_text_analyzer/step-01.html">Step 1</a></li>
+<li><a href="../../beginner/03_text_analyzer/step-02.html">Step 2</a></li>
+<li><a href="../../beginner/03_text_analyzer/step-03.html">Step 3</a></li>
+<li><a href="../../beginner/03_text_analyzer/step-04.html">Step 4</a></li>
+<li><a href="../../beginner/03_text_analyzer/step-05.html">Step 5</a></li>
+<li><a href="../../beginner/03_text_analyzer/step-06.html">Step 6</a></li>
+<li><a href="../../beginner/03_text_analyzer/step-07.html">Step 7</a></li>
+<li><a href="../../beginner/03_text_analyzer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Data Display</summary>
+<ul>
+<li><a href="../../beginner/04_data_display/index.html">Projekt</a></li>
+<li><a href="../../beginner/04_data_display/step-01.html">Step 1</a></li>
+<li><a href="../../beginner/04_data_display/step-02.html">Step 2</a></li>
+<li><a href="../../beginner/04_data_display/step-03.html">Step 3</a></li>
+<li><a href="../../beginner/04_data_display/step-04.html">Step 4</a></li>
+<li><a href="../../beginner/04_data_display/step-05.html">Step 5</a></li>
+<li><a href="../../beginner/04_data_display/step-06.html">Step 6</a></li>
+<li><a href="../../beginner/04_data_display/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Temperature Converter</summary>
+<ul>
+<li><a href="../../beginner/05_temperature_converter/index.html">Projekt</a></li>
+<li><a href="../../beginner/05_temperature_converter/step-01.html">Step 1</a></li>
+<li><a href="../../beginner/05_temperature_converter/step-02.html">Step 2</a></li>
+<li><a href="../../beginner/05_temperature_converter/step-03.html">Step 3</a></li>
+<li><a href="../../beginner/05_temperature_converter/step-04.html">Step 4</a></li>
+<li><a href="../../beginner/05_temperature_converter/step-05.html">Step 5</a></li>
+<li><a href="../../beginner/05_temperature_converter/step-06.html">Step 6</a></li>
+<li><a href="../../beginner/05_temperature_converter/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Image Gallery</summary>
+<ul>
+<li><a href="../../beginner/06_image_gallery/index.html">Projekt</a></li>
+<li><a href="../../beginner/06_image_gallery/step-01.html">Step 1</a></li>
+<li><a href="../../beginner/06_image_gallery/step-02.html">Step 2</a></li>
+<li><a href="../../beginner/06_image_gallery/step-03.html">Step 3</a></li>
+<li><a href="../../beginner/06_image_gallery/step-04.html">Step 4</a></li>
+<li><a href="../../beginner/06_image_gallery/step-05.html">Step 5</a></li>
+<li><a href="../../beginner/06_image_gallery/step-06.html">Step 6</a></li>
+<li><a href="../../beginner/06_image_gallery/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Color Picker Tool</summary>
+<ul>
+<li><a href="../../beginner/07_color_picker_tool/index.html">Projekt</a></li>
+<li><a href="../../beginner/07_color_picker_tool/step-01.html">Step 1</a></li>
+<li><a href="../../beginner/07_color_picker_tool/step-02.html">Step 2</a></li>
+<li><a href="../../beginner/07_color_picker_tool/step-03.html">Step 3</a></li>
+<li><a href="../../beginner/07_color_picker_tool/step-04.html">Step 4</a></li>
+<li><a href="../../beginner/07_color_picker_tool/step-05.html">Step 5</a></li>
+<li><a href="../../beginner/07_color_picker_tool/step-06.html">Step 6</a></li>
+<li><a href="../../beginner/07_color_picker_tool/step-07.html">Step 7</a></li>
+<li><a href="../../beginner/07_color_picker_tool/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Simple Survey Form</summary>
+<ul>
+<li><a href="../../beginner/08_simple_survey_form/index.html">Projekt</a></li>
+<li><a href="../../beginner/08_simple_survey_form/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Number Guessing Game</summary>
+<ul>
+<li><a href="../../beginner/09_number_guessing_game/index.html">Projekt</a></li>
+<li><a href="../../beginner/09_number_guessing_game/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Bmi Calculator</summary>
+<ul>
+<li><a href="../../beginner/10_bmi_calculator/index.html">Projekt</a></li>
+<li><a href="../../beginner/10_bmi_calculator/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+<details class="nav-level" >
+<summary>Advanced</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Data Visualizer</summary>
+<ul>
+<li><a href="../../advanced/01_data_visualizer/index.html">Projekt</a></li>
+<li><a href="../../advanced/01_data_visualizer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Csv Analyzer</summary>
+<ul>
+<li><a href="../../advanced/02_csv_analyzer/index.html">Projekt</a></li>
+<li><a href="../../advanced/02_csv_analyzer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Api Dashboard</summary>
+<ul>
+<li><a href="../../advanced/03_api_dashboard/index.html">Projekt</a></li>
+<li><a href="../../advanced/03_api_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Stock Price Tracker</summary>
+<ul>
+<li><a href="../../advanced/04_stock_price_tracker/index.html">Projekt</a></li>
+<li><a href="../../advanced/04_stock_price_tracker/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Weather Dashboard</summary>
+<ul>
+<li><a href="../../advanced/05_weather_dashboard/index.html">Projekt</a></li>
+<li><a href="../../advanced/05_weather_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Todo List Manager</summary>
+<ul>
+<li><a href="../../advanced/06_todo_list_manager/index.html">Projekt</a></li>
+<li><a href="../../advanced/06_todo_list_manager/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Data Filter Explorer</summary>
+<ul>
+<li><a href="../../advanced/07_data_filter_explorer/index.html">Projekt</a></li>
+<li><a href="../../advanced/07_data_filter_explorer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Multi Page App</summary>
+<ul>
+<li><a href="../../advanced/08_multi_page_app/index.html">Projekt</a></li>
+<li><a href="../../advanced/08_multi_page_app/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Form Validator</summary>
+<ul>
+<li><a href="../../advanced/09_form_validator/index.html">Projekt</a></li>
+<li><a href="../../advanced/09_form_validator/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Quiz Application</summary>
+<ul>
+<li><a href="../../advanced/10_quiz_application/index.html">Projekt</a></li>
+<li><a href="../../advanced/10_quiz_application/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+<details class="nav-level" open>
+<summary>Expert</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Ml Model Dashboard</summary>
+<ul>
+<li><a href="../01_ml_model_dashboard/index.html">Projekt</a></li>
+<li><a href="../01_ml_model_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Realtime Data Stream</summary>
+<ul>
+<li><a href="../02_realtime_data_stream/index.html">Projekt</a></li>
+<li><a href="../02_realtime_data_stream/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Advanced Caching</summary>
+<ul>
+<li><a href="../03_advanced_caching/index.html">Projekt</a></li>
+<li><a href="../03_advanced_caching/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Custom Components</summary>
+<ul>
+<li><a href="../04_custom_components/index.html">Projekt</a></li>
+<li><a href="../04_custom_components/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" open>
+<summary>05 Database Integration</summary>
+<ul>
+<li><a class="active" href="index.html">Projekt</a></li>
+<li><a href="app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Authentication System</summary>
+<ul>
+<li><a href="../06_authentication_system/index.html">Projekt</a></li>
+<li><a href="../06_authentication_system/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Data Pipeline Monitor</summary>
+<ul>
+<li><a href="../07_data_pipeline_monitor/index.html">Projekt</a></li>
+<li><a href="../07_data_pipeline_monitor/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Ab Testing Dashboard</summary>
+<ul>
+<li><a href="../08_ab_testing_dashboard/index.html">Projekt</a></li>
+<li><a href="../08_ab_testing_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Performance Optimizer</summary>
+<ul>
+<li><a href="../09_performance_optimizer/index.html">Projekt</a></li>
+<li><a href="../09_performance_optimizer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Production Deployment</summary>
+<ul>
+<li><a href="../10_production_deployment/index.html">Projekt</a></li>
+<li><a href="../10_production_deployment/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+</nav>
+    </aside>
+    <main class="main">
+      
+<section class="hero" data-aos="fade-up">
+  <h1>05 Database Integration</h1>
+  <div class="meta">
+    <span class="badge">Level: Expert</span>
+    <span class="badge">Projektpfad: site/expert/05_database_integration</span>
+  </div>
+</section>
+
+<section class="section-card" data-aos="fade-up" data-tabs>
+  <div class="tabs">
+    <button class="tab-btn">TODO.md</button>
+    <button class="tab-btn">TIPPS.md</button>
+  </div>
+  <div class="tab-panel md"><h1>TODO für diesen Schritt</h1>
+<ul>
+<li>Beschreibe hier, welche Erweiterungen oder Aufgaben in diesem Schritt zu erledigen sind.</li>
+</ul></div>
+  <div class="tab-panel md"><h1>Tipps für diesen Schritt</h1>
+<p>Beschreibe hier, wie man zu diesem Schritt kommt. Gib eine grobe Übersicht über den Programmcode und die wichtigsten Konzepte, die in diesem Schritt behandelt werden.</p></div>
+</section>
+
+
+<section class="section-card" data-aos="fade-up">
+  <h2>App Kurzprofil</h2>
+  <div class="summary-grid">
+    <div class="summary-card"><strong>Zeilen</strong><div>64</div></div>
+    <div class="summary-card"><strong>Funktionen</strong><div>2</div></div>
+    <div class="summary-card"><strong>Klassen</strong><div>0</div></div>
+    <div class="summary-card"><strong>Widgets</strong><div>button, cache_resource, caption, dataframe, divider, form, form_submit_button, metric</div></div>
+    <div class="summary-card"><strong>Imports</strong><div>pandas, sqlite3, streamlit</div></div>
+    <div class="summary-card"><strong>Quellen/APIs</strong><div>Datenbank</div></div>
+  </div>
+</section>
+
+
+<section class="section-card" data-aos="fade-up">
+  <h2>Steps</h2>
+  <div class="step-grid">
+    
+    <a class="box" href="app.html"><strong>App</strong><p>Finale Streamlit-App ansehen.</p></a>
+  </div>
+</section>
+
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

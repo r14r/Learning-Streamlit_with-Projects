@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>02 Interactive Calculator</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+  <div class="site">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-title">Streamlit Workshop</div>
+        <div class="brand-subtitle">Learning-Streamlit_with-Projects</div>
+      </div>
+      <div class="nav-search">
+        <input id="nav-search" type="search" placeholder="Projekt oder Step suchen...">
+        <div class="nav-search-hint">Tipp: Tippe z.B. "api" oder "step 3"</div>
+      </div>
+      <nav class="nav">
+<details class="nav-level" open>
+<summary>Beginner</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Hello Streamlit</summary>
+<ul>
+<li><a href="../01_hello_streamlit/index.html">Projekt</a></li>
+<li><a href="../01_hello_streamlit/step-01.html">Step 1</a></li>
+<li><a href="../01_hello_streamlit/step-02.html">Step 2</a></li>
+<li><a href="../01_hello_streamlit/step-03.html">Step 3</a></li>
+<li><a href="../01_hello_streamlit/step-04.html">Step 4</a></li>
+<li><a href="../01_hello_streamlit/step-05.html">Step 5</a></li>
+<li><a href="../01_hello_streamlit/step-06.html">Step 6</a></li>
+<li><a href="../01_hello_streamlit/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" open>
+<summary>02 Interactive Calculator</summary>
+<ul>
+<li><a class="active" href="index.html">Projekt</a></li>
+<li><a href="step-01.html">Step 1</a></li>
+<li><a href="step-02.html">Step 2</a></li>
+<li><a href="step-03.html">Step 3</a></li>
+<li><a href="step-04.html">Step 4</a></li>
+<li><a href="step-05.html">Step 5</a></li>
+<li><a href="step-06.html">Step 6</a></li>
+<li><a href="step-07.html">Step 7</a></li>
+<li><a href="app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Text Analyzer</summary>
+<ul>
+<li><a href="../03_text_analyzer/index.html">Projekt</a></li>
+<li><a href="../03_text_analyzer/step-01.html">Step 1</a></li>
+<li><a href="../03_text_analyzer/step-02.html">Step 2</a></li>
+<li><a href="../03_text_analyzer/step-03.html">Step 3</a></li>
+<li><a href="../03_text_analyzer/step-04.html">Step 4</a></li>
+<li><a href="../03_text_analyzer/step-05.html">Step 5</a></li>
+<li><a href="../03_text_analyzer/step-06.html">Step 6</a></li>
+<li><a href="../03_text_analyzer/step-07.html">Step 7</a></li>
+<li><a href="../03_text_analyzer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Data Display</summary>
+<ul>
+<li><a href="../04_data_display/index.html">Projekt</a></li>
+<li><a href="../04_data_display/step-01.html">Step 1</a></li>
+<li><a href="../04_data_display/step-02.html">Step 2</a></li>
+<li><a href="../04_data_display/step-03.html">Step 3</a></li>
+<li><a href="../04_data_display/step-04.html">Step 4</a></li>
+<li><a href="../04_data_display/step-05.html">Step 5</a></li>
+<li><a href="../04_data_display/step-06.html">Step 6</a></li>
+<li><a href="../04_data_display/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Temperature Converter</summary>
+<ul>
+<li><a href="../05_temperature_converter/index.html">Projekt</a></li>
+<li><a href="../05_temperature_converter/step-01.html">Step 1</a></li>
+<li><a href="../05_temperature_converter/step-02.html">Step 2</a></li>
+<li><a href="../05_temperature_converter/step-03.html">Step 3</a></li>
+<li><a href="../05_temperature_converter/step-04.html">Step 4</a></li>
+<li><a href="../05_temperature_converter/step-05.html">Step 5</a></li>
+<li><a href="../05_temperature_converter/step-06.html">Step 6</a></li>
+<li><a href="../05_temperature_converter/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Image Gallery</summary>
+<ul>
+<li><a href="../06_image_gallery/index.html">Projekt</a></li>
+<li><a href="../06_image_gallery/step-01.html">Step 1</a></li>
+<li><a href="../06_image_gallery/step-02.html">Step 2</a></li>
+<li><a href="../06_image_gallery/step-03.html">Step 3</a></li>
+<li><a href="../06_image_gallery/step-04.html">Step 4</a></li>
+<li><a href="../06_image_gallery/step-05.html">Step 5</a></li>
+<li><a href="../06_image_gallery/step-06.html">Step 6</a></li>
+<li><a href="../06_image_gallery/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Color Picker Tool</summary>
+<ul>
+<li><a href="../07_color_picker_tool/index.html">Projekt</a></li>
+<li><a href="../07_color_picker_tool/step-01.html">Step 1</a></li>
+<li><a href="../07_color_picker_tool/step-02.html">Step 2</a></li>
+<li><a href="../07_color_picker_tool/step-03.html">Step 3</a></li>
+<li><a href="../07_color_picker_tool/step-04.html">Step 4</a></li>
+<li><a href="../07_color_picker_tool/step-05.html">Step 5</a></li>
+<li><a href="../07_color_picker_tool/step-06.html">Step 6</a></li>
+<li><a href="../07_color_picker_tool/step-07.html">Step 7</a></li>
+<li><a href="../07_color_picker_tool/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Simple Survey Form</summary>
+<ul>
+<li><a href="../08_simple_survey_form/index.html">Projekt</a></li>
+<li><a href="../08_simple_survey_form/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Number Guessing Game</summary>
+<ul>
+<li><a href="../09_number_guessing_game/index.html">Projekt</a></li>
+<li><a href="../09_number_guessing_game/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Bmi Calculator</summary>
+<ul>
+<li><a href="../10_bmi_calculator/index.html">Projekt</a></li>
+<li><a href="../10_bmi_calculator/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+<details class="nav-level" >
+<summary>Advanced</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Data Visualizer</summary>
+<ul>
+<li><a href="../../advanced/01_data_visualizer/index.html">Projekt</a></li>
+<li><a href="../../advanced/01_data_visualizer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Csv Analyzer</summary>
+<ul>
+<li><a href="../../advanced/02_csv_analyzer/index.html">Projekt</a></li>
+<li><a href="../../advanced/02_csv_analyzer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Api Dashboard</summary>
+<ul>
+<li><a href="../../advanced/03_api_dashboard/index.html">Projekt</a></li>
+<li><a href="../../advanced/03_api_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Stock Price Tracker</summary>
+<ul>
+<li><a href="../../advanced/04_stock_price_tracker/index.html">Projekt</a></li>
+<li><a href="../../advanced/04_stock_price_tracker/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Weather Dashboard</summary>
+<ul>
+<li><a href="../../advanced/05_weather_dashboard/index.html">Projekt</a></li>
+<li><a href="../../advanced/05_weather_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Todo List Manager</summary>
+<ul>
+<li><a href="../../advanced/06_todo_list_manager/index.html">Projekt</a></li>
+<li><a href="../../advanced/06_todo_list_manager/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Data Filter Explorer</summary>
+<ul>
+<li><a href="../../advanced/07_data_filter_explorer/index.html">Projekt</a></li>
+<li><a href="../../advanced/07_data_filter_explorer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Multi Page App</summary>
+<ul>
+<li><a href="../../advanced/08_multi_page_app/index.html">Projekt</a></li>
+<li><a href="../../advanced/08_multi_page_app/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Form Validator</summary>
+<ul>
+<li><a href="../../advanced/09_form_validator/index.html">Projekt</a></li>
+<li><a href="../../advanced/09_form_validator/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Quiz Application</summary>
+<ul>
+<li><a href="../../advanced/10_quiz_application/index.html">Projekt</a></li>
+<li><a href="../../advanced/10_quiz_application/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+<details class="nav-level" >
+<summary>Expert</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Ml Model Dashboard</summary>
+<ul>
+<li><a href="../../expert/01_ml_model_dashboard/index.html">Projekt</a></li>
+<li><a href="../../expert/01_ml_model_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Realtime Data Stream</summary>
+<ul>
+<li><a href="../../expert/02_realtime_data_stream/index.html">Projekt</a></li>
+<li><a href="../../expert/02_realtime_data_stream/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Advanced Caching</summary>
+<ul>
+<li><a href="../../expert/03_advanced_caching/index.html">Projekt</a></li>
+<li><a href="../../expert/03_advanced_caching/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Custom Components</summary>
+<ul>
+<li><a href="../../expert/04_custom_components/index.html">Projekt</a></li>
+<li><a href="../../expert/04_custom_components/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Database Integration</summary>
+<ul>
+<li><a href="../../expert/05_database_integration/index.html">Projekt</a></li>
+<li><a href="../../expert/05_database_integration/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Authentication System</summary>
+<ul>
+<li><a href="../../expert/06_authentication_system/index.html">Projekt</a></li>
+<li><a href="../../expert/06_authentication_system/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Data Pipeline Monitor</summary>
+<ul>
+<li><a href="../../expert/07_data_pipeline_monitor/index.html">Projekt</a></li>
+<li><a href="../../expert/07_data_pipeline_monitor/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Ab Testing Dashboard</summary>
+<ul>
+<li><a href="../../expert/08_ab_testing_dashboard/index.html">Projekt</a></li>
+<li><a href="../../expert/08_ab_testing_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Performance Optimizer</summary>
+<ul>
+<li><a href="../../expert/09_performance_optimizer/index.html">Projekt</a></li>
+<li><a href="../../expert/09_performance_optimizer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Production Deployment</summary>
+<ul>
+<li><a href="../../expert/10_production_deployment/index.html">Projekt</a></li>
+<li><a href="../../expert/10_production_deployment/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+</nav>
+    </aside>
+    <main class="main">
+      
+<section class="hero" data-aos="fade-up">
+  <h1>02 Interactive Calculator</h1>
+  <div class="meta">
+    <span class="badge">Level: Beginner</span>
+    <span class="badge">Projektpfad: site/beginner/02_interactive_calculator</span>
+  </div>
+</section>
+
+<section class="section-card" data-aos="fade-up" data-tabs>
+  <div class="tabs">
+    <button class="tab-btn">TODO.md</button>
+    <button class="tab-btn">TIPPS.md</button>
+  </div>
+  <div class="tab-panel md"><h1>Interactive Calculator - TODO List</h1>
+<p>Build a fully functional calculator with interactive widgets!</p>
+<h2>Steps</h2>
+<ul>
+<li>[ ] <strong>Step 1</strong>: Set up basic calculator interface</li>
+<li>Configure page with calculator theme</li>
+<li>Add title and description</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 2</strong>: Add number inputs</li>
+<li>Create two number input widgets</li>
+<li>Learn to use <code>st.number_input()</code> with formatting</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 3</strong>: Organize layout with columns</li>
+<li>Use <code>st.columns()</code> for side-by-side inputs</li>
+<li>Improve visual organization</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 4</strong>: Add operation selection</li>
+<li>Implement dropdown menu with <code>st.selectbox()</code></li>
+<li>Provide arithmetic operation choices</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 5</strong>: Implement calculation logic</li>
+<li>Add calculate button</li>
+<li>Perform operations based on selection</li>
+<li>Display results with formatting</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 6</strong>: Handle division by zero</li>
+<li>Add error checking</li>
+<li>Display appropriate error messages</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 7</strong>: Add expandable details</li>
+<li>Use <code>st.expander()</code> for calculation details</li>
+<li>Show step-by-step information</li>
+</ul>
+<h2>Learning Goals</h2>
+<p>By completing this project, you will learn:</p>
+<ul>
+<li>Number input widgets with constraints</li>
+<li>Layout organization with columns</li>
+<li>Dropdown menus with selectbox</li>
+<li>Button interactions and event handling</li>
+<li>Conditional logic and error handling</li>
+<li>Expandable sections for additional content</li>
+</ul></div>
+  <div class="tab-panel md"><h1>Interactive Calculator - Tips &amp; Code Sketches</h1>
+<h2>Step 1: Basic Setup</h2>
+<p><strong>Key Concept</strong>: Set up the calculator with appropriate theme and layout.</p>
+<pre><code>
+import streamlit as st
+
+st.set_page_config(
+    page_title=&quot;Interactive Calculator&quot;,
+    page_icon=&quot;🧮&quot;,
+    layout=&quot;centered&quot;
+)
+
+st.title(&quot;🧮 Interactive Calculator&quot;)
+st.write(&quot;Perform basic arithmetic operations with ease!&quot;)
+</code></pre>
+<hr>
+<h2>Step 2: Number Inputs</h2>
+<p><strong>Key Concept</strong>: <code>number_input()</code> creates a numeric input field with validation.</p>
+<pre><code>
+num1 = st.number_input(
+    &quot;Enter first number&quot;,
+    value=0.0,        # Default value
+    format=&quot;%.2f&quot;     # Display with 2 decimal places
+)
+</code></pre>
+<p><strong>Tip</strong>: The <code>format</code> parameter controls how the number is displayed (e.g., <code>%.2f</code> for 2 decimals).</p>
+<hr>
+<h2>Step 3: Columns for Layout</h2>
+<p><strong>Key Concept</strong>: Use columns to arrange widgets side by side.</p>
+<pre><code>
+col1, col2 = st.columns(2)
+
+with col1:
+    num1 = st.number_input(&quot;First number&quot;, value=0.0)
+
+with col2:
+    num2 = st.number_input(&quot;Second number&quot;, value=0.0)
+</code></pre>
+<p><strong>Tip</strong>: The <code>with</code> statement makes it clear which widgets belong to which column.</p>
+<hr>
+<h2>Step 4: Operation Selection</h2>
+<p><strong>Key Concept</strong>: <code>selectbox()</code> creates a dropdown menu for user selection.</p>
+<pre><code>
+operation = st.selectbox(
+    &quot;Select operation&quot;,
+    [&quot;Addition (+)&quot;, &quot;Subtraction (-)&quot;, &quot;Multiplication (×)&quot;, &quot;Division (÷)&quot;]
+)
+</code></pre>
+<p><strong>Tip</strong>: Make option labels user-friendly by including symbols.</p>
+<hr>
+<h2>Step 5: Button and Calculation Logic</h2>
+<p><strong>Key Concept</strong>: Buttons trigger actions when clicked; use if/elif for different operations.</p>
+<pre><code>
+if st.button(&quot;Calculate&quot;, type=&quot;primary&quot;):
+    result = None
+
+    if operation == &quot;Addition (+)&quot;:
+        result = num1 + num2
+    elif operation == &quot;Subtraction (-)&quot;:
+        result = num1 - num2
+    elif operation == &quot;Multiplication (×)&quot;:
+        result = num1 * num2
+    elif operation == &quot;Division (÷)&quot;:
+        result = num1 / num2
+
+    if result is not None:
+        st.success(f&quot;Result: {result:.2f}&quot;)
+</code></pre>
+<p><strong>Tip</strong>: <code>type=&quot;primary&quot;</code> makes the button stand out with accent color.</p>
+<hr>
+<h2>Step 6: Error Handling</h2>
+<p><strong>Key Concept</strong>: Always check for errors before performing operations.</p>
+<pre><code>
+if operation == &quot;Division (÷)&quot;:
+    if num2 == 0:
+        st.error(&quot;⚠️ Cannot divide by zero!&quot;)
+    else:
+        result = num1 / num2
+</code></pre>
+<p><strong>Tip</strong>: Use <code>st.error()</code> for error messages - it displays in red to grab attention.</p>
+<hr>
+<h2>Step 7: Expandable Details</h2>
+<p><strong>Key Concept</strong>: Expanders hide content by default, keeping the UI clean.</p>
+<pre><code>
+with st.expander(&quot;ℹ️ Calculation Details&quot;):
+    st.write(f&quot;- First Number: {num1}&quot;)
+    st.write(f&quot;- Second Number: {num2}&quot;)
+    st.write(f&quot;- Operation: {operation}&quot;)
+    st.write(f&quot;- Result: {result:.2f}&quot;)
+</code></pre>
+<p><strong>Tip</strong>: Use expanders for optional or detailed information that might clutter the main view.</p>
+<hr>
+<h2>Best Practices</h2>
+<p>1. <strong>Input Validation</strong>: Always validate user inputs before calculations</p>
+<p>2. <strong>Clear Feedback</strong>: Use success/error messages to confirm actions</p>
+<p>3. <strong>Layout Organization</strong>: Use columns for better visual hierarchy</p>
+<p>4. <strong>Error Handling</strong>: Check for edge cases (like division by zero)</p>
+<p>5. <strong>User Experience</strong>: Make button labels clear and use appropriate colors</p>
+<p>6. <strong>Number Formatting</strong>: Format numbers consistently (e.g., 2 decimal places)</p></div>
+</section>
+
+
+<section class="section-card" data-aos="fade-up">
+  <h2>App Kurzprofil</h2>
+  <div class="summary-grid">
+    <div class="summary-card"><strong>Zeilen</strong><div>52</div></div>
+    <div class="summary-card"><strong>Funktionen</strong><div>0</div></div>
+    <div class="summary-card"><strong>Klassen</strong><div>0</div></div>
+    <div class="summary-card"><strong>Widgets</strong><div>button, caption, columns, divider, error, expander, number_input, selectbox</div></div>
+    <div class="summary-card"><strong>Imports</strong><div>streamlit</div></div>
+    <div class="summary-card"><strong>Quellen/APIs</strong><div>—</div></div>
+  </div>
+</section>
+
+
+<section class="section-card" data-aos="fade-up">
+  <h2>Steps</h2>
+  <div class="step-grid">
+    <a class="box" href="step-01.html"><strong>Step 1</strong><p>Set up basic calculator interface
+- Configure page with calculator theme
+- Add title and description</p></a><a class="box" href="step-02.html"><strong>Step 2</strong><p>Add number inputs
+- Create two number input widgets
+- Learn to use `st.number_input()` with formatting</p></a><a class="box" href="step-03.html"><strong>Step 3</strong><p>Organize layout with columns
+- Use `st.columns()` for side-by-side inputs
+- Improve visual organization</p></a><a class="box" href="step-04.html"><strong>Step 4</strong><p>Add operation selection
+- Implement dropdown menu with `st.selectbox()`
+- Provide arithmetic operation choices</p></a><a class="box" href="step-05.html"><strong>Step 5</strong><p>Implement calculation logic
+- Add calculate button
+- Perform operations based on selection
+- Display results with formatting</p></a><a class="box" href="step-06.html"><strong>Step 6</strong><p>Handle division by zero
+- Add error checking
+- Display appropriate error messages</p></a><a class="box" href="step-07.html"><strong>Step 7</strong><p>Add expandable details
+- Use `st.expander()` for calculation details
+- Show step-by-step information
+
+
+- Number input widgets with constraints
+- Layout organization with columns
+- Dropdown menus with selectbox
+- Button interactions and event handling
+- Conditional logic and error handling
+- Expandable sections for additional content</p></a>
+    <a class="box" href="app.html"><strong>App</strong><p>Finale Streamlit-App ansehen.</p></a>
+  </div>
+</section>
+
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

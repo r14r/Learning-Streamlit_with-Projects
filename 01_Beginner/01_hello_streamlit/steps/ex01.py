@@ -1,0 +1,10 @@
+"""
+Step 1: Basic Streamlit Import and Simple Title
+Learning objective: Import streamlit and create your first title
+"""
+
+import streamlit as st
+
+# Create a simple title
+# The title() function creates a large, bold heading at the top of your app
+st.title("👋 Hello Streamlit!")

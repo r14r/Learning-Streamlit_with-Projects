@@ -1,0 +1,33 @@
+"""
+Step 3: Displaying All Images in a List
+Learning objective: Loop through uploaded files to display all images
+"""
+
+import streamlit as st
+from PIL import Image
+
+st.set_page_config(
+    page_title="Image Gallery",
+    page_icon="🖼️",
+    layout="wide"
+)
+
+st.title("🖼️ Image Gallery")
+st.write("Upload and view your images")
+
+uploaded_files = st.file_uploader(
+    "Choose images...",
+    type=['png', 'jpg', 'jpeg'],
+    accept_multiple_files=True
+)
+
+if uploaded_files:
+    st.success(f"✅ Uploaded {len(uploaded_files)} image(s)")
+
+    # Loop through all uploaded files
+    for uploaded_file in uploaded_files:
+        # Open and display each image
+        image = Image.open(uploaded_file)
+        st.image(image, caption=uploaded_file.name, use_container_width=True)
+else:
+    st.info("👆 Upload one or more images to get started")

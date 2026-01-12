@@ -1,0 +1,121 @@
+"""
+Step 3: Add Metrics Dashboard and Progress Bar
+- Display key metrics in columns
+- Add visual progress bar
+- Show color-coded status
+"""
+
+import streamlit as st
+import random
+
+st.set_page_config(page_title="Data Pipeline Monitor", page_icon="🔄", layout="wide")
+
+st.title("🔄 Data Pipeline Monitor")
+
+pipelines = {
+    "User Data ETL": {"status": "Running", "progress": 75, "records": 15234},
+    "Sales Analytics": {"status": "Completed", "progress": 100, "records": 45123},
+    "Log Processing": {"status": "Failed", "progress": 45, "records": 8934},
+    "Report Generation": {"status": "Running", "progress": 60, "records": 3456}
+}
+
+selected_pipeline = st.selectbox("Select Pipeline", list(pipelines.keys()))
+pipeline = pipelines[selected_pipeline]
+
+# STEP 1: Create metrics dashboard with 4 columns
+st.subheader("📊 Pipeline Metrics")
+
+col1, col2, col3, col4 = st.columns(4)
+
+# STEP 2: Display status with color indicator
+with col1:
+    status_color = {
+        "Running": "🟡",
+        "Completed": "🟢",
+        "Failed": "🔴"
+    }
+    icon = status_color.get(pipeline['status'], "⚪")
+    st.metric("Status", f"{icon} {pipeline['status']}")
+
+# STEP 3: Display progress percentage
+with col2:
+    # Add delta (change) indicator for running pipelines
+    delta = None
+    if pipeline['status'] == "Running":
+        delta = "+5%"  # Simulated progress increase
+
+    st.metric("Progress", f"{pipeline['progress']}%", delta=delta)
+
+# STEP 4: Display records processed
+with col3:
+    st.metric("Records Processed", f"{pipeline['records']:,}")
+
+# STEP 5: Display estimated runtime
+with col4:
+    runtime = random.randint(10, 60)
+    st.metric("Runtime", f"{runtime}min")
+
+# STEP 6: Add visual progress bar
+st.subheader("Progress")
+
+# Create progress bar with color based on status
+if pipeline['status'] == "Failed":
+    st.error(f"Pipeline failed at {pipeline['progress']}%")
+elif pipeline['status'] == "Completed":
+    st.success("Pipeline completed successfully!")
+else:
+    st.info(f"Pipeline is running: {pipeline['progress']}% complete")
+
+# Display progress bar
+st.progress(pipeline['progress'] / 100)
+
+# STEP 7: Add detailed status information
+st.divider()
+
+st.subheader("📋 Pipeline Information")
+
+# Create info sections based on status
+if pipeline['status'] == "Running":
+    st.write("**Current Stage:** Processing batch data")
+    st.write("**Estimated Time Remaining:**", f"{random.randint(5, 30)} minutes")
+    st.write("**Last Checkpoint:**", "Batch 75 of 100")
+
+elif pipeline['status'] == "Completed":
+    st.write("**Completion Time:**", "10:45 AM")
+    st.write("**Total Records:**", f"{pipeline['records']:,}")
+    st.write("**Success Rate:**", "100%")
+
+elif pipeline['status'] == "Failed":
+    st.write("**Error Time:**", "09:23 AM")
+    st.write("**Error Type:**", "Database Connection Timeout")
+    st.write("**Failed at Stage:**", "Transform")
+    st.error("⚠️ Action required: Check database connection and retry")
+
+# STEP 8: Add metrics explanation
+with st.expander("💡 Understanding Pipeline Metrics"):
+    st.markdown("""
+    ### Key Metrics Explained
+
+    **Status Icons:**
+    - 🟢 Completed: Pipeline finished successfully
+    - 🟡 Running: Pipeline is currently executing
+    - 🔴 Failed: Pipeline encountered an error
+
+    **Progress:**
+    - Shows completion percentage (0-100%)
+    - Updates in real-time for running pipelines
+    - Delta shows recent progress change
+
+    **Records Processed:**
+    - Number of data records processed so far
+    - Useful for estimating completion time
+    - Helps identify performance bottlenecks
+
+    **Runtime:**
+    - Total execution time
+    - Used for performance monitoring
+    - Helps optimize pipeline efficiency
+    """)
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

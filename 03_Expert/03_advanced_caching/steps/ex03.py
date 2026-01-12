@@ -1,0 +1,141 @@
+"""
+Step 3: Add Educational Documentation (Complete)
+- Explain different caching strategies
+- Document @st.cache_data vs @st.cache_resource
+- Provide best practices
+"""
+
+import streamlit as st
+import pandas as pd
+import numpy as np
+import time
+
+st.set_page_config(page_title="Advanced Caching", page_icon="⚡", layout="wide")
+
+st.title("⚡ Advanced Caching Demo")
+
+@st.cache_data
+def expensive_computation_cached(n):
+    time.sleep(2)
+    return pd.DataFrame(np.random.randn(n, 5), columns=list('ABCDE'))
+
+def expensive_computation_uncached(n):
+    time.sleep(2)
+    return pd.DataFrame(np.random.randn(n, 5), columns=list('ABCDE'))
+
+st.sidebar.header("Configuration")
+use_cache = st.sidebar.checkbox("Use Caching", value=True)
+n_rows = st.sidebar.slider("Number of rows", 100, 10000, 1000, step=100)
+
+if st.button("Run Computation", type="primary"):
+    start_time = time.time()
+
+    with st.spinner("Processing..."):
+        if use_cache:
+            df = expensive_computation_cached(n_rows)
+        else:
+            df = expensive_computation_uncached(n_rows)
+
+    end_time = time.time()
+    elapsed = end_time - start_time
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.metric("Execution Time", f"{elapsed:.2f}s")
+
+    with col2:
+        st.metric("Rows Generated", n_rows)
+
+    st.dataframe(df.head(10), use_container_width=True)
+
+    if use_cache:
+        st.success("✅ Used cached result (subsequent runs will be faster)")
+    else:
+        st.warning("⚠️ No caching (every run takes full time)")
+
+# STEP 1: Add comprehensive caching documentation
+with st.expander("ℹ️ About Caching"):
+    st.markdown("""
+    ### Streamlit Caching Strategies
+
+    Streamlit provides two main caching decorators:
+
+    #### 📊 @st.cache_data
+    **Use for:** Data transformations, API calls, database queries
+
+    **Behavior:**
+    - Caches the return value
+    - Returns a **new copy** each time
+    - Automatically serializes/deserializes data
+    - Perfect for DataFrames, lists, dictionaries
+
+    **Example:**
+    ```python
+    @st.cache_data
+    def load_data(file_path):
+        return pd.read_csv(file_path)
+    ```
+
+    #### 🔧 @st.cache_resource
+    **Use for:** ML models, database connections, shared resources
+
+    **Behavior:**
+    - Caches the actual object
+    - Returns the **same object** each time
+    - No serialization/deserialization
+    - Perfect for non-serializable objects
+
+    **Example:**
+    ```python
+    @st.cache_resource
+    def load_model():
+        return tensorflow.keras.models.load_model('model.h5')
+    ```
+
+    #### 🎯 When to Use Each
+
+    | Scenario | Decorator |
+    |----------|-----------|
+    | Load CSV file | `@st.cache_data` |
+    | API request | `@st.cache_data` |
+    | Data processing | `@st.cache_data` |
+    | ML model | `@st.cache_resource` |
+    | Database connection | `@st.cache_resource` |
+    | Thread pool | `@st.cache_resource` |
+
+    #### 💡 Best Practices
+
+    1. **Cache expensive operations**: Only cache functions that take significant time
+    2. **Watch cache size**: Cached data consumes memory
+    3. **Clear when needed**: Use `st.cache_data.clear()` if needed
+    4. **Parameter sensitivity**: Cache invalidates when parameters change
+    5. **Avoid side effects**: Cached functions should be pure (same input = same output)
+
+    #### ⚙️ Advanced Options
+
+    ```python
+    @st.cache_data(
+        ttl=3600,           # Time to live (seconds)
+        max_entries=100,    # Maximum cache entries
+        show_spinner=False  # Hide spinner
+    )
+    def my_function():
+        pass
+    ```
+    """)
+
+# STEP 2: Add performance tips
+with st.expander("🚀 Performance Tips"):
+    st.markdown("""
+    ### Optimization Strategies
+
+    1. **Cache aggressively**: Cache anything that takes > 0.1 seconds
+    2. **Combine operations**: Cache the entire pipeline, not individual steps
+    3. **Use appropriate decorator**: Choose between `cache_data` and `cache_resource`
+    4. **Monitor memory**: Clear caches if memory becomes an issue
+    5. **Test invalidation**: Ensure cache updates when data changes
+    """)
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

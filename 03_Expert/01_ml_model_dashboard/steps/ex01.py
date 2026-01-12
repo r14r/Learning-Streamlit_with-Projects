@@ -1,0 +1,21 @@
+"""
+Step 1: Basic ML Model Dashboard Setup
+- Create basic page configuration and title
+- Add simple layout structure
+"""
+
+import streamlit as st
+
+# STEP 1: Configure the page with title, icon, and layout
+# This sets up the browser tab and page appearance
+st.set_page_config(page_title="ML Model Dashboard", page_icon="🤖", layout="wide")
+
+# STEP 2: Add main title
+st.title("🤖 ML Model Dashboard")
+
+# STEP 3: Add a placeholder message
+st.write("Welcome to the ML Model Dashboard!")
+st.info("In the following steps, we'll build a complete ML model dashboard with predictions and visualizations.")
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

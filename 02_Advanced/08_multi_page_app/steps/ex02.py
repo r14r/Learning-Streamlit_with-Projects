@@ -1,0 +1,38 @@
+"""
+Step 2: Adding Navigation Structure
+
+In this step, we'll:
+- Define a dictionary of pages
+- Add a sidebar with page names
+- Create a radio button for navigation
+
+Key Concepts:
+- Dictionary for page mapping
+- st.sidebar for navigation panel
+- st.sidebar.radio() for page selection
+"""
+
+import streamlit as st
+
+st.set_page_config(page_title="Multi-Page App", page_icon="📄", layout="wide")
+
+# Define pages
+pages = {
+    "Home": "home",
+    "About": "about",
+    "Dashboard": "dashboard",
+    "Settings": "settings"
+}
+
+# Sidebar navigation
+st.sidebar.title("Navigation")
+selection = st.sidebar.radio("Go to", list(pages.keys()))
+
+# Display selected page
+st.title(f"Current page: {selection}")
+st.write(f"You selected: {pages[selection]}")
+
+st.info("We'll add specific content for each page in the next step")
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

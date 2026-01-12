@@ -1,0 +1,53 @@
+"""
+Step 3: Adding Tasks to Session State
+
+In this step, we'll:
+- Actually add tasks to the session state list
+- Include timestamp for when task was created
+- Use st.rerun() to refresh the app after adding
+
+Key Concepts:
+- Appending to session state lists
+- datetime module for timestamps
+- st.rerun() to refresh the app
+- Creating dictionaries to store task data
+"""
+
+import streamlit as st
+from datetime import datetime
+
+st.set_page_config(page_title="TODO List Manager", page_icon="✅", layout="centered")
+
+st.title("✅ TODO List Manager")
+
+# Initialize session state
+if 'todos' not in st.session_state:
+    st.session_state.todos = []
+
+# Add task form
+with st.form("add_todo"):
+    new_task = st.text_input("New task")
+    priority = st.selectbox("Priority", ["Low", "Medium", "High"])
+    submitted = st.form_submit_button("Add Task", type="primary")
+
+    if submitted and new_task:
+        # Add task to session state
+        st.session_state.todos.append({
+            'task': new_task,
+            'priority': priority,
+            'completed': False,
+            'created': datetime.now().strftime("%Y-%m-%d %H:%M")
+        })
+        st.success("Task added!")
+        st.rerun()  # Refresh the app to show the new task
+
+# Display todos
+if st.session_state.todos:
+    st.subheader("Your Tasks")
+    for todo in st.session_state.todos:
+        st.write(f"- {todo['task']} ({todo['priority']})")
+else:
+    st.info("No tasks yet. Add one above!")
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

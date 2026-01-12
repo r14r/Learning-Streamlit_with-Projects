@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>06 Image Gallery</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+  <div class="site">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-title">Streamlit Workshop</div>
+        <div class="brand-subtitle">Learning-Streamlit_with-Projects</div>
+      </div>
+      <div class="nav-search">
+        <input id="nav-search" type="search" placeholder="Projekt oder Step suchen...">
+        <div class="nav-search-hint">Tipp: Tippe z.B. "api" oder "step 3"</div>
+      </div>
+      <nav class="nav">
+<details class="nav-level" open>
+<summary>Beginner</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Hello Streamlit</summary>
+<ul>
+<li><a href="../01_hello_streamlit/index.html">Projekt</a></li>
+<li><a href="../01_hello_streamlit/step-01.html">Step 1</a></li>
+<li><a href="../01_hello_streamlit/step-02.html">Step 2</a></li>
+<li><a href="../01_hello_streamlit/step-03.html">Step 3</a></li>
+<li><a href="../01_hello_streamlit/step-04.html">Step 4</a></li>
+<li><a href="../01_hello_streamlit/step-05.html">Step 5</a></li>
+<li><a href="../01_hello_streamlit/step-06.html">Step 6</a></li>
+<li><a href="../01_hello_streamlit/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Interactive Calculator</summary>
+<ul>
+<li><a href="../02_interactive_calculator/index.html">Projekt</a></li>
+<li><a href="../02_interactive_calculator/step-01.html">Step 1</a></li>
+<li><a href="../02_interactive_calculator/step-02.html">Step 2</a></li>
+<li><a href="../02_interactive_calculator/step-03.html">Step 3</a></li>
+<li><a href="../02_interactive_calculator/step-04.html">Step 4</a></li>
+<li><a href="../02_interactive_calculator/step-05.html">Step 5</a></li>
+<li><a href="../02_interactive_calculator/step-06.html">Step 6</a></li>
+<li><a href="../02_interactive_calculator/step-07.html">Step 7</a></li>
+<li><a href="../02_interactive_calculator/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Text Analyzer</summary>
+<ul>
+<li><a href="../03_text_analyzer/index.html">Projekt</a></li>
+<li><a href="../03_text_analyzer/step-01.html">Step 1</a></li>
+<li><a href="../03_text_analyzer/step-02.html">Step 2</a></li>
+<li><a href="../03_text_analyzer/step-03.html">Step 3</a></li>
+<li><a href="../03_text_analyzer/step-04.html">Step 4</a></li>
+<li><a href="../03_text_analyzer/step-05.html">Step 5</a></li>
+<li><a href="../03_text_analyzer/step-06.html">Step 6</a></li>
+<li><a href="../03_text_analyzer/step-07.html">Step 7</a></li>
+<li><a href="../03_text_analyzer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Data Display</summary>
+<ul>
+<li><a href="../04_data_display/index.html">Projekt</a></li>
+<li><a href="../04_data_display/step-01.html">Step 1</a></li>
+<li><a href="../04_data_display/step-02.html">Step 2</a></li>
+<li><a href="../04_data_display/step-03.html">Step 3</a></li>
+<li><a href="../04_data_display/step-04.html">Step 4</a></li>
+<li><a href="../04_data_display/step-05.html">Step 5</a></li>
+<li><a href="../04_data_display/step-06.html">Step 6</a></li>
+<li><a href="../04_data_display/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Temperature Converter</summary>
+<ul>
+<li><a href="../05_temperature_converter/index.html">Projekt</a></li>
+<li><a href="../05_temperature_converter/step-01.html">Step 1</a></li>
+<li><a href="../05_temperature_converter/step-02.html">Step 2</a></li>
+<li><a href="../05_temperature_converter/step-03.html">Step 3</a></li>
+<li><a href="../05_temperature_converter/step-04.html">Step 4</a></li>
+<li><a href="../05_temperature_converter/step-05.html">Step 5</a></li>
+<li><a href="../05_temperature_converter/step-06.html">Step 6</a></li>
+<li><a href="../05_temperature_converter/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" open>
+<summary>06 Image Gallery</summary>
+<ul>
+<li><a class="active" href="index.html">Projekt</a></li>
+<li><a href="step-01.html">Step 1</a></li>
+<li><a href="step-02.html">Step 2</a></li>
+<li><a href="step-03.html">Step 3</a></li>
+<li><a href="step-04.html">Step 4</a></li>
+<li><a href="step-05.html">Step 5</a></li>
+<li><a href="step-06.html">Step 6</a></li>
+<li><a href="app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Color Picker Tool</summary>
+<ul>
+<li><a href="../07_color_picker_tool/index.html">Projekt</a></li>
+<li><a href="../07_color_picker_tool/step-01.html">Step 1</a></li>
+<li><a href="../07_color_picker_tool/step-02.html">Step 2</a></li>
+<li><a href="../07_color_picker_tool/step-03.html">Step 3</a></li>
+<li><a href="../07_color_picker_tool/step-04.html">Step 4</a></li>
+<li><a href="../07_color_picker_tool/step-05.html">Step 5</a></li>
+<li><a href="../07_color_picker_tool/step-06.html">Step 6</a></li>
+<li><a href="../07_color_picker_tool/step-07.html">Step 7</a></li>
+<li><a href="../07_color_picker_tool/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Simple Survey Form</summary>
+<ul>
+<li><a href="../08_simple_survey_form/index.html">Projekt</a></li>
+<li><a href="../08_simple_survey_form/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Number Guessing Game</summary>
+<ul>
+<li><a href="../09_number_guessing_game/index.html">Projekt</a></li>
+<li><a href="../09_number_guessing_game/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Bmi Calculator</summary>
+<ul>
+<li><a href="../10_bmi_calculator/index.html">Projekt</a></li>
+<li><a href="../10_bmi_calculator/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+<details class="nav-level" >
+<summary>Advanced</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Data Visualizer</summary>
+<ul>
+<li><a href="../../advanced/01_data_visualizer/index.html">Projekt</a></li>
+<li><a href="../../advanced/01_data_visualizer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Csv Analyzer</summary>
+<ul>
+<li><a href="../../advanced/02_csv_analyzer/index.html">Projekt</a></li>
+<li><a href="../../advanced/02_csv_analyzer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Api Dashboard</summary>
+<ul>
+<li><a href="../../advanced/03_api_dashboard/index.html">Projekt</a></li>
+<li><a href="../../advanced/03_api_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Stock Price Tracker</summary>
+<ul>
+<li><a href="../../advanced/04_stock_price_tracker/index.html">Projekt</a></li>
+<li><a href="../../advanced/04_stock_price_tracker/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Weather Dashboard</summary>
+<ul>
+<li><a href="../../advanced/05_weather_dashboard/index.html">Projekt</a></li>
+<li><a href="../../advanced/05_weather_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Todo List Manager</summary>
+<ul>
+<li><a href="../../advanced/06_todo_list_manager/index.html">Projekt</a></li>
+<li><a href="../../advanced/06_todo_list_manager/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Data Filter Explorer</summary>
+<ul>
+<li><a href="../../advanced/07_data_filter_explorer/index.html">Projekt</a></li>
+<li><a href="../../advanced/07_data_filter_explorer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Multi Page App</summary>
+<ul>
+<li><a href="../../advanced/08_multi_page_app/index.html">Projekt</a></li>
+<li><a href="../../advanced/08_multi_page_app/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Form Validator</summary>
+<ul>
+<li><a href="../../advanced/09_form_validator/index.html">Projekt</a></li>
+<li><a href="../../advanced/09_form_validator/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Quiz Application</summary>
+<ul>
+<li><a href="../../advanced/10_quiz_application/index.html">Projekt</a></li>
+<li><a href="../../advanced/10_quiz_application/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+<details class="nav-level" >
+<summary>Expert</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Ml Model Dashboard</summary>
+<ul>
+<li><a href="../../expert/01_ml_model_dashboard/index.html">Projekt</a></li>
+<li><a href="../../expert/01_ml_model_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Realtime Data Stream</summary>
+<ul>
+<li><a href="../../expert/02_realtime_data_stream/index.html">Projekt</a></li>
+<li><a href="../../expert/02_realtime_data_stream/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Advanced Caching</summary>
+<ul>
+<li><a href="../../expert/03_advanced_caching/index.html">Projekt</a></li>
+<li><a href="../../expert/03_advanced_caching/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Custom Components</summary>
+<ul>
+<li><a href="../../expert/04_custom_components/index.html">Projekt</a></li>
+<li><a href="../../expert/04_custom_components/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Database Integration</summary>
+<ul>
+<li><a href="../../expert/05_database_integration/index.html">Projekt</a></li>
+<li><a href="../../expert/05_database_integration/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Authentication System</summary>
+<ul>
+<li><a href="../../expert/06_authentication_system/index.html">Projekt</a></li>
+<li><a href="../../expert/06_authentication_system/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Data Pipeline Monitor</summary>
+<ul>
+<li><a href="../../expert/07_data_pipeline_monitor/index.html">Projekt</a></li>
+<li><a href="../../expert/07_data_pipeline_monitor/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Ab Testing Dashboard</summary>
+<ul>
+<li><a href="../../expert/08_ab_testing_dashboard/index.html">Projekt</a></li>
+<li><a href="../../expert/08_ab_testing_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Performance Optimizer</summary>
+<ul>
+<li><a href="../../expert/09_performance_optimizer/index.html">Projekt</a></li>
+<li><a href="../../expert/09_performance_optimizer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Production Deployment</summary>
+<ul>
+<li><a href="../../expert/10_production_deployment/index.html">Projekt</a></li>
+<li><a href="../../expert/10_production_deployment/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+</nav>
+    </aside>
+    <main class="main">
+      
+<section class="hero" data-aos="fade-up">
+  <h1>06 Image Gallery</h1>
+  <div class="meta">
+    <span class="badge">Level: Beginner</span>
+    <span class="badge">Projektpfad: site/beginner/06_image_gallery</span>
+  </div>
+</section>
+
+<section class="section-card" data-aos="fade-up" data-tabs>
+  <div class="tabs">
+    <button class="tab-btn">TODO.md</button>
+    <button class="tab-btn">TIPPS.md</button>
+  </div>
+  <div class="tab-panel md"><h1>Image Gallery - TODO List</h1>
+<p>Create an image gallery with upload, display, and metadata features!</p>
+<h2>Steps</h2>
+<ul>
+<li>[ ] <strong>Step 1</strong>: Set up file uploader</li>
+<li>Create file uploader widget</li>
+<li>Configure for multiple image files</li>
+<li>Support PNG, JPG, JPEG formats</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 2</strong>: Display a single image</li>
+<li>Import PIL for image handling</li>
+<li>Open and display the first uploaded image</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 3</strong>: Display all images in a list</li>
+<li>Loop through uploaded files</li>
+<li>Display each image with caption</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 4</strong>: Create grid layout</li>
+<li>Organize images in a 3-column grid</li>
+<li>Calculate rows needed dynamically</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 5</strong>: Add image information</li>
+<li>Extract file size and dimensions</li>
+<li>Display metadata below each image</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 6</strong>: Add expandable info sections</li>
+<li>Use expanders for image details</li>
+<li>Add instructions when no images uploaded</li>
+</ul>
+<h2>Learning Goals</h2>
+<p>By completing this project, you will learn:</p>
+<ul>
+<li>File uploading with Streamlit</li>
+<li>Working with PIL (Python Imaging Library)</li>
+<li>Displaying images with captions</li>
+<li>Creating grid layouts with columns</li>
+<li>Extracting image metadata</li>
+<li>Loop and conditional logic</li>
+<li>Expandable UI sections</li>
+</ul></div>
+  <div class="tab-panel md"><h1>Image Gallery - Tips &amp; Code Sketches</h1>
+<h2>Step 1: File Uploader</h2>
+<p><strong>Key Concept</strong>: <code>file_uploader()</code> handles file uploads with type filtering.</p>
+<pre><code>
+uploaded_files = st.file_uploader(
+    &quot;Choose images...&quot;,
+    type=[&#x27;png&#x27;, &#x27;jpg&#x27;, &#x27;jpeg&#x27;],      # Allowed extensions
+    accept_multiple_files=True         # Allow multiple files
+)
+
+if uploaded_files:
+    st.success(f&quot;✅ Uploaded {len(uploaded_files)} image(s)&quot;)
+else:
+    st.info(&quot;👆 Upload images to get started&quot;)
+</code></pre>
+<p><strong>Tip</strong>: Use <code>accept_multiple_files=True</code> for gallery applications.</p>
+<hr>
+<h2>Step 2: Display Single Image</h2>
+<p><strong>Key Concept</strong>: Use PIL to open uploaded files and st.image() to display.</p>
+<pre><code>
+from PIL import Image
+
+if uploaded_files:
+    # Get first file
+    uploaded_file = uploaded_files[0]
+
+    # Open with PIL
+    image = Image.open(uploaded_file)
+
+    # Display
+    st.image(
+        image,
+        caption=uploaded_file.name,      # Show filename
+        use_container_width=True         # Responsive width
+    )
+</code></pre>
+<p><strong>Tip</strong>: <code>use_container_width=True</code> makes images responsive to screen size.</p>
+<hr>
+<h2>Step 3: Loop Through Images</h2>
+<p><strong>Key Concept</strong>: Iterate over all uploaded files to display them.</p>
+<pre><code>
+for uploaded_file in uploaded_files:
+    image = Image.open(uploaded_file)
+    st.image(image, caption=uploaded_file.name, use_container_width=True)
+</code></pre>
+<p><strong>Tip</strong>: Simple loops work well for vertical list layouts.</p>
+<hr>
+<h2>Step 4: Grid Layout</h2>
+<p><strong>Key Concept</strong>: Calculate rows and use nested loops for grid display.</p>
+<pre><code>
+cols_per_row = 3
+rows = (len(uploaded_files) + cols_per_row - 1) // cols_per_row
+
+for row in range(rows):
+    cols = st.columns(cols_per_row)
+
+    for col_idx in range(cols_per_row):
+        # Calculate which image this is
+        img_idx = row * cols_per_row + col_idx
+
+        # Check if we have an image for this position
+        if img_idx &lt; len(uploaded_files):
+            uploaded_file = uploaded_files[img_idx]
+
+            with cols[col_idx]:
+                image = Image.open(uploaded_file)
+                st.image(image, caption=uploaded_file.name, use_container_width=True)
+</code></pre>
+<p><strong>Tip</strong>: Use <code>//</code> (floor division) to calculate rows needed.</p>
+<hr>
+<h2>Step 5: Extract Image Metadata</h2>
+<p><strong>Key Concept</strong>: Access file and image properties for metadata.</p>
+<pre><code>
+# File information
+filename = uploaded_file.name
+file_size = uploaded_file.size / 1024  # Convert bytes to KB
+
+# Image information
+image = Image.open(uploaded_file)
+width, height = image.size
+image_format = image.format
+
+# Display
+st.write(f&quot;**Filename**: {filename}&quot;)
+st.write(f&quot;**Size**: {file_size:.2f} KB&quot;)
+st.write(f&quot;**Dimensions**: {width} x {height} pixels&quot;)
+st.write(f&quot;**Format**: {image_format}&quot;)
+</code></pre>
+<p><strong>Tip</strong>: PIL images have <code>size</code> (tuple of width, height) and <code>format</code> properties.</p>
+<hr>
+<h2>Step 6: Expandable Information</h2>
+<p><strong>Key Concept</strong>: Hide detailed info in expanders to save space.</p>
+<pre><code>
+with st.expander(&quot;ℹ️ Image Info&quot;):
+    st.write(f&quot;**Filename**: {uploaded_file.name}&quot;)
+    st.write(f&quot;**Size**: {uploaded_file.size / 1024:.2f} KB&quot;)
+    st.write(f&quot;**Dimensions**: {image.size[0]} x {image.size[1]} pixels&quot;)
+    st.write(f&quot;**Format**: {image.format}&quot;)
+    st.write(f&quot;**Mode**: {image.mode}&quot;)  # RGB, RGBA, etc.
+</code></pre>
+<p><strong>Tip</strong>: Expanders keep the gallery clean while providing detailed info on demand.</p>
+<hr>
+<h2>PIL Image Attributes</h2>
+<pre><code>
+image = Image.open(file)
+
+image.size       # (width, height) tuple
+image.width      # Width in pixels
+image.height     # Height in pixels
+image.format     # &#x27;PNG&#x27;, &#x27;JPEG&#x27;, etc.
+image.mode       # &#x27;RGB&#x27;, &#x27;RGBA&#x27;, &#x27;L&#x27;, etc.
+image.info       # Dictionary of image metadata
+</code></pre>
+<hr>
+<h2>Grid Layout Math</h2>
+<pre><code>
+# Calculate rows needed
+total_items = len(uploaded_files)
+cols_per_row = 3
+rows = (total_items + cols_per_row - 1) // cols_per_row
+
+# Calculate item index from row and column
+item_index = row * cols_per_row + col_idx
+
+# Check if index is valid
+if item_index &lt; total_items:
+    # Process item
+</code></pre>
+<hr>
+<h2>Best Practices</h2>
+<p>1. <strong>File Validation</strong>: Specify allowed file types in uploader</p>
+<p>2. <strong>Responsive Images</strong>: Use <code>use_container_width=True</code></p>
+<p>3. <strong>Grid Consistency</strong>: Calculate rows properly to avoid empty cells</p>
+<p>4. <strong>Memory Management</strong>: Don&#x27;t load all images at once for large galleries</p>
+<p>5. <strong>User Feedback</strong>: Show upload status and image count</p>
+<p>6. <strong>Error Handling</strong>: Check if files exist before processing</p>
+<p>7. <strong>Metadata Display</strong>: Use expanders to keep UI clean</p>
+<p>8. <strong>File Size</strong>: Display file sizes in KB or MB for readability</p></div>
+</section>
+
+
+<section class="section-card" data-aos="fade-up">
+  <h2>App Kurzprofil</h2>
+  <div class="summary-grid">
+    <div class="summary-card"><strong>Zeilen</strong><div>56</div></div>
+    <div class="summary-card"><strong>Funktionen</strong><div>0</div></div>
+    <div class="summary-card"><strong>Klassen</strong><div>0</div></div>
+    <div class="summary-card"><strong>Widgets</strong><div>caption, columns, divider, expander, file_uploader, image, info, markdown</div></div>
+    <div class="summary-card"><strong>Imports</strong><div>PIL, io, streamlit</div></div>
+    <div class="summary-card"><strong>Quellen/APIs</strong><div>Upload</div></div>
+  </div>
+</section>
+
+
+<section class="section-card" data-aos="fade-up">
+  <h2>Steps</h2>
+  <div class="step-grid">
+    <a class="box" href="step-01.html"><strong>Step 1</strong><p>Set up file uploader
+- Create file uploader widget
+- Configure for multiple image files
+- Support PNG, JPG, JPEG formats</p></a><a class="box" href="step-02.html"><strong>Step 2</strong><p>Display a single image
+- Import PIL for image handling
+- Open and display the first uploaded image</p></a><a class="box" href="step-03.html"><strong>Step 3</strong><p>Display all images in a list
+- Loop through uploaded files
+- Display each image with caption</p></a><a class="box" href="step-04.html"><strong>Step 4</strong><p>Create grid layout
+- Organize images in a 3-column grid
+- Calculate rows needed dynamically</p></a><a class="box" href="step-05.html"><strong>Step 5</strong><p>Add image information
+- Extract file size and dimensions
+- Display metadata below each image</p></a><a class="box" href="step-06.html"><strong>Step 6</strong><p>Add expandable info sections
+- Use expanders for image details
+- Add instructions when no images uploaded
+
+
+- File uploading with Streamlit
+- Working with PIL (Python Imaging Library)
+- Displaying images with captions
+- Creating grid layouts with columns
+- Extracting image metadata
+- Loop and conditional logic
+- Expandable UI sections</p></a>
+    <a class="box" href="app.html"><strong>App</strong><p>Finale Streamlit-App ansehen.</p></a>
+  </div>
+</section>
+
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

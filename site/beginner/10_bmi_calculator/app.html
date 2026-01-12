@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>10 Bmi Calculator App</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+  <div class="site">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-title">Streamlit Workshop</div>
+        <div class="brand-subtitle">Learning-Streamlit_with-Projects</div>
+      </div>
+      <div class="nav-search">
+        <input id="nav-search" type="search" placeholder="Projekt oder Step suchen...">
+        <div class="nav-search-hint">Tipp: Tippe z.B. "api" oder "step 3"</div>
+      </div>
+      <nav class="nav">
+<details class="nav-level" open>
+<summary>Beginner</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Hello Streamlit</summary>
+<ul>
+<li><a href="../01_hello_streamlit/index.html">Projekt</a></li>
+<li><a href="../01_hello_streamlit/step-01.html">Step 1</a></li>
+<li><a href="../01_hello_streamlit/step-02.html">Step 2</a></li>
+<li><a href="../01_hello_streamlit/step-03.html">Step 3</a></li>
+<li><a href="../01_hello_streamlit/step-04.html">Step 4</a></li>
+<li><a href="../01_hello_streamlit/step-05.html">Step 5</a></li>
+<li><a href="../01_hello_streamlit/step-06.html">Step 6</a></li>
+<li><a href="../01_hello_streamlit/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Interactive Calculator</summary>
+<ul>
+<li><a href="../02_interactive_calculator/index.html">Projekt</a></li>
+<li><a href="../02_interactive_calculator/step-01.html">Step 1</a></li>
+<li><a href="../02_interactive_calculator/step-02.html">Step 2</a></li>
+<li><a href="../02_interactive_calculator/step-03.html">Step 3</a></li>
+<li><a href="../02_interactive_calculator/step-04.html">Step 4</a></li>
+<li><a href="../02_interactive_calculator/step-05.html">Step 5</a></li>
+<li><a href="../02_interactive_calculator/step-06.html">Step 6</a></li>
+<li><a href="../02_interactive_calculator/step-07.html">Step 7</a></li>
+<li><a href="../02_interactive_calculator/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Text Analyzer</summary>
+<ul>
+<li><a href="../03_text_analyzer/index.html">Projekt</a></li>
+<li><a href="../03_text_analyzer/step-01.html">Step 1</a></li>
+<li><a href="../03_text_analyzer/step-02.html">Step 2</a></li>
+<li><a href="../03_text_analyzer/step-03.html">Step 3</a></li>
+<li><a href="../03_text_analyzer/step-04.html">Step 4</a></li>
+<li><a href="../03_text_analyzer/step-05.html">Step 5</a></li>
+<li><a href="../03_text_analyzer/step-06.html">Step 6</a></li>
+<li><a href="../03_text_analyzer/step-07.html">Step 7</a></li>
+<li><a href="../03_text_analyzer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Data Display</summary>
+<ul>
+<li><a href="../04_data_display/index.html">Projekt</a></li>
+<li><a href="../04_data_display/step-01.html">Step 1</a></li>
+<li><a href="../04_data_display/step-02.html">Step 2</a></li>
+<li><a href="../04_data_display/step-03.html">Step 3</a></li>
+<li><a href="../04_data_display/step-04.html">Step 4</a></li>
+<li><a href="../04_data_display/step-05.html">Step 5</a></li>
+<li><a href="../04_data_display/step-06.html">Step 6</a></li>
+<li><a href="../04_data_display/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Temperature Converter</summary>
+<ul>
+<li><a href="../05_temperature_converter/index.html">Projekt</a></li>
+<li><a href="../05_temperature_converter/step-01.html">Step 1</a></li>
+<li><a href="../05_temperature_converter/step-02.html">Step 2</a></li>
+<li><a href="../05_temperature_converter/step-03.html">Step 3</a></li>
+<li><a href="../05_temperature_converter/step-04.html">Step 4</a></li>
+<li><a href="../05_temperature_converter/step-05.html">Step 5</a></li>
+<li><a href="../05_temperature_converter/step-06.html">Step 6</a></li>
+<li><a href="../05_temperature_converter/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Image Gallery</summary>
+<ul>
+<li><a href="../06_image_gallery/index.html">Projekt</a></li>
+<li><a href="../06_image_gallery/step-01.html">Step 1</a></li>
+<li><a href="../06_image_gallery/step-02.html">Step 2</a></li>
+<li><a href="../06_image_gallery/step-03.html">Step 3</a></li>
+<li><a href="../06_image_gallery/step-04.html">Step 4</a></li>
+<li><a href="../06_image_gallery/step-05.html">Step 5</a></li>
+<li><a href="../06_image_gallery/step-06.html">Step 6</a></li>
+<li><a href="../06_image_gallery/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Color Picker Tool</summary>
+<ul>
+<li><a href="../07_color_picker_tool/index.html">Projekt</a></li>
+<li><a href="../07_color_picker_tool/step-01.html">Step 1</a></li>
+<li><a href="../07_color_picker_tool/step-02.html">Step 2</a></li>
+<li><a href="../07_color_picker_tool/step-03.html">Step 3</a></li>
+<li><a href="../07_color_picker_tool/step-04.html">Step 4</a></li>
+<li><a href="../07_color_picker_tool/step-05.html">Step 5</a></li>
+<li><a href="../07_color_picker_tool/step-06.html">Step 6</a></li>
+<li><a href="../07_color_picker_tool/step-07.html">Step 7</a></li>
+<li><a href="../07_color_picker_tool/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Simple Survey Form</summary>
+<ul>
+<li><a href="../08_simple_survey_form/index.html">Projekt</a></li>
+<li><a href="../08_simple_survey_form/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Number Guessing Game</summary>
+<ul>
+<li><a href="../09_number_guessing_game/index.html">Projekt</a></li>
+<li><a href="../09_number_guessing_game/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" open>
+<summary>10 Bmi Calculator</summary>
+<ul>
+<li><a href="index.html">Projekt</a></li>
+<li><a class="active" href="app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+<details class="nav-level" >
+<summary>Advanced</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Data Visualizer</summary>
+<ul>
+<li><a href="../../advanced/01_data_visualizer/index.html">Projekt</a></li>
+<li><a href="../../advanced/01_data_visualizer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Csv Analyzer</summary>
+<ul>
+<li><a href="../../advanced/02_csv_analyzer/index.html">Projekt</a></li>
+<li><a href="../../advanced/02_csv_analyzer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Api Dashboard</summary>
+<ul>
+<li><a href="../../advanced/03_api_dashboard/index.html">Projekt</a></li>
+<li><a href="../../advanced/03_api_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Stock Price Tracker</summary>
+<ul>
+<li><a href="../../advanced/04_stock_price_tracker/index.html">Projekt</a></li>
+<li><a href="../../advanced/04_stock_price_tracker/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Weather Dashboard</summary>
+<ul>
+<li><a href="../../advanced/05_weather_dashboard/index.html">Projekt</a></li>
+<li><a href="../../advanced/05_weather_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Todo List Manager</summary>
+<ul>
+<li><a href="../../advanced/06_todo_list_manager/index.html">Projekt</a></li>
+<li><a href="../../advanced/06_todo_list_manager/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Data Filter Explorer</summary>
+<ul>
+<li><a href="../../advanced/07_data_filter_explorer/index.html">Projekt</a></li>
+<li><a href="../../advanced/07_data_filter_explorer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Multi Page App</summary>
+<ul>
+<li><a href="../../advanced/08_multi_page_app/index.html">Projekt</a></li>
+<li><a href="../../advanced/08_multi_page_app/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Form Validator</summary>
+<ul>
+<li><a href="../../advanced/09_form_validator/index.html">Projekt</a></li>
+<li><a href="../../advanced/09_form_validator/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Quiz Application</summary>
+<ul>
+<li><a href="../../advanced/10_quiz_application/index.html">Projekt</a></li>
+<li><a href="../../advanced/10_quiz_application/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+<details class="nav-level" >
+<summary>Expert</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Ml Model Dashboard</summary>
+<ul>
+<li><a href="../../expert/01_ml_model_dashboard/index.html">Projekt</a></li>
+<li><a href="../../expert/01_ml_model_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Realtime Data Stream</summary>
+<ul>
+<li><a href="../../expert/02_realtime_data_stream/index.html">Projekt</a></li>
+<li><a href="../../expert/02_realtime_data_stream/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Advanced Caching</summary>
+<ul>
+<li><a href="../../expert/03_advanced_caching/index.html">Projekt</a></li>
+<li><a href="../../expert/03_advanced_caching/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Custom Components</summary>
+<ul>
+<li><a href="../../expert/04_custom_components/index.html">Projekt</a></li>
+<li><a href="../../expert/04_custom_components/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Database Integration</summary>
+<ul>
+<li><a href="../../expert/05_database_integration/index.html">Projekt</a></li>
+<li><a href="../../expert/05_database_integration/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Authentication System</summary>
+<ul>
+<li><a href="../../expert/06_authentication_system/index.html">Projekt</a></li>
+<li><a href="../../expert/06_authentication_system/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Data Pipeline Monitor</summary>
+<ul>
+<li><a href="../../expert/07_data_pipeline_monitor/index.html">Projekt</a></li>
+<li><a href="../../expert/07_data_pipeline_monitor/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Ab Testing Dashboard</summary>
+<ul>
+<li><a href="../../expert/08_ab_testing_dashboard/index.html">Projekt</a></li>
+<li><a href="../../expert/08_ab_testing_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Performance Optimizer</summary>
+<ul>
+<li><a href="../../expert/09_performance_optimizer/index.html">Projekt</a></li>
+<li><a href="../../expert/09_performance_optimizer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Production Deployment</summary>
+<ul>
+<li><a href="../../expert/10_production_deployment/index.html">Projekt</a></li>
+<li><a href="../../expert/10_production_deployment/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+</nav>
+    </aside>
+    <main class="main">
+      
+<section class="hero" data-aos="fade-up">
+  <h1>10 Bmi Calculator — App</h1>
+  <div class="meta">
+    <span class="badge">Level: Beginner</span>
+    <span class="badge">Datei: app/app.py</span>
+  </div>
+  <div class="nav-inline"><a href="index.html">Zurueck zum Projekt</a></div>
+</section>
+
+<section class="section-card" data-aos="fade-up">
+  <h2>app.py</h2>
+  <pre class="code-block"><code>&quot;&quot;&quot;
+BMI Calculator - Beginner Project 10
+
+Calculate Body Mass Index and provide health assessment.
+&quot;&quot;&quot;
+
+import streamlit as st
+
+st.set_page_config(
+    page_title=&quot;BMI Calculator&quot;,
+    page_icon=&quot;⚕️&quot;,
+    layout=&quot;centered&quot;
+)
+
+st.title(&quot;⚕️ BMI Calculator&quot;)
+st.write(&quot;Calculate your Body Mass Index and understand your health status&quot;)
+
+# Unit selection
+unit_system = st.radio(&quot;Select unit system:&quot;, [&quot;Metric (kg, cm)&quot;, &quot;Imperial (lbs, inches)&quot;], horizontal=True)
+
+# Input fields based on unit system
+col1, col2 = st.columns(2)
+
+if unit_system == &quot;Metric (kg, cm)&quot;:
+    with col1:
+        weight = st.number_input(&quot;Weight (kg)&quot;, min_value=1.0, max_value=300.0, value=70.0, step=0.1)
+    with col2:
+        height = st.number_input(&quot;Height (cm)&quot;, min_value=50.0, max_value=300.0, value=170.0, step=0.1)
+    
+    # Convert height to meters for calculation
+    height_m = height / 100
+    bmi = weight / (height_m ** 2)
+else:
+    with col1:
+        weight = st.number_input(&quot;Weight (lbs)&quot;, min_value=1.0, max_value=700.0, value=154.0, step=0.1)
+    with col2:
+        height = st.number_input(&quot;Height (inches)&quot;, min_value=20.0, max_value=120.0, value=67.0, step=0.1)
+    
+    # Convert to metric for BMI calculation
+    weight_kg = weight * 0.453592
+    height_m = height * 0.0254
+    bmi = weight_kg / (height_m ** 2)
+
+# Calculate button
+if st.button(&quot;Calculate BMI&quot;, type=&quot;primary&quot;):
+    st.divider()
+    
+    # Determine category
+    if bmi &lt; 18.5:
+        category = &quot;Underweight&quot;
+        color = &quot;blue&quot;
+        emoji = &quot;🔵&quot;
+        advice = &quot;Consider consulting a healthcare provider for guidance on healthy weight gain.&quot;
+    elif 18.5 &lt;= bmi &lt; 25:
+        category = &quot;Normal weight&quot;
+        color = &quot;green&quot;
+        emoji = &quot;🟢&quot;
+        advice = &quot;Great! Maintain your healthy lifestyle with balanced diet and regular exercise.&quot;
+    elif 25 &lt;= bmi &lt; 30:
+        category = &quot;Overweight&quot;
+        color = &quot;orange&quot;
+        emoji = &quot;🟠&quot;
+        advice = &quot;Consider a balanced diet and regular physical activity to reach a healthier weight.&quot;
+    else:
+        category = &quot;Obese&quot;
+        color = &quot;red&quot;
+        emoji = &quot;🔴&quot;
+        advice = &quot;Consult with a healthcare provider for personalized guidance on weight management.&quot;
+    
+    # Display result
+    st.markdown(f&quot;### Your BMI: {bmi:.1f}&quot;)
+    st.markdown(f&quot;### Category: {emoji} {category}&quot;)
+    
+    # BMI scale visualization
+    st.subheader(&quot;📊 BMI Scale&quot;)
+    
+    # Create a visual scale
+    scale_html = f&quot;&quot;&quot;
+    &lt;div style=&quot;background: linear-gradient(to right, #3498db 0%, #2ecc71 25%, #f39c12 50%, #e74c3c 75%, #c0392b 100%); 
+                height: 30px; border-radius: 5px; position: relative; margin: 20px 0;&quot;&gt;
+        &lt;div style=&quot;position: absolute; left: {min(max((bmi/40)*100, 0), 100)}%; 
+                    top: -5px; transform: translateX(-50%);&quot;&gt;
+            &lt;div style=&quot;background: white; border: 2px solid black; border-radius: 50%; 
+                        width: 20px; height: 20px;&quot;&gt;&lt;/div&gt;
+            &lt;div style=&quot;text-align: center; margin-top: 5px; font-weight: bold;&quot;&gt;↑&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;display: flex; justify-content: space-between; font-size: 12px;&quot;&gt;
+        &lt;span&gt;Underweight&lt;br&gt;(&amp;lt;18.5)&lt;/span&gt;
+        &lt;span&gt;Normal&lt;br&gt;(18.5-24.9)&lt;/span&gt;
+        &lt;span&gt;Overweight&lt;br&gt;(25-29.9)&lt;/span&gt;
+        &lt;span&gt;Obese&lt;br&gt;(≥30)&lt;/span&gt;
+    &lt;/div&gt;
+    &quot;&quot;&quot;
+    st.markdown(scale_html, unsafe_allow_html=True)
+    
+    # Health advice
+    st.info(f&quot;💡 **Health Advice**: {advice}&quot;)
+    
+    # Additional metrics
+    with st.expander(&quot;📋 Detailed Information&quot;):
+        st.write(f&quot;**BMI Value**: {bmi:.2f}&quot;)
+        st.write(f&quot;**Category**: {category}&quot;)
+        
+        if unit_system == &quot;Metric (kg, cm)&quot;:
+            st.write(f&quot;**Your Weight**: {weight} kg&quot;)
+            st.write(f&quot;**Your Height**: {height} cm&quot;)
+            
+            # Healthy weight range
+            min_healthy = 18.5 * (height_m ** 2)
+            max_healthy = 24.9 * (height_m ** 2)
+            st.write(f&quot;**Healthy Weight Range**: {min_healthy:.1f} - {max_healthy:.1f} kg&quot;)
+        else:
+            st.write(f&quot;**Your Weight**: {weight} lbs&quot;)
+            st.write(f&quot;**Your Height**: {height} inches&quot;)
+            
+            # Healthy weight range
+            min_healthy = 18.5 * (height_m ** 2) / 0.453592
+            max_healthy = 24.9 * (height_m ** 2) / 0.453592
+            st.write(f&quot;**Healthy Weight Range**: {min_healthy:.1f} - {max_healthy:.1f} lbs&quot;)
+
+# Information about BMI
+with st.expander(&quot;ℹ️ About BMI&quot;):
+    st.markdown(&quot;&quot;&quot;
+    **Body Mass Index (BMI)** is a measure of body fat based on height and weight.
+    
+    **BMI Categories:**
+    - **Underweight**: BMI &lt; 18.5
+    - **Normal weight**: BMI 18.5 - 24.9
+    - **Overweight**: BMI 25 - 29.9
+    - **Obese**: BMI ≥ 30
+    
+    **Note**: BMI is a screening tool and doesn&#x27;t directly measure body fat percentage. 
+    Factors like muscle mass, bone density, and overall body composition are not taken into account.
+    &quot;&quot;&quot;)
+
+st.divider()
+st.caption(&quot;Built with Streamlit 🎈&quot;)
+</code></pre>
+</section>
+
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

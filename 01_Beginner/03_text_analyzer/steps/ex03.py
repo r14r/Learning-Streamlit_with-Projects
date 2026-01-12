@@ -1,0 +1,42 @@
+"""
+Step 3: Adding More Statistics (Sentences, Vowels, Consonants)
+Learning objective: Use string methods and comprehensions to analyze text
+"""
+
+import streamlit as st
+
+st.set_page_config(
+    page_title="Text Analyzer",
+    page_icon="📝",
+    layout="wide"
+)
+
+st.title("📝 Text Analyzer")
+st.write("Enter text to analyze its characteristics")
+
+text = st.text_area("Enter your text here:", height=200,
+                    placeholder="Type or paste your text...")
+
+if text:
+    # Basic statistics
+    char_count = len(text)
+    char_no_spaces = len(text.replace(" ", "").replace("\n", ""))
+    word_count = len(text.split())
+
+    # Count sentences by counting sentence-ending punctuation
+    sentence_count = text.count('.') + text.count('!') + text.count('?')
+
+    # Count vowels and consonants
+    vowels = "aeiouAEIOU"
+    # Use a list comprehension to count vowels
+    vowel_count = sum(1 for char in text if char in vowels)
+    # Count consonants (letters that are not vowels)
+    consonants = sum(1 for char in text if char.isalpha() and char not in vowels)
+
+    st.write(f"**Characters**: {char_count} (without spaces: {char_no_spaces})")
+    st.write(f"**Words**: {word_count}")
+    st.write(f"**Sentences**: {max(sentence_count, 1)}")
+    st.write(f"**Vowels**: {vowel_count}")
+    st.write(f"**Consonants**: {consonants}")
+else:
+    st.info("👆 Enter some text above to see the analysis")

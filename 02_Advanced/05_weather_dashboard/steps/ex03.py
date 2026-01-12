@@ -1,0 +1,44 @@
+"""
+Step 3: Adding Weather Metrics with Icons
+
+In this step, we'll:
+- Display weather data using metric cards
+- Add emoji icons for visual appeal
+- Use columns for layout
+
+Key Concepts:
+- st.metric() for displaying metrics
+- Using emojis to enhance UI
+- Column layout for organization
+"""
+
+import streamlit as st
+import random
+
+st.set_page_config(page_title="Weather Dashboard", page_icon="🌤️", layout="wide")
+
+st.title("🌤️ Weather Dashboard")
+
+cities = ["New York", "London", "Tokyo", "Paris", "Sydney"]
+city = st.selectbox("Select City", cities)
+
+# Generate demo weather data
+random.seed(hash(city))
+temp = random.randint(10, 30)
+humidity = random.randint(40, 80)
+wind = random.randint(5, 25)
+
+# Display metrics in columns
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.metric("🌡️ Temperature", f"{temp}°C")
+
+with col2:
+    st.metric("💧 Humidity", f"{humidity}%")
+
+with col3:
+    st.metric("💨 Wind Speed", f"{wind} km/h")
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

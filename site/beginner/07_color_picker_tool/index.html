@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>07 Color Picker Tool</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+  <div class="site">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-title">Streamlit Workshop</div>
+        <div class="brand-subtitle">Learning-Streamlit_with-Projects</div>
+      </div>
+      <div class="nav-search">
+        <input id="nav-search" type="search" placeholder="Projekt oder Step suchen...">
+        <div class="nav-search-hint">Tipp: Tippe z.B. "api" oder "step 3"</div>
+      </div>
+      <nav class="nav">
+<details class="nav-level" open>
+<summary>Beginner</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Hello Streamlit</summary>
+<ul>
+<li><a href="../01_hello_streamlit/index.html">Projekt</a></li>
+<li><a href="../01_hello_streamlit/step-01.html">Step 1</a></li>
+<li><a href="../01_hello_streamlit/step-02.html">Step 2</a></li>
+<li><a href="../01_hello_streamlit/step-03.html">Step 3</a></li>
+<li><a href="../01_hello_streamlit/step-04.html">Step 4</a></li>
+<li><a href="../01_hello_streamlit/step-05.html">Step 5</a></li>
+<li><a href="../01_hello_streamlit/step-06.html">Step 6</a></li>
+<li><a href="../01_hello_streamlit/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Interactive Calculator</summary>
+<ul>
+<li><a href="../02_interactive_calculator/index.html">Projekt</a></li>
+<li><a href="../02_interactive_calculator/step-01.html">Step 1</a></li>
+<li><a href="../02_interactive_calculator/step-02.html">Step 2</a></li>
+<li><a href="../02_interactive_calculator/step-03.html">Step 3</a></li>
+<li><a href="../02_interactive_calculator/step-04.html">Step 4</a></li>
+<li><a href="../02_interactive_calculator/step-05.html">Step 5</a></li>
+<li><a href="../02_interactive_calculator/step-06.html">Step 6</a></li>
+<li><a href="../02_interactive_calculator/step-07.html">Step 7</a></li>
+<li><a href="../02_interactive_calculator/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Text Analyzer</summary>
+<ul>
+<li><a href="../03_text_analyzer/index.html">Projekt</a></li>
+<li><a href="../03_text_analyzer/step-01.html">Step 1</a></li>
+<li><a href="../03_text_analyzer/step-02.html">Step 2</a></li>
+<li><a href="../03_text_analyzer/step-03.html">Step 3</a></li>
+<li><a href="../03_text_analyzer/step-04.html">Step 4</a></li>
+<li><a href="../03_text_analyzer/step-05.html">Step 5</a></li>
+<li><a href="../03_text_analyzer/step-06.html">Step 6</a></li>
+<li><a href="../03_text_analyzer/step-07.html">Step 7</a></li>
+<li><a href="../03_text_analyzer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Data Display</summary>
+<ul>
+<li><a href="../04_data_display/index.html">Projekt</a></li>
+<li><a href="../04_data_display/step-01.html">Step 1</a></li>
+<li><a href="../04_data_display/step-02.html">Step 2</a></li>
+<li><a href="../04_data_display/step-03.html">Step 3</a></li>
+<li><a href="../04_data_display/step-04.html">Step 4</a></li>
+<li><a href="../04_data_display/step-05.html">Step 5</a></li>
+<li><a href="../04_data_display/step-06.html">Step 6</a></li>
+<li><a href="../04_data_display/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Temperature Converter</summary>
+<ul>
+<li><a href="../05_temperature_converter/index.html">Projekt</a></li>
+<li><a href="../05_temperature_converter/step-01.html">Step 1</a></li>
+<li><a href="../05_temperature_converter/step-02.html">Step 2</a></li>
+<li><a href="../05_temperature_converter/step-03.html">Step 3</a></li>
+<li><a href="../05_temperature_converter/step-04.html">Step 4</a></li>
+<li><a href="../05_temperature_converter/step-05.html">Step 5</a></li>
+<li><a href="../05_temperature_converter/step-06.html">Step 6</a></li>
+<li><a href="../05_temperature_converter/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Image Gallery</summary>
+<ul>
+<li><a href="../06_image_gallery/index.html">Projekt</a></li>
+<li><a href="../06_image_gallery/step-01.html">Step 1</a></li>
+<li><a href="../06_image_gallery/step-02.html">Step 2</a></li>
+<li><a href="../06_image_gallery/step-03.html">Step 3</a></li>
+<li><a href="../06_image_gallery/step-04.html">Step 4</a></li>
+<li><a href="../06_image_gallery/step-05.html">Step 5</a></li>
+<li><a href="../06_image_gallery/step-06.html">Step 6</a></li>
+<li><a href="../06_image_gallery/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" open>
+<summary>07 Color Picker Tool</summary>
+<ul>
+<li><a class="active" href="index.html">Projekt</a></li>
+<li><a href="step-01.html">Step 1</a></li>
+<li><a href="step-02.html">Step 2</a></li>
+<li><a href="step-03.html">Step 3</a></li>
+<li><a href="step-04.html">Step 4</a></li>
+<li><a href="step-05.html">Step 5</a></li>
+<li><a href="step-06.html">Step 6</a></li>
+<li><a href="step-07.html">Step 7</a></li>
+<li><a href="app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Simple Survey Form</summary>
+<ul>
+<li><a href="../08_simple_survey_form/index.html">Projekt</a></li>
+<li><a href="../08_simple_survey_form/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Number Guessing Game</summary>
+<ul>
+<li><a href="../09_number_guessing_game/index.html">Projekt</a></li>
+<li><a href="../09_number_guessing_game/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Bmi Calculator</summary>
+<ul>
+<li><a href="../10_bmi_calculator/index.html">Projekt</a></li>
+<li><a href="../10_bmi_calculator/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+<details class="nav-level" >
+<summary>Advanced</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Data Visualizer</summary>
+<ul>
+<li><a href="../../advanced/01_data_visualizer/index.html">Projekt</a></li>
+<li><a href="../../advanced/01_data_visualizer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Csv Analyzer</summary>
+<ul>
+<li><a href="../../advanced/02_csv_analyzer/index.html">Projekt</a></li>
+<li><a href="../../advanced/02_csv_analyzer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Api Dashboard</summary>
+<ul>
+<li><a href="../../advanced/03_api_dashboard/index.html">Projekt</a></li>
+<li><a href="../../advanced/03_api_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Stock Price Tracker</summary>
+<ul>
+<li><a href="../../advanced/04_stock_price_tracker/index.html">Projekt</a></li>
+<li><a href="../../advanced/04_stock_price_tracker/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Weather Dashboard</summary>
+<ul>
+<li><a href="../../advanced/05_weather_dashboard/index.html">Projekt</a></li>
+<li><a href="../../advanced/05_weather_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Todo List Manager</summary>
+<ul>
+<li><a href="../../advanced/06_todo_list_manager/index.html">Projekt</a></li>
+<li><a href="../../advanced/06_todo_list_manager/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Data Filter Explorer</summary>
+<ul>
+<li><a href="../../advanced/07_data_filter_explorer/index.html">Projekt</a></li>
+<li><a href="../../advanced/07_data_filter_explorer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Multi Page App</summary>
+<ul>
+<li><a href="../../advanced/08_multi_page_app/index.html">Projekt</a></li>
+<li><a href="../../advanced/08_multi_page_app/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Form Validator</summary>
+<ul>
+<li><a href="../../advanced/09_form_validator/index.html">Projekt</a></li>
+<li><a href="../../advanced/09_form_validator/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Quiz Application</summary>
+<ul>
+<li><a href="../../advanced/10_quiz_application/index.html">Projekt</a></li>
+<li><a href="../../advanced/10_quiz_application/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+<details class="nav-level" >
+<summary>Expert</summary>
+<div class="nav-level-items">
+<details class="nav-project" >
+<summary>01 Ml Model Dashboard</summary>
+<ul>
+<li><a href="../../expert/01_ml_model_dashboard/index.html">Projekt</a></li>
+<li><a href="../../expert/01_ml_model_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>02 Realtime Data Stream</summary>
+<ul>
+<li><a href="../../expert/02_realtime_data_stream/index.html">Projekt</a></li>
+<li><a href="../../expert/02_realtime_data_stream/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>03 Advanced Caching</summary>
+<ul>
+<li><a href="../../expert/03_advanced_caching/index.html">Projekt</a></li>
+<li><a href="../../expert/03_advanced_caching/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>04 Custom Components</summary>
+<ul>
+<li><a href="../../expert/04_custom_components/index.html">Projekt</a></li>
+<li><a href="../../expert/04_custom_components/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>05 Database Integration</summary>
+<ul>
+<li><a href="../../expert/05_database_integration/index.html">Projekt</a></li>
+<li><a href="../../expert/05_database_integration/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>06 Authentication System</summary>
+<ul>
+<li><a href="../../expert/06_authentication_system/index.html">Projekt</a></li>
+<li><a href="../../expert/06_authentication_system/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>07 Data Pipeline Monitor</summary>
+<ul>
+<li><a href="../../expert/07_data_pipeline_monitor/index.html">Projekt</a></li>
+<li><a href="../../expert/07_data_pipeline_monitor/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>08 Ab Testing Dashboard</summary>
+<ul>
+<li><a href="../../expert/08_ab_testing_dashboard/index.html">Projekt</a></li>
+<li><a href="../../expert/08_ab_testing_dashboard/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>09 Performance Optimizer</summary>
+<ul>
+<li><a href="../../expert/09_performance_optimizer/index.html">Projekt</a></li>
+<li><a href="../../expert/09_performance_optimizer/app.html">App</a></li>
+</ul>
+</details>
+<details class="nav-project" >
+<summary>10 Production Deployment</summary>
+<ul>
+<li><a href="../../expert/10_production_deployment/index.html">Projekt</a></li>
+<li><a href="../../expert/10_production_deployment/app.html">App</a></li>
+</ul>
+</details>
+</div>
+</details>
+</nav>
+    </aside>
+    <main class="main">
+      
+<section class="hero" data-aos="fade-up">
+  <h1>07 Color Picker Tool</h1>
+  <div class="meta">
+    <span class="badge">Level: Beginner</span>
+    <span class="badge">Projektpfad: site/beginner/07_color_picker_tool</span>
+  </div>
+</section>
+
+<section class="section-card" data-aos="fade-up" data-tabs>
+  <div class="tabs">
+    <button class="tab-btn">TODO.md</button>
+    <button class="tab-btn">TIPPS.md</button>
+  </div>
+  <div class="tab-panel md"><h1>Color Picker Tool - TODO List</h1>
+<p>Build a color picker with format conversions and visualizations!</p>
+<h2>Steps</h2>
+<ul>
+<li>[ ] <strong>Step 1</strong>: Add color picker widget</li>
+<li>Create color picker with default color</li>
+<li>Display selected color value</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 2</strong>: Convert HEX to RGB</li>
+<li>Extract RGB values from hex color</li>
+<li>Display RGB format</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 3</strong>: Add color preview with HTML</li>
+<li>Create colored preview box using HTML/CSS</li>
+<li>Use <code>unsafe_allow_html</code> for rendering</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 4</strong>: Display formats in columns</li>
+<li>Show HEX, RGB values in separate columns</li>
+<li>Add placeholder for HSL</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 5</strong>: Implement RGB to HSL conversion</li>
+<li>Write RGB to HSL conversion function</li>
+<li>Display calculated HSL values</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 6</strong>: Add component visualizations</li>
+<li>Display RGB values with metrics</li>
+<li>Add progress bars for each component</li>
+</ul>
+<ul>
+<li>[ ] <strong>Step 7</strong>: Add copy values section</li>
+<li>Create expander with all color formats</li>
+<li>Make values easy to copy</li>
+</ul>
+<h2>Learning Goals</h2>
+<p>By completing this project, you will learn:</p>
+<ul>
+<li>Color picker widget usage</li>
+<li>Hexadecimal to RGB conversion</li>
+<li>RGB to HSL conversion algorithms</li>
+<li>HTML rendering in Streamlit</li>
+<li>Progress bars for visualization</li>
+<li>Color theory and formats</li>
+<li>Dynamic text color based on background</li>
+</ul></div>
+  <div class="tab-panel md"><h1>Color Picker Tool - Tips &amp; Code Sketches</h1>
+<h2>Step 1: Color Picker Widget</h2>
+<p><strong>Key Concept</strong>: <code>color_picker()</code> provides a visual color selection interface.</p>
+<pre><code>
+color = st.color_picker(
+    &quot;Pick a color&quot;,
+    &quot;#3498db&quot;  # Default color in HEX format
+)
+
+st.write(f&quot;Selected: {color}&quot;)
+</code></pre>
+<p><strong>Tip</strong>: Color picker returns hex color codes like &quot;#3498db&quot;.</p>
+<hr>
+<h2>Step 2: HEX to RGB Conversion</h2>
+<p><strong>Key Concept</strong>: Parse hex string to extract RGB values.</p>
+<pre><code>
+# Remove &#x27;#&#x27; from color
+hex_color = color.lstrip(&#x27;#&#x27;)
+
+# Convert each pair of hex digits to decimal
+# Hex format: RRGGBB (each pair is 0-255 in base 16)
+rgb = tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+
+st.write(f&quot;**HEX**: {color}&quot;)
+st.write(f&quot;**RGB**: rgb({rgb[0]}, {rgb[1]}, {rgb[2]})&quot;)
+</code></pre>
+<p><strong>Tip</strong>: <code>int(string, 16)</code> converts hexadecimal to decimal.</p>
+<hr>
+<h2>Step 3: Color Preview with HTML</h2>
+<p><strong>Key Concept</strong>: Use HTML/CSS for custom styling and previews.</p>
+<pre><code>
+# Determine text color based on background brightness
+text_color = &#x27;white&#x27; if sum(rgb) &lt; 382 else &#x27;black&#x27;
+
+st.markdown(f&quot;&quot;&quot;
+&lt;div style=&quot;background-color: {color};
+            padding: 100px;
+            border-radius: 10px;
+            text-align: center;&quot;&gt;
+    &lt;h2 style=&quot;color: {text_color};&quot;&gt;Color Preview&lt;/h2&gt;
+&lt;/div&gt;
+&quot;&quot;&quot;, unsafe_allow_html=True)
+</code></pre>
+<p><strong>Tip</strong>: Sum of RGB &lt; 382 indicates a dark color (use white text).</p>
+<hr>
+<h2>Step 4: Format Display in Columns</h2>
+<p><strong>Key Concept</strong>: Organize different color formats in columns.</p>
+<pre><code>
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.subheader(&quot;HEX&quot;)
+    st.code(color.upper())  # Display in monospace
+
+with col2:
+    st.subheader(&quot;RGB&quot;)
+    st.code(f&quot;rgb({rgb[0]}, {rgb[1]}, {rgb[2]})&quot;)
+
+with col3:
+    st.subheader(&quot;HSL&quot;)
+    st.code(&quot;hsl(207°, 70%, 54%)&quot;)  # Placeholder
+</code></pre>
+<p><strong>Tip</strong>: <code>st.code()</code> displays text in monospace font, perfect for color codes.</p>
+<hr>
+<h2>Step 5: RGB to HSL Conversion</h2>
+<p><strong>Key Concept</strong>: Implement the RGB to HSL color space conversion algorithm.</p>
+<pre><code>
+def rgb_to_hsl(r, g, b):
+    &quot;&quot;&quot;Convert RGB (0-255) to HSL (H: 0-360, S: 0-100, L: 0-100)&quot;&quot;&quot;
+    # Normalize RGB to 0-1
+    r, g, b = r/255.0, g/255.0, b/255.0
+
+    max_c = max(r, g, b)
+    min_c = min(r, g, b)
+    l = (max_c + min_c) / 2  # Lightness
+
+    if max_c == min_c:
+        h = s = 0  # Achromatic (gray)
+    else:
+        d = max_c - min_c
+        # Saturation
+        s = d / (2 - max_c - min_c) if l &gt; 0.5 else d / (max_c + min_c)
+
+        # Hue
+        if max_c == r:
+            h = (g - b) / d + (6 if g &lt; b else 0)
+        elif max_c == g:
+            h = (b - r) / d + 2
+        else:
+            h = (r - g) / d + 4
+        h /= 6
+
+    # Convert to degrees and percentages
+    return int(h * 360), int(s * 100), int(l * 100)
+
+hsl = rgb_to_hsl(rgb[0], rgb[1], rgb[2])
+st.code(f&quot;hsl({hsl[0]}°, {hsl[1]}%, {hsl[2]}%)&quot;)
+</code></pre>
+<p><strong>Tip</strong>: HSL is more intuitive for humans than RGB (Hue, Saturation, Lightness).</p>
+<hr>
+<h2>Step 6: Component Visualization</h2>
+<p><strong>Key Concept</strong>: Use metrics and progress bars to visualize color components.</p>
+<pre><code>
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.metric(&quot;Red&quot;, rgb[0])
+    st.progress(rgb[0] / 255)  # 0.0 to 1.0
+
+with col2:
+    st.metric(&quot;Green&quot;, rgb[1])
+    st.progress(rgb[1] / 255)
+
+with col3:
+    st.metric(&quot;Blue&quot;, rgb[2])
+    st.progress(rgb[2] / 255)
+</code></pre>
+<p><strong>Tip</strong>: Progress bars visually show the intensity of each color component.</p>
+<hr>
+<h2>Step 7: Copy Values Section</h2>
+<p><strong>Key Concept</strong>: Provide all formats in one place for easy copying.</p>
+<pre><code>
+with st.expander(&quot;📋 Copy Values&quot;):
+    st.code(f&quot;HEX: {color.upper()}&quot;)
+    st.code(f&quot;RGB: rgb({rgb[0]}, {rgb[1]}, {rgb[2]})&quot;)
+    st.code(f&quot;HSL: hsl({hsl[0]}°, {hsl[1]}%, {hsl[2]}%)&quot;)
+</code></pre>
+<p><strong>Tip</strong>: <code>st.code()</code> allows users to easily select and copy text.</p>
+<hr>
+<h2>Color Format Reference</h2>
+<pre><code>
+# HEX: #RRGGBB (hexadecimal)
+&quot;#3498db&quot;
+
+# RGB: Red, Green, Blue (0-255)
+&quot;rgb(52, 152, 219)&quot;
+
+# HSL: Hue (0-360°), Saturation (0-100%), Lightness (0-100%)
+&quot;hsl(204°, 70%, 53%)&quot;
+
+# Color component ranges
+R, G, B: 0-255
+H: 0-360 degrees
+S, L: 0-100 percent
+</code></pre>
+<hr>
+<h2>Best Practices</h2>
+<p>1. <strong>Text Contrast</strong>: Calculate appropriate text color for backgrounds</p>
+<p>2. <strong>Format Consistency</strong>: Display all color formats consistently</p>
+<p>3. <strong>User Experience</strong>: Make color codes easy to copy</p>
+<p>4. <strong>Visual Feedback</strong>: Use progress bars for component values</p>
+<p>5. <strong>Code Display</strong>: Use monospace fonts for color codes</p>
+<p>6. <strong>Color Preview</strong>: Show large preview area for selected color</p>
+<p>7. <strong>Multiple Formats</strong>: Support HEX, RGB, and HSL for flexibility</p>
+<p>8. <strong>Default Colors</strong>: Choose visually appealing default colors</p></div>
+</section>
+
+
+<section class="section-card" data-aos="fade-up">
+  <h2>App Kurzprofil</h2>
+  <div class="summary-grid">
+    <div class="summary-card"><strong>Zeilen</strong><div>73</div></div>
+    <div class="summary-card"><strong>Funktionen</strong><div>1</div></div>
+    <div class="summary-card"><strong>Klassen</strong><div>0</div></div>
+    <div class="summary-card"><strong>Widgets</strong><div>caption, code, color_picker, columns, divider, expander, markdown, metric</div></div>
+    <div class="summary-card"><strong>Imports</strong><div>streamlit</div></div>
+    <div class="summary-card"><strong>Quellen/APIs</strong><div>—</div></div>
+  </div>
+</section>
+
+
+<section class="section-card" data-aos="fade-up">
+  <h2>Steps</h2>
+  <div class="step-grid">
+    <a class="box" href="step-01.html"><strong>Step 1</strong><p>Add color picker widget
+- Create color picker with default color
+- Display selected color value</p></a><a class="box" href="step-02.html"><strong>Step 2</strong><p>Convert HEX to RGB
+- Extract RGB values from hex color
+- Display RGB format</p></a><a class="box" href="step-03.html"><strong>Step 3</strong><p>Add color preview with HTML
+- Create colored preview box using HTML/CSS
+- Use `unsafe_allow_html` for rendering</p></a><a class="box" href="step-04.html"><strong>Step 4</strong><p>Display formats in columns
+- Show HEX, RGB values in separate columns
+- Add placeholder for HSL</p></a><a class="box" href="step-05.html"><strong>Step 5</strong><p>Implement RGB to HSL conversion
+- Write RGB to HSL conversion function
+- Display calculated HSL values</p></a><a class="box" href="step-06.html"><strong>Step 6</strong><p>Add component visualizations
+- Display RGB values with metrics
+- Add progress bars for each component</p></a><a class="box" href="step-07.html"><strong>Step 7</strong><p>Add copy values section
+- Create expander with all color formats
+- Make values easy to copy
+
+
+- Color picker widget usage
+- Hexadecimal to RGB conversion
+- RGB to HSL conversion algorithms
+- HTML rendering in Streamlit
+- Progress bars for visualization
+- Color theory and formats
+- Dynamic text color based on background</p></a>
+    <a class="box" href="app.html"><strong>App</strong><p>Finale Streamlit-App ansehen.</p></a>
+  </div>
+</section>
+
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="../../assets/app.js"></script>
+</body>
+</html>

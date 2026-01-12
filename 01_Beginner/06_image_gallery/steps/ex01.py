@@ -1,0 +1,30 @@
+"""
+Step 1: Basic Setup with File Uploader
+Learning objective: Use file_uploader() to accept image files
+"""
+
+import streamlit as st
+
+st.set_page_config(
+    page_title="Image Gallery",
+    page_icon="🖼️",
+    layout="wide"
+)
+
+st.title("🖼️ Image Gallery")
+st.write("Upload and view your images")
+
+# File uploader widget
+# type: specifies allowed file extensions
+# accept_multiple_files: allows uploading multiple files at once
+uploaded_files = st.file_uploader(
+    "Choose images...",
+    type=['png', 'jpg', 'jpeg'],
+    accept_multiple_files=True
+)
+
+# Show how many files were uploaded
+if uploaded_files:
+    st.success(f"✅ Uploaded {len(uploaded_files)} image(s)")
+else:
+    st.info("👆 Upload one or more images to get started")

@@ -1,0 +1,77 @@
+"""
+Step 2: Implement @st.cache_data
+- Add caching decorator to expensive function
+- Compare cached vs uncached performance
+- Demonstrate cache behavior
+"""
+
+import streamlit as st
+import pandas as pd
+import numpy as np
+import time
+
+st.set_page_config(page_title="Advanced Caching", page_icon="⚡", layout="wide")
+
+st.title("⚡ Advanced Caching Demo")
+
+# STEP 1: Create CACHED version with @st.cache_data
+@st.cache_data
+def expensive_computation_cached(n):
+    """Cached version - will only run once per unique parameter value"""
+    time.sleep(2)
+    return pd.DataFrame(np.random.randn(n, 5), columns=list('ABCDE'))
+
+# STEP 2: Keep uncached version for comparison
+def expensive_computation_uncached(n):
+    """Uncached version - runs every time"""
+    time.sleep(2)
+    return pd.DataFrame(np.random.randn(n, 5), columns=list('ABCDE'))
+
+# STEP 3: Add toggle to switch between cached and uncached
+st.sidebar.header("Configuration")
+use_cache = st.sidebar.checkbox("Use Caching", value=True)
+n_rows = st.sidebar.slider("Number of rows", 100, 10000, 1000, step=100)
+
+if st.button("Run Computation", type="primary"):
+    start_time = time.time()
+
+    with st.spinner("Processing..."):
+        # STEP 4: Use cached or uncached version based on toggle
+        if use_cache:
+            df = expensive_computation_cached(n_rows)
+        else:
+            df = expensive_computation_uncached(n_rows)
+
+    end_time = time.time()
+    elapsed = end_time - start_time
+
+    # Display results
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.metric("Execution Time", f"{elapsed:.2f}s")
+
+    with col2:
+        st.metric("Rows Generated", n_rows)
+
+    st.dataframe(df.head(10), use_container_width=True)
+
+    # STEP 5: Show appropriate message based on caching
+    if use_cache:
+        st.success("✅ Used cached result (try clicking the button again - it will be instant!)")
+    else:
+        st.warning("⚠️ No caching (every run takes full 2 seconds)")
+
+# STEP 6: Explain the difference
+st.info("""
+💡 **Try this experiment:**
+1. Enable caching and click "Run Computation" (takes 2s)
+2. Click the button again with same parameters (instant!)
+3. Change the slider, then click (takes 2s - new parameters)
+4. Change back to previous value (instant - uses cache!)
+
+The cache stores results for each unique parameter combination.
+""")
+
+st.divider()
+st.caption("Built with Streamlit 🎈")

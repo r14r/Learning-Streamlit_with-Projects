@@ -1,0 +1,105 @@
+"""
+Step 5: Add Live Chart Visualization (Complete)
+- Add real-time line chart
+- Visualize streaming data
+- Complete the real-time dashboard
+"""
+
+import streamlit as st
+import pandas as pd
+import numpy as np
+import time
+from datetime import datetime
+
+st.set_page_config(page_title="Real-Time Data Stream", page_icon="📡", layout="wide")
+
+st.title("📡 Real-Time Data Stream")
+
+st.sidebar.header("🎛️ Stream Controls")
+refresh_rate = st.sidebar.slider("Refresh Rate (seconds)", 1, 10, 2)
+auto_refresh = st.sidebar.checkbox("Auto-refresh", value=True)
+
+# Create placeholder for updating content
+placeholder = st.empty()
+
+# Initialize session state
+if 'data_history' not in st.session_state:
+    st.session_state.data_history = []
+
+# Main streaming loop
+while auto_refresh:
+    with placeholder.container():
+        # Generate new data
+        current_time = datetime.now().strftime("%H:%M:%S")
+        value = np.random.randint(50, 150)
+
+        # Update history
+        st.session_state.data_history.append({
+            'time': current_time,
+            'value': value
+        })
+
+        if len(st.session_state.data_history) > 50:
+            st.session_state.data_history.pop(0)
+
+        # Display metrics
+        col1, col2, col3 = st.columns(3)
+
+        with col1:
+            st.metric("Current Value", value)
+
+        with col2:
+            avg_value = np.mean([d['value'] for d in st.session_state.data_history])
+            st.metric("Average", f"{avg_value:.1f}")
+
+        with col3:
+            st.metric("Samples", len(st.session_state.data_history))
+
+        # STEP 1: Convert data history to DataFrame for charting
+        df = pd.DataFrame(st.session_state.data_history)
+
+        # STEP 2: Display live line chart
+        # st.line_chart automatically updates as data changes
+        st.subheader("📈 Live Data Stream")
+        st.line_chart(df.set_index('time'))
+
+        # STEP 3: Add data table for detailed view
+        with st.expander("📋 View Data Table"):
+            st.dataframe(df, use_container_width=True)
+
+        # STEP 4: Add statistics
+        st.subheader("📊 Statistics")
+        stat_col1, stat_col2, stat_col3, stat_col4 = st.columns(4)
+
+        values = [d['value'] for d in st.session_state.data_history]
+
+        with stat_col1:
+            st.metric("Min", min(values) if values else 0)
+
+        with stat_col2:
+            st.metric("Max", max(values) if values else 0)
+
+        with stat_col3:
+            st.metric("Std Dev", f"{np.std(values):.1f}" if values else "0")
+
+        with stat_col4:
+            st.metric("Range", max(values) - min(values) if values else 0)
+
+        # Show last update
+        st.caption(f"Last updated: {current_time}")
+
+    # Wait and rerun
+    time.sleep(refresh_rate)
+    st.rerun()
+
+# Static view when auto-refresh is off
+if not auto_refresh:
+    st.info("🔴 Auto-refresh is disabled. Enable it in the sidebar to see live streaming data!")
+
+    if st.session_state.data_history:
+        df = pd.DataFrame(st.session_state.data_history)
+        st.line_chart(df.set_index('time'))
+        st.dataframe(df, use_container_width=True)
+
+st.divider()
+st.caption("Built with Streamlit 🎈")
