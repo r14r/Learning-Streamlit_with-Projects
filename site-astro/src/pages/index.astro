@@ -1,0 +1,82 @@
+---
+import content from '../data/content.json';
+
+const slugify = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Learning Streamlit Projects</title>
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <h1>Learning Streamlit Projects</h1>
+        <nav>
+          {content.levels.map((level) => (
+            <div class="nav-section" key={level.id}>
+              <a class="nav-level" href={`#${slugify(level.id)}`}>{level.title}</a>
+              <ul>
+                {level.projects.map((project) => (
+                  <li key={project.id}>
+                    <a href={`#${slugify(`${level.id}-${project.id}`)}`}>{project.title}</a>
+                    <ul>
+                      {project.steps.map((step) => (
+                        <li key={step.id}>
+                          <a href={`#${slugify(`${level.id}-${project.id}-${step.id}`)}`}>
+                            {step.filename}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </nav>
+      </aside>
+      <main class="content">
+        {content.levels.map((level) => (
+          <section id={slugify(level.id)} class="level" key={level.id}>
+            <h2>{level.title}</h2>
+            {level.projects.map((project) => (
+              <section
+                id={slugify(`${level.id}-${project.id}`)}
+                class="project"
+                key={project.id}
+              >
+                <h3>{project.title}</h3>
+                <div class="project-meta">
+                  <div>
+                    <h4>TODO</h4>
+                    <pre>{project.todo || 'No TODO.md provided.'}</pre>
+                  </div>
+                  <div>
+                    <h4>TIPPS</h4>
+                    <pre>{project.tipps || 'No TIPPS.md provided.'}</pre>
+                  </div>
+                </div>
+                <div class="steps">
+                  {project.steps.map((step) => (
+                    <article
+                      id={slugify(`${level.id}-${project.id}-${step.id}`)}
+                      class="step"
+                      key={step.id}
+                    >
+                      <h4>{step.filename}</h4>
+                      <pre>{step.code}</pre>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            ))}
+          </section>
+        ))}
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ .Site.Title }}</title>
+    {{ $styles := resources.Get "css/styles.css" | minify }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
+  </head>
+  <body>
+    {{ block "main" . }}{{ end }}
+  </body>
+</html>

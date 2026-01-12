@@ -1,0 +1,6 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Learning Streamlit Projects"
+
+[params]
+  description = "Static overview of the Learning Streamlit projects."
