@@ -1,0 +1,58 @@
+{{ define "main" }}
+<div class="layout">
+  <aside class="sidebar">
+    <h1>{{ .Site.Title }}</h1>
+    <nav>
+      {{ range $level := .Site.Data.content.levels }}
+        <div class="nav-section">
+          <a class="nav-level" href="#{{ $level.id | urlize }}">{{ $level.title }}</a>
+          <ul>
+            {{ range $project := $level.projects }}
+              <li>
+                <a href="#{{ printf "%s-%s" $level.id $project.id | urlize }}">{{ $project.title }}</a>
+                <ul>
+                  {{ range $step := $project.steps }}
+                    <li>
+                      <a href="#{{ printf "%s-%s-%s" $level.id $project.id $step.id | urlize }}">{{ $step.filename }}</a>
+                    </li>
+                  {{ end }}
+                </ul>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
+    </nav>
+  </aside>
+  <main class="content">
+    {{ range $level := .Site.Data.content.levels }}
+      <section id="{{ $level.id | urlize }}" class="level">
+        <h2>{{ $level.title }}</h2>
+        {{ range $project := $level.projects }}
+          <section id="{{ printf "%s-%s" $level.id $project.id | urlize }}" class="project">
+            <h3>{{ $project.title }}</h3>
+            <div class="project-meta">
+              <div>
+                <h4>TODO</h4>
+                <pre>{{ if $project.todo }}{{ $project.todo }}{{ else }}No TODO.md provided.{{ end }}</pre>
+              </div>
+              <div>
+                <h4>TIPPS</h4>
+                <pre>{{ if $project.tipps }}{{ $project.tipps }}{{ else }}No TIPPS.md provided.{{ end }}</pre>
+              </div>
+            </div>
+            <div class="steps">
+              {{ range $step := $project.steps }}
+                <article id="{{ printf "%s-%s-%s" $level.id $project.id $step.id | urlize }}" class="step">
+                  <h4>{{ $step.filename }}</h4>
+                  <pre>{{ $step.code }}</pre>
+                </article>
+              {{ end }}
+            </div>
+          </section>
+        {{ end }}
+      </section>
+    {{ end }}
+  </main>
+</div>
+{{ end }}
