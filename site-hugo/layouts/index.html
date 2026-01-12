@@ -34,18 +34,30 @@
             <div class="project-meta">
               <div>
                 <h4>TODO</h4>
-                <pre>{{ if $project.todo }}{{ $project.todo }}{{ else }}No TODO.md provided.{{ end }}</pre>
+                {{ if $project.todo_path }}
+                  <div class="markdown">{{ readFile $project.todo_path | markdownify }}</div>
+                {{ else }}
+                  <pre>No TODO.md provided.</pre>
+                {{ end }}
               </div>
               <div>
                 <h4>TIPPS</h4>
-                <pre>{{ if $project.tipps }}{{ $project.tipps }}{{ else }}No TIPPS.md provided.{{ end }}</pre>
+                {{ if $project.tipps_path }}
+                  <div class="markdown">{{ readFile $project.tipps_path | markdownify }}</div>
+                {{ else }}
+                  <pre>No TIPPS.md provided.</pre>
+                {{ end }}
               </div>
             </div>
             <div class="steps">
               {{ range $step := $project.steps }}
                 <article id="{{ printf "%s-%s-%s" $level.id $project.id $step.id | urlize }}" class="step">
                   <h4>{{ $step.filename }}</h4>
-                  <pre>{{ $step.code }}</pre>
+                  {{ if $step.path }}
+                    <div class="code-block">{{ readFile $step.path | markdownify }}</div>
+                  {{ else }}
+                    <pre>No step content available.</pre>
+                  {{ end }}
                 </article>
               {{ end }}
             </div>
